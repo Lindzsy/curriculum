@@ -1,276 +1,254 @@
 * General
-** Plan should be in place by 2nd Week of Dec
-** Begins First(ish) week of Feb, lasts 4 mo
+- Plan should be in place by 2nd Week of Dec
+- Begins First(ish) week of Feb, lasts 4 mo
 * Emails
-** https://mail.google.com/mail/u/0/#all/1509609751bf3bb0
-** https://mail.google.com/mail/u/0/#all/150af31cde0b6e77 Curriculum topics
+- https://mail.google.com/mail/u/0/#all/1509609751bf3bb0
+- https://mail.google.com/mail/u/0/#all/150af31cde0b6e77 Curriculum topics
 * Big goal(ish) [0/3]
 - [ ] Put this on an organization for code platoon
 - [ ] Finish prework
 - [ ] Finish high-level for curriculum
 * Prework
 ** Typing
-*** Purpose
-Get them thinking about and working on their typing speed
-since it affects everything else they do.
-*** Approach
-**** Go back and forth between Ruby code and quotes.
-***** Code because it will get them used to the syntax and to typing those characters.
-***** Quotes because they're inspirational, easier, and help you go quickly, increasing your perception of speed.
-*** Task
-**** TODO Complete some set of exercises on 10fastfingers
-**** Example: http://10fastfingers.com/text/28530-Testing-with-a-Ruby-program
+- Purpose ::
+  Get them thinking about and working on their typing speed since it affects everything else they do.
+- Approach ::
+  Go back and forth between Ruby code and quotes.
+  Code because it will get them used to the syntax and to typing those characters.
+  Quotes because they're inspirational, easier, and help you go quickly, increasing your perception of speed.
+- Task ::
+  - TODO Complete some set of exercises on 10fastfingers
+  - Example: http://10fastfingers.com/text/28530-Testing-with-a-Ruby-program
 ** Command-line interface
-*** Purpose
-Start familiarizing them with the environment they'll call home.
-*** Goals
-**** Understand the directory structure  
-**** Programs they'll interact with constantly
-**** How to make sense of text typed into a shell
-**** Familiar with these programs: `ruby, cd, cat, rm, mv, ls, mkdir, cp, type` (I added type to get them thinking about how the shell works)
-*** Task
-**** Do this one: https://www.codecademy.com/learn/learn-the-command-line
-*** Note
- Might be worth creating some katas that use [[http://www.tutorialspoint.com/execute_bash_online.php][this one]] eg something along the lines of the ones I made [[https://github.com/JoshCheek/team_grit/blob/master/cheatsheets_other/shell.md][here]] 
+- Purpose :: Start familiarizing them with the environment they'll call home.
+- Goals ::
+  - Understand the directory structure  
+  - Programs they'll interact with constantly
+  - How to make sense of text typed into a shell
+  - Familiar with these programs: `ruby, cd, cat, rm, mv, ls, mkdir, cp, type` (I added type to get them thinking about how the shell works)
+- Task :: Do this one: https://www.codecademy.com/learn/learn-the-command-line
+- Note :: Might be worth creating some katas that use [[http://www.tutorialspoint.com/execute_bash_online.php][this one]] eg something along the lines of the ones I made [[https://github.com/JoshCheek/team_grit/blob/master/cheatsheets_other/shell.md][here]] 
 ** Ruby Syntax
-*** Purpose
-Get them comfortable with the syntax so they have the abilty to mechanically know what the pieces are,
-leaving them free to spend their cognition on more relevant matters like how to solve the problem or structure the code.
-Think of it as a multiplier.
-*** Task: Ruby
-**** TODO Webify my [[https://github.com/JoshCheek/1508/blob/master/tools/bin/show_syntax][cli syntax shower]]
-**** Make it a bit more comprehensive
-**** Add some sort of game so its not totally boring, but encourages to get excited about the challenges
+- Purpose :: Get them comfortable with the syntax so they have the abilty to mechanically know what the pieces are, leaving them free to spend their cognition on more relevant matters like how to solve the problem or structure the code. Think of it as a multiplier.
+- Task :: Ruby
+  - TODO Webify my [[https://github.com/JoshCheek/1508/blob/master/tools/bin/show_syntax][cli syntax shower]]
+  - Make it a bit more comprehensive
+  - Add some sort of game so its not totally boring, but encourages to get excited about the challenges
 ** Object Model 
-*** Purpose
-**** Remove the magic / overwhelmingness of not even knowing what's possible or how big this new world is.
-**** Give students the ability to make sense of anything they see in Ruby.
-*** Goals:
-**** Understand the callstack / objects / classes  
-**** How Ruby moves through their program (the mechanics of Ruby)
-*** TODO Task:
-Hmm, I could have them memorize the structure, that would be easy enough, but not useful in and of itself.
-Maybe toss like 50 variations of programs through my [[https://github.com/JoshCheek/1508/blob/master/tools/bin/line_nums][line number shower]], so they get a feel for various patterns.
-[[https://github.com/JoshCheek/team_grit/blob/master/katas/flow.rb][This]] one worked pretty well in the past. Then toss the [[https://gist.github.com/JoshCheek/ad9f70a6d855be9ed50d][object model challenges]] at them?
+- Purpose :: Remove the magic / overwhelmingness of not even knowing what's possible or how big this new world is. Give students the ability to make sense of anything they see in Ruby.
+- Goals ::
+  - Understand the callstack / objects / classes  
+  - How Ruby moves through their program (the mechanics of Ruby)
+- TODO Task :: Hmm, I could have them memorize the structure, that would be easy enough, but not useful in and of itself. Maybe toss like 50 variations of programs through my [[https://github.com/JoshCheek/1508/blob/master/tools/bin/line_nums][line number shower]], so they get a feel for various patterns. [[https://github.com/JoshCheek/team_grit/blob/master/katas/flow.rb][This]] one worked pretty well in the past. Then toss the [[https://gist.github.com/JoshCheek/ad9f70a6d855be9ed50d][object model challenges]] at them?
 ** Vocabulary / context recognition
-*** Purpose
-*** TODO Task
-Organize these better, give them definitions. Is it worth putting them on a flash card site?
-Anki
-#+BEGIN_SRC 
-environmental
-    http://www.tutorialspoint.com/computer_fundamentals/computer_operating_system.htm
-    git
-    file
-    source control
-    editor
-    shell
-    mac
-    unix
-    linux
-    terminal
-    directory
-    environment variable
-    operating system http://www.tutorialspoint.com/computer_fundamentals/computer_operating_system.htm
-    cli
-    program
-    application
-    app
-    script
-    bit / byte / kilobyte / megabyte / gigabyte / terabyte
-    bug
-    cursor
-    gui
-    http
-    html
-hardware
-    cpu
-    memory
-    ram
-shell
-    navigate
-    open
-    run
-    execute
-    call
-    command
-    escape
-    path (absolute, relative)
-    home directory
-    root directory
-    current working directory
-    parent directory
-    common programs
+- Purpose :: Ease the transition into Ruby. Brand-new people frequently say that that the language makes it very difficult to learn / understand.
+- TODO Task :: Organize these better, give them definitions. Is it worth putting them on a flash card site? (eg Anki)
+  #+BEGIN_SRC 
+  environmental
+      http://www.tutorialspoint.com/computer_fundamentals/computer_operating_system.htm
+      git
+      file
+      source control
+      editor
+      shell
+      mac
+      unix
+      linux
+      terminal
+      directory
+      environment variable
+      operating system http://www.tutorialspoint.com/computer_fundamentals/computer_operating_system.htm
+      cli
+      program
+      application
+      app
+      script
+      bit / byte / kilobyte / megabyte / gigabyte / terabyte
+      bug
+      cursor
+      gui
+      http
+      html
+  hardware
+      cpu
+      memory
+      ram
+  shell
+      navigate
+      open
+      run
+      execute
+      call
+      command
+      escape
+      path (absolute, relative)
+      home directory
+      root directory
+      current working directory
+      parent directory
+      common programs
       cd, pwd, ruby, ls, 
-    flag
-    argument
-ruby
-    interpolate
-    run
-    execute
-    call (ruby)
-    class
-    type
-    string
-    integer
-    float
-    instantiate
-    variable (local / global / instance / class)
-    class
-    object
-culture
-    open source
-    free software    
-git
-    add
-    commit
-    working directory
-    staging directory
-    sha
-    head
-#+END_SRC
+      flag
+      argument
+  ruby
+      interpolate
+      run
+      execute
+      call (ruby)
+      class
+      type
+      string
+      integer
+      float
+      instantiate
+      variable (local / global / instance / class)
+      class
+      object
+  culture
+      open source
+      free software    
+  git
+      add
+      commit
+      working directory
+      staging directory
+      sha
+      head
+  #+END_SRC
 
 * Potential Resources
-** GradeTrain
-*** https://www.gradetrain.com/
-** Codecademy
+- GradeTrain
+  - https://www.gradetrain.com/
+- Codecademy
 
 * Curriculum
 Split into 3 main sections, with some amount of overlap between each section,
 as we choose appropriate ways to end a third which prepare them for the next one.
 
 ** To Add
-*** Sprinkle challenges liberally throughout
-*** Concrete demonstrations of knowledge each day
-*** Reflection opportunities
-*** Opportunities to go back and redo challenges they did previously (anchor the knowledge)
+- Sprinkle challenges liberally throughout
+- Concrete demonstrations of knowledge each day
+- Reflection opportunities
+- Opportunities to go back and redo challenges they did previously (anchor the knowledge)
 
 ** References
-*** [[https://github.com/turingschool/today][Turing's curriculum]]
-*** [[https://github.com/turingschool/lesson_plans/tree/master/ruby_01-object_oriented_programming_with_ruby][Some of Turing's lesson plans]]
-*** [[https://github.com/Ada-Developers-Academy/daily-curriculum/blob/f3688db58b98237e6df6602179a7051d65ddd284/cohort_schedules/C03_classroom.md][Ada Academy's curriculum]]
+- [[https://github.com/turingschool/today][Turing's curriculum]]
+- [[https://github.com/turingschool/lesson_plans/tree/master/ruby_01-object_oriented_programming_with_ruby][Some of Turing's lesson plans]]
+- [[https://github.com/Ada-Developers-Academy/daily-curriculum/blob/f3688db58b98237e6df6602179a7051d65ddd284/cohort_schedules/C03_classroom.md][Ada Academy's curriculum]]
 
 ** (1/3) Environment, Ruby, Problem Solving, Good Habits
 *** Week  1 - Intro to Editor, Ruby, Terminal
-**** Set expectations 
-***** positive behaviour
-***** collaboration
-***** grit
-**** Get to know each other
-**** Become familiar with editor (What editor do we want to use? Probably Atom or Emacs, might depend on dev env, eg are we doing cloud based?) 
-***** Practice the mechanical skills of, making files, deleting them, editing them
-***** Learn first Keybindings
-***** Alternate between solving problems using [[https://github.com/JoshCheek/seeing_is_believing][SiB]] and practicing keybindings / editing
-***** Demonstrate that you can perform these tasks
-**** Set up the terminal
-***** Some stuff from my [[https://github.com/JoshCheek/1508/blob/master/initial-setup.md][setup instructions]] and probably [[https://github.com/JoshCheek/dotfiles-for-students][dotfiles]]
-**** Become familiar with the terminal
-***** Be able to perform [[https://github.com/JoshCheek/team_grit/blob/master/cheatsheets_other/shell.md][these katas]] by the end (mechanical practice)
-**** Become familiar with the OS (Mac?)
-***** Practice poweruser keybindings
-**** Have them create cheatsheets for the primitives (String, Integer, Array, Hash, booleans)
-***** [[https://github.com/JoshCheek/ruby-kickstart/tree/master/cheatsheets][example]]
-***** Demonstrate an [[http://orgmode.org/worg/org-faq.html#ecm][ECM]] eg to show how map works:
-#+BEGIN_SRC ruby
-['a', 'b'].map { |c| c.upcase }  # => ["A", "B"]
-#+END_SRC
-**** Create a linked list using [[https://gist.github.com/JoshCheek/e8dfba74a0ec7e9d8400/53a6c7555284c2d3272bf5638f8d8efc78303ff9#file-15_ways_to_make_a_linked_list-rb-L31][toplevel methods and arrays]], tests will be provided
-**** Create a linked list using [[https://gist.github.com/JoshCheek/e8dfba74a0ec7e9d8400/53a6c7555284c2d3272bf5638f8d8efc78303ff9#file-15_ways_to_make_a_linked_list-rb-L81][toplevel methods and hashes]], tests will be provided
-**** [[https://github.com/JoshCheek/object-model-hash-style#objects-are-just-linked-lists][Structure of the Object Model]]
-***** Toplevel methods, local variables, callstack, parameters
-***** Objects (ivars/class) 
-***** Classes (superclass/methods/constnats)
+- Set expectations 
+  - positive behaviour
+  - collaboration
+  - grit
+- Get to know each other
+  - Become familiar with editor (What editor do we want to use? Probably Atom or Emacs, might depend on dev env, eg are we doing cloud based?) 
+    - Practice the mechanical skills of, making files, deleting them, editing them
+    - Learn first Keybindings
+    - Alternate between solving problems using [[https://github.com/JoshCheek/seeing_is_believing][SiB]] and practicing keybindings / editing
+    - Demonstrate that you can perform these tasks
+- Set up the terminal
+  - Some stuff from my [[https://github.com/JoshCheek/1508/blob/master/initial-setup.md][setup instructions]] and probably [[https://github.com/JoshCheek/dotfiles-for-students][dotfiles]]
+- Become familiar with the terminal
+  - Be able to perform [[https://github.com/JoshCheek/team_grit/blob/master/cheatsheets_other/shell.md][these katas]] by the end (mechanical practice)
+- Become familiar with the OS (Mac?)
+  - Practice poweruser keybindings
+- Have them create cheatsheets for the primitives (String, Integer, Array, Hash, booleans)
+  - [[https://github.com/JoshCheek/ruby-kickstart/tree/master/cheatsheets][example]]
+  - Demonstrate an [[http://orgmode.org/worg/org-faq.html#ecm][ECM]] eg to show how map works:
+    #+BEGIN_SRC ruby
+    ['a', 'b'].map { |c| c.upcase }  # => ["A", "B"]
+    #+END_SRC
+- Create a linked list using [[https://gist.github.com/JoshCheek/e8dfba74a0ec7e9d8400/53a6c7555284c2d3272bf5638f8d8efc78303ff9#file-15_ways_to_make_a_linked_list-rb-L31][toplevel methods and arrays]], tests will be provided
+- Create a linked list using [[https://gist.github.com/JoshCheek/e8dfba74a0ec7e9d8400/53a6c7555284c2d3272bf5638f8d8efc78303ff9#file-15_ways_to_make_a_linked_list-rb-L81][toplevel methods and hashes]], tests will be provided
+- [[https://github.com/JoshCheek/object-model-hash-style#objects-are-just-linked-lists][Structure of the Object Model]]
+  - Toplevel methods, local variables, callstack, parameters
+  - Objects (ivars/class) 
+  - Classes (superclass/methods/constnats)
 *** Week  2 - Ruby in context
-**** Unix: $PATH, input/output streams, file permissions, executbales
-**** Ruby: $stdin / $stdout / $stderr / ARGV / ENV
-**** Unix: environment variables, pipes, redirecting input/output
-**** Ruby Miniprojects
-***** Create [[https://github.com/JoshCheek/team_grit/blob/master/katas/wc.rb][wc]], [[https://github.com/JoshCheek/team_grit/blob/master/katas/echo.rb][echo]], [[https://github.com/JoshCheek/team_grit/blob/master/katas/cat.rb][cat]]
-**** Namespacing, multiple files in Ruby (load path), naming conventions across files and classes
-**** [[https://github.com/turingschool/curriculum/blob/master/source/topics/debugging/debugging.markdown#pry][Pry]]
-***** Show how to add it to an existing program
-***** Practice imporant commands (whereami, show-source, ls, cd)
-***** Recognize that the shell / editor keybindings work here as well
-***** Create [[https://github.com/JoshCheek/team_grit/blob/master/katas/pwd.rb][pwd]] by exploring in pry (no looking up docs, we have to make guesses and check them to see if they 
-***** Use pry to explore objects based on what we predict from the object model
-**** Exploring gems using pry
-***** Something like [[https://github.com/JumpstartLab/tdd-class-8-dec/blob/master/12-dec-faker.rb][this]]
-**** Git fundamentals
-***** The basic model to use when thinking
-***** My cardinal rule of git: "run git status after everything you do"
-***** Practice the commit workflow (I've got it written down somewhere, will have to find it)
-***** "Get over yourself" aka commit constantly
-**** Various [[https://github.com/turingschool/ruby-exercises][ruby exercises]] (probably objects and methods)
-***** To practice modeling domains using objects
-***** To practice using git to commit
-**** Maybe refactoring exercises [[https://github.com/JoshCheek/1508/blob/master/katas/blowing_bubbles_part1.rb][material]] video of me doing it https://vimeo.com/137837006
-*** week 3 - Testing and More objects
-**** [[https://github.com/JoshCheek/how-to-test][Mechanics of testing]] (the hard skills) 
-***** TODO Do we want to use minitest or RSpec, or don't care?
-***** Have them demonstrate they can repeat all the hard skills
-**** Exploring with pry (to see how feedback is useful, and build intuition)
-***** We'll use pry to go in and figure out how minitest runs our tests
-(if we use RSpec instead, then it's probably not worth it, b/c RSpec is much larger and more sophisticated, not ripe for entry level discovery)
-**** Discuss how to start a project (bdd)
-https://gist.github.com/JoshCheek/37e4cf3bea6541023bab
-**** Show how this manifests in the [[https://github.com/JoshCheek/how-to-test#watch-me-build-a-calculator-in-this-way][mindset of testing]] (the soft skills)
-***** How to think about testing 
-***** What tests to write
-***** Watch me do it
-***** Students repeat it
-***** Demonstrate they can mimic my process and thought patterns
-**** Use testing and git on a linked list that uses toplevel methods and objects
-**** Use testing and git on a linked list that moves the methods into the objects
-***** This will likely lead to test pain because each test probably uses the interface directly.
-So we'll get to talk about tdd (in this case, refactor the tests to introduce abstractions, then move the methods 1 at a time)
-***** Maybe have them set it aside and go through more [[https://github.com/JoshCheek/1508/blob/master/katas/blowing_bubbles_part2.rb][refactoring exercises]] (video of me doing it https://vimeo.com/137837005)
-***** Maybe them do both iterative solutions and recursive solutions, pushing the logic down into the node.
-**** Object Model: Singleton classes
-**** [[https://github.com/JoshCheek/programming_is_fun/blob/master/spec/request_spec.rb][HTTP Parser]] (uses streams, strings, testing, and we can define the interface as `ParseHttp.call` which will use singleton classes, and starts prepping them for the web)
-*** week  4 - How to approach a project
-**** Practice starting a project the way I do
-***** Watch me do Chisel (markdown parser)
-http://tutorials.jumpstartlab.com/projects/chisel.html
-https://vimeo.com/131588133
-***** They attempt to mimic my approach
-***** Watch me do chisel again
-***** They attempt to mimic my approach again
-***** Watch me do chisel again (this time in 20ish minutes)
-***** They practice on one they haven't seen me do, [[https://vimeo.com/139372804][Character Count]]
-**** Project: [[https://github.com/turingschool/lesson_plans/tree/master/electives/building-a-gem][building a gem]]
-Uses all the stuff they learned last week + the stuff they learned this week, lets us talk about design
-*** week  5 - Modules and Blocks
-**** Blocks
-***** How they work
-***** Follow the flow through the program
-**** Add `each` method to their linked list
-**** Modules as mixins and namespaces
-***** Have them infer the structure from their knowledge of the object model
-**** Create Enumerable#map together
-**** Project: create some subset of [[https://vimeo.com/133626457][Enumerable]]
-**** Include it into their linked list so they can see that they get the `map` methods and so forth
-*** week  6 - 
+- Unix: $PATH, input/output streams, file permissions, executbales
+- Ruby: $stdin / $stdout / $stderr / ARGV / ENV
+- Unix: environment variables, pipes, redirecting input/output
+- Ruby Miniprojects
+  - Create [[https://github.com/JoshCheek/team_grit/blob/master/katas/wc.rb][wc]], [[https://github.com/JoshCheek/team_grit/blob/master/katas/echo.rb][echo]], [[https://github.com/JoshCheek/team_grit/blob/master/katas/cat.rb][cat]]
+- Namespacing, multiple files in Ruby (load path), naming conventions across files and classes
+- [[https://github.com/turingschool/curriculum/blob/master/source/topics/debugging/debugging.markdown#pry][Pry]]
+  - Show how to add it to an existing program
+  - Practice imporant commands (whereami, show-source, ls, cd)
+  - Recognize that the shell / editor keybindings work here as well
+  - Create [[https://github.com/JoshCheek/team_grit/blob/master/katas/pwd.rb][pwd]] by exploring in pry (no looking up docs, we have to make guesses and check them to see if they 
+  - Use pry to explore objects based on what we predict from the object model
+- Exploring gems using pry
+  - Something like [[https://github.com/JumpstartLab/tdd-class-8-dec/blob/master/12-dec-faker.rb][this]]
+- Git fundamentals
+  - The basic model to use when thinking
+  - My cardinal rule of git: "run git status after everything you do"
+  - Practice the commit workflow (I've got it written down somewhere, will have to find it)
+  - "Get over yourself" aka commit constantly
+- Various [[https://github.com/turingschool/ruby-exercises][ruby exercises]] (probably objects and methods)
+  - To practice modeling domains using objects
+  - To practice using git to commit
+- Maybe refactoring exercises [[https://github.com/JoshCheek/1508/blob/master/katas/blowing_bubbles_part1.rb][material]] video of me doing it https://vimeo.com/137837006
+*** Week 3 - Testing and More objects
+- [[https://github.com/JoshCheek/how-to-test][Mechanics of testing]] (the hard skills) 
+  - TODO Do we want to use minitest or RSpec, or don't care?
+  - Have them demonstrate they can repeat all the hard skills
+- Exploring with pry (to see how feedback is useful, and build intuition)
+  - We'll use pry to go in and figure out how minitest runs our tests (if we use RSpec instead, then it's probably not worth it, b/c RSpec is much larger and more sophisticated, not ripe for entry level discovery)
+- Discuss how to start a project (bdd) https://gist.github.com/JoshCheek/37e4cf3bea6541023bab
+- Show how this manifests in the [[https://github.com/JoshCheek/how-to-test#watch-me-build-a-calculator-in-this-way][mindset of testing]] (the soft skills)
+  - How to think about testing 
+  - What tests to write
+  - Watch me do it
+  - Students repeat it
+  - Demonstrate they can mimic my process and thought patterns
+- Use testing and git on a linked list that uses toplevel methods and objects
+- Use testing and git on a linked list that moves the methods into the objects
+  - This will likely lead to test pain because each test probably uses the interface directly. So we'll get to talk about tdd (in this case, refactor the tests to introduce abstractions, then move the methods 1 at a time)
+  - Maybe have them set it aside and go through more [[https://github.com/JoshCheek/1508/blob/master/katas/blowing_bubbles_part2.rb][refactoring exercises]] (video of me doing it https://vimeo.com/137837005)
+  - Maybe them do both iterative solutions and recursive solutions, pushing the logic down into the node.
+- Object Model: Singleton classes
+- [[https://github.com/JoshCheek/programming_is_fun/blob/master/spec/request_spec.rb][HTTP Parser]] (uses streams, strings, testing, and we can define the interface as `ParseHttp.call` which will use singleton classes, and starts prepping them for the web)
+*** Week 4 - How to approach a project
+- Practice starting a project the way I do
+  - Watch me do Chisel (markdown parser) http://tutorials.jumpstartlab.com/projects/chisel.html https://vimeo.com/131588133
+  - They attempt to mimic my approach
+  - Watch me do chisel again
+  - They attempt to mimic my approach again
+  - Watch me do chisel again (this time in 20ish minutes)
+  - They practice on one they haven't seen me do, [[https://vimeo.com/139372804][Character Count]]
+- Project: [[https://github.com/turingschool/lesson_plans/tree/master/electives/building-a-gem][building a gem]] Uses all the stuff they learned last week + the stuff they learned this week, lets us talk about design
+*** Week 5 - Modules and Blocks
+- Blocks
+  - How they work
+  - Follow the flow through the program
+- Add `each` method to their linked list
+- Modules as mixins and namespaces
+  - Have them infer the structure from their knowledge of the object model
+- Create Enumerable#map together
+- Project: create some subset of [[https://vimeo.com/133626457][Enumerable]]
+- Include it into their linked list so they can see that they get the `map` methods and so forth
+*** Week 6
 (or hashes (TODO ask Horace for these links)
-**** Webserver project
-https://github.com/turingschool/curriculum/blob/master/source/projects/http_yeah_you_know_me.markdown
-**** sinatra
+- Webserver project https://github.com/turingschool/curriculum/blob/master/source/projects/http_yeah_you_know_me.markdown
+- sinatra
 ** (2/3) Internet / Rails
-*** week  7 - 
-*** week  8 - 
-*** week  9 - 
-*** week 10 - 
-*** week 11 - 
+*** Week 7 - 
+*** Week 8 - 
+*** Week 9 - 
+*** Week 10 - 
+*** Week 11 - 
 ** (3/3) Frontend / Javascript
-*** week 12 - 
-*** week 13 - 
-*** week 14 - 
-*** week 15 - 
-*** week 16 - 
+*** Week 12 - 
+*** Week 13 - 
+*** Week 14 - 
+*** Week 15 - 
+*** Week 16 - 
 
-* projects
-* Support
-  Companies bringing in support:
-    Pivotal day on tdd / jasmie
-    Hash rocket day or more on varying topics
-    Essential Rails - Jeff Cohen
-  The CS lady
+* Available Support
+- Companies bringing in support:
+  - Pivotal day on tdd / jasmie
+  - Hash rocket day or more on varying topics
+  - Essential Rails - Jeff Cohen
+- Andrea (CS @ Ohio University)
