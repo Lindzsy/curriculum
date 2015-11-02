@@ -120,6 +120,8 @@
 - GradeTrain
   - https://www.gradetrain.com/
 - Codecademy
+- [[http://ankisrs.net/][Anki]]
+- [[https://github.com/JoshCheek/ruby-kickstart/tree/master/session1][RKS]] (also has lots of challenges)
 
 * Curriculum
 Split into 3 main sections, with some amount of overlap between each section,
@@ -137,6 +139,13 @@ as we choose appropriate ways to end a third which prepare them for the next one
 - [[https://github.com/Ada-Developers-Academy/daily-curriculum/blob/f3688db58b98237e6df6602179a7051d65ddd284/cohort_schedules/C03_classroom.md][Ada Academy's curriculum]]
 
 ** (1/3) Environment, Ruby, Problem Solving, Good Habits
+- Maybe add ::
+  - More git
+  - [[https://github.com/Ada-Developers-Academy/daily-curriculum/blob/f3688db58b98237e6df6602179a7051d65ddd284/topic_resources/how-to-os-x.md][How to OSX]]
+  - [[https://github.com/Ada-Developers-Academy/daily-curriculum/blob/f3688db58b98237e6df6602179a7051d65ddd284/topic_resources/nix.md][Intro to Unix]]
+  - [[http://computers.tutsplus.com/tutorials/navigating-the-terminal-a-gentle-introduction--mac-3855][Navigating the Terminal: A Gentle Introduction]]
+  - Enumerables
+  - [[https://vimeo.com/130811302][Various Games]]
 *** Week  1 - Intro to Editor, Ruby, Terminal
 - Set expectations 
   - positive behaviour
@@ -229,17 +238,74 @@ as we choose appropriate ways to end a third which prepare them for the next one
 - Create Enumerable#map together
 - Project: create some subset of [[https://vimeo.com/133626457][Enumerable]]
 - Include it into their linked list so they can see that they get the `map` methods and so forth
-*** Week 6
-(or hashes (TODO ask Horace for these links)
+*** Week 6 - HTTP / webservers
+(or hashes https://github.com/turingschool/data_structures_and_algorithms/tree/master/hash_tables)
 - Webserver project https://github.com/turingschool/curriculum/blob/master/source/projects/http_yeah_you_know_me.markdown
-- sinatra
+- Maybe build a miniature web framework for the server, then show that it works on something like Webrick or Puma, as well (eg https://gist.github.com/JoshCheek/a754fce5d1d5e5bb88a6)
 ** (2/3) Internet / Rails
-*** Week 7 - 
-*** Week 8 - 
+- Early Topics::
+  - DOM / [[http://www.codecademy.com/en/tracks/web][Codecademy's HTML / CSS track]]
+  - [[https://github.com/Ada-Developers-Academy/daily-curriculum/blob/f3688db58b98237e6df6602179a7051d65ddd284/topic_resources/submitting-forms.md][Forms]]
+  - MVC
+  - [[https://github.com/Ada-Developers-Academy/daily-curriculum/blob/f3688db58b98237e6df6602179a7051d65ddd284/topic_resources/html.md][HTML]]
+  - [[https://github.com/turingschool/lesson_plans/blob/master/ruby_02-web_applications_with_ruby/how_the_web_works.markdown][Intro to the web]] Looks like it could be good, so does [[https://github.com/Ada-Developers-Academy/daily-curriculum/blob/f3688db58b98237e6df6602179a7051d65ddd284/topic_resources/networking.md][Ada's networking material]]
+  - [[https://github.com/turingschool/lesson_plans/blob/master/ruby_02-web_applications_with_ruby/introduction_to_bootstrap.markdown][Intro to bootstrap]]
+  - [[https://github.com/turingschool/challenges/blob/master/parsing_html.markdown][Nokogiri Challenge]]
+  - [[https://github.com/turingschool/lesson_plans/blob/master/ruby_02-web_applications_with_ruby/feature_testing_in_sinatra_with_capybara.markdown][Capybara]] / [[https://github.com/turingschool/lesson_plans/blob/master/ruby_02-web_applications_with_ruby/feature_testing_rails_minitest_rspec.markdown][Feature Testing]] / [[https://gist.github.com/JoshCheek/f71d7d5d749401733a5e][Minimal Testing Example]]
+  - [[https://github.com/turingschool/lesson_plans/blob/master/ruby_02-web_applications_with_ruby/database_design_modeling.markdown][Database Design & Modeling]] / [[https://github.com/turingschool/lesson_plans/blob/master/ruby_02-web_applications_with_ruby/database_schema_design.markdown][Database / Schema design]]
+  - [[https://github.com/turingschool/lesson_plans/blob/master/ruby_02-web_applications_with_ruby/rest_routing_and_controllers_in_rails.markdown][REST]]
+  - [[https://github.com/turingschool/challenges/blob/master/models_databases_relationships_routes_controllers_oh_my.markdown][Rails Basics Challenge]]
+  - [[https://github.com/turingschool/lesson_plans/blob/master/ruby_02-web_applications_with_ruby/forms_and_route_helpers_in_rails.markdown][Form and Route helpers]]
+  - [[https://github.com/turingschool/lesson_plans/blob/master/ruby_02-web_applications_with_ruby/sessions_cookies_and_flashes.markdown][Sessions / Cookies / Flashes]] / [[https://gist.github.com/JoshCheek/7b1c1eb231dfa83098be][Decrypting a Rails Session]] / [[https://github.com/Ada-Developers-Academy/daily-curriculum/blob/f3688db58b98237e6df6602179a7051d65ddd284/topic_resources/rails/session..md][Ada's sessions]]
+  - [[http://guides.rubyonrails.org/action_controller_overview.html#filters][Controller Filters]]
+  - [[https://github.com/turingschool/lesson_plans/blob/master/ruby_02-web_applications_with_ruby/authentication.markdown][Turing's Authentication]] / [[https://github.com/Ada-Developers-Academy/daily-curriculum/blob/f3688db58b98237e6df6602179a7051d65ddd284/topic_resources/user-authentication.md][Ada's authentication]]
+  - [[https://github.com/turingschool/lesson_plans/blob/master/ruby_02-web_applications_with_ruby/authorization.markdown][Authorization]]
+  - [[https://github.com/turingschool/lesson_plans/blob/master/ruby_02-web_applications_with_ruby/rails_views_tips_and_techniques.markdown][Rails Views]]
+  - Extracting logic from the view/controller/model
+  - [[https://github.com/turingschool/lesson_plans/blob/master/ruby_02-web_applications_with_ruby/intro_to_the_asset_pipeline.markdown][Asset Pipeline]]
+  - [[https://github.com/turingschool/lesson_plans/blob/master/ruby_02-web_applications_with_ruby/transactions_scopes_callbacks.markdown][Transactions/callbacks/scopes]]
+  - [[https://github.com/Ada-Developers-Academy/daily-curriculum/blob/f3688db58b98237e6df6602179a7051d65ddd284/topic_resources/rails/active_record.md][ActiveRecord]]
+  - [[https://github.com/Ada-Developers-Academy/daily-curriculum/blob/f3688db58b98237e6df6602179a7051d65ddd284/topic_resources/rails/active_record_practice.md][ActiveRecord practice]]
+  - [[https://github.com/Ada-Developers-Academy/daily-curriculum/blob/f3688db58b98237e6df6602179a7051d65ddd284/topic_resources/carrierwave.md][Carrierwave]]
+  - Sqlite / Postgresql
+  - Heroku
+- Late Topics ::
+  - [[https://github.com/Ada-Developers-Academy/daily-curriculum/blob/f3688db58b98237e6df6602179a7051d65ddd284/topic_resources/web-api-101.md][API examples]]
+  - [[https://github.com/Ada-Developers-Academy/daily-curriculum/blob/f3688db58b98237e6df6602179a7051d65ddd284/topic_resources/consuming-an-api.md][Consuming an API]]
+  - [[https://github.com/Ada-Developers-Academy/daily-curriculum/blob/f3688db58b98237e6df6602179a7051d65ddd284/topic_resources/consuming-an-api.md#practice][Consuming an API]]
+  - [[https://github.com/Ada-Developers-Academy/daily-curriculum/blob/f3688db58b98237e6df6602179a7051d65ddd284/topic_resources/omniauth.md][Authentication w/ Omniauth]]
+- Project Ideas::
+  - THOUGHT: What if they build their own mini web framework, and then, before learning something in Rails, they add it to their framework? (is there time for that?)
+  - Traffic Spy
+  - Task Manager
+  - Implement sessions
+  - Implement Authentication
+  - [[https://github.com/Ada-Developers-Academy/C3Projects--bEtsy][Betsy]]
+  - [[https://github.com/Ada-Developers-Academy/C3Projects--SeeMore][See More]]
+
+*** Week 7 - Databases / templating languages
+- ActiveRecord w/o Rails (SiB, its patterns, db patterns, its interfaces for creating, querying, associating, validating) [[https://gist.github.com/JoshCheek/53877049e76f98447249][example]]
+- Enough metaprogramming for AR to not be magic
+- ERB in plain Ruby
+*** Week 8 - Rails 
+- High level (what are the pieces, why are they there, how do they fit together?)
+- ActiveRecord in Rails (migrations, models)
+- Various Rails pieces in isolation [[https://github.com/JoshCheek/playgrounds][Example]]
+- Rails project
 *** Week 9 - 
+- APIs
 *** Week 10 - 
 *** Week 11 - 
 ** (3/3) Frontend / Javascript
+- Resources ::
+  - [[https://github.com/Ada-Developers-Academy/daily-curriculum/blob/f3688db58b98237e6df6602179a7051d65ddd284/cohort_schedules/C03_classroom.md#resources-14][Ada JS resources]]
+  - [[https://github.com/turingschool/lesson_plans/blob/master/ruby_02-web_applications_with_ruby/introduction_to_javascript.markdown][Turing Module 2 Intro to js]]
+  - [[https://github.com/turingschool/lesson_plans/blob/master/ruby_02-web_applications_with_ruby/introduction_to_jquery.markdown][JQuery]]
+- Topics ::
+  - JS object model (prototypes, constsructor, local vars, self, callstack, event queue/callbacks)
+  - 
+- Project Ideas ::
+  - Linked List in JavaScript
 *** Week 12 - 
 *** Week 13 - 
 *** Week 14 - 
