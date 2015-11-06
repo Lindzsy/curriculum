@@ -1,0 +1,125 @@
+* Prework
+** Typing
+- Purpose ::
+  Get them thinking about and working on their typing speed since it affects everything else they do.
+- Approach ::
+  Go back and forth between Ruby code and quotes.
+  Code because it will get them used to the syntax and to typing those characters.
+  Quotes because they're inspirational, easier, and help you go quickly, increasing your perception of speed.
+- Task ::
+  - TODO Complete some set of exercises on 10fastfingers
+  - Example: http://10fastfingers.com/text/28530-Testing-with-a-Ruby-program
+** Command-line interface
+- Purpose :: Start familiarizing them with the environment they'll call home.
+- Goals ::
+  - Understand the directory structure
+  - Programs they'll interact with constantly
+  - How to make sense of text typed into a shell
+  - Familiar with these programs: `ruby, cd, cat, rm, mv, ls, mkdir, cp, type` (I added type to get them thinking about how the shell works)
+- Task :: Do this one: https://www.codecademy.com/learn/learn-the-command-line
+- Note :: Might be worth creating some katas that use [[http://www.tutorialspoint.com/execute_bash_online.php][this one]] eg something along the lines of the ones I made [[https://github.com/JoshCheek/team_grit/blob/master/cheatsheets_other/shell.md][here]]
+** Ruby Syntax
+- Purpose :: Get them comfortable with the syntax so they have the abilty to mechanically know what the pieces are, leaving them free to spend their cognition on more relevant matters like how to solve the problem or structure the code. Think of it as a multiplier.
+- Task :: Ruby
+  - TODO Webify my [[https://github.com/JoshCheek/1508/blob/master/tools/bin/show_syntax][cli syntax shower]]
+  - Make it a bit more comprehensive
+  - Add some sort of game so its not totally boring, but encourages to get excited about the challenges
+** Line Numbers
+** Object Model
+- Purpose :: Remove the magic / overwhelmingness of not even knowing what's possible or how big this new world is. Give students the ability to make sense of anything they see in Ruby.
+- Goals ::
+  - Understand the callstack / objects / classes
+  - How Ruby moves through their program (the mechanics of Ruby)
+- TODO Task :: Hmm, I could have them memorize the structure, that would be easy enough, but not useful in and of itself. Maybe toss like 50 variations of programs through my [[https://github.com/JoshCheek/1508/blob/master/tools/bin/line_nums][line number shower]], so they get a feel for various patterns. [[https://github.com/JoshCheek/team_grit/blob/master/katas/flow.rb][This]] one worked pretty well in the past. Then toss the [[https://gist.github.com/JoshCheek/ad9f70a6d855be9ed50d][object model challenges]] at them?
+** Vocabulary / context recognition
+- Purpose :: Ease the transition into Ruby. Brand-new people frequently say that that the language makes it very difficult to learn / understand.
+- TODO Task :: Organize these better, give them definitions. Is it worth putting them on a flash card site? (eg Anki)
+  "assigns" vs "is equal", is-a vs has-a
+  #+BEGIN_SRC
+  Organize These
+      http://www.tutorialspoint.com/computer_fundamentals/computer_operating_system.htm
+      git
+      syntax
+      is-a / has-a
+      stdlib
+      core
+      compiler
+      interpreter
+      source control
+      MRI
+      Java
+      JavaScript
+      garbage collection
+      virtual machine
+      portability
+      script ( high-level instructions to other programs)
+      DSL
+      file
+      source control
+      editor
+      shell
+      mac
+      unix
+      linux
+      terminal
+      directory
+      environment variable
+      operating system http://www.tutorialspoint.com/computer_fundamentals/computer_operating_system.htm
+      cli
+      program
+      application
+      app
+      script
+      bit / byte / kilobyte / megabyte / gigabyte / terabyte
+      bug
+      cursor
+      gui
+      http
+      html
+  hardware
+      cpu
+      memory
+      ram
+  shell
+      navigate
+      open
+      run
+      execute
+      call
+      command
+      escape
+      path (absolute, relative)
+      home directory
+      root directory
+      current working directory
+      parent directory
+      common programs
+      cd, pwd, ruby, ls,
+      flag
+      argument
+  ruby
+      interpolate
+      run
+      execute
+      call (ruby)
+      class
+      type
+      string
+      integer
+      float
+      instantiate
+      variable (local / global / instance / class)
+      class
+      object
+  culture
+      open source
+      free software
+  git
+      add
+      commit
+      working directory
+      staging directory
+      sha
+      head
+  #+END_SRC
+
