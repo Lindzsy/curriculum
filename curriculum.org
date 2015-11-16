@@ -211,4 +211,4 @@ as we choose appropriate ways to end a third which prepare them for the next one
   - Essential Rails - Jeff Cohen
 - Andrea (CS @ Ohio University)
 
-Unless otherwise noted, this curriculum [by Josh Cheek] licensed under - [[http://creativecommons.org/licenses/by-nc-sa/3.0/][Creative Commons Attribution-NonCommercial-ShareAlike 3.0]]
+Unless otherwise noted, this curriculum by Josh Cheek is licensed under - [[http://creativecommons.org/licenses/by-nc-sa/3.0/][Creative Commons Attribution-NonCommercial-ShareAlike 3.0]]
