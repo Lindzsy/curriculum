@@ -55,7 +55,6 @@
       script ( high-level instructions to other programs)
       DSL
       file
-      source control
       editor
       shell
       mac
@@ -94,7 +93,7 @@
       current working directory
       parent directory
       common programs
-      cd, pwd, ruby, ls,
+      ruby, cd, cat, rm, mv, ls, mkdir, cp, type, pwd, git, ag, grep, gem, echo, l, curl, mkdir, bundle, ff, man, env, mrspec, fullpath, head, rake, wc, sort, sed, awk, kill, ps, which, sudo, tree, alias, clear, true, false
       flag
       argument
   ruby

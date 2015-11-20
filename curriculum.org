@@ -38,6 +38,14 @@ as we choose appropriate ways to end a third which prepare them for the next one
   - [[http://computers.tutsplus.com/tutorials/navigating-the-terminal-a-gentle-introduction--mac-3855][Navigating the Terminal: A Gentle Introduction]]
   - Enumerables
   - [[https://vimeo.com/130811302][Various Games]]
+  - a fun first day to help them see where their skills are going to take them
+    - https://twitter.com/josh_cheek/status/664795920467300352
+    - https://www.govtrack.us/developers/api
+    - https://github.com/phoet/asin
+    - https://www.ruby-toolbox.com/categories/api_clients
+    - https://www.ruby-toolbox.com/categories/visualizing_data
+    - https://www.ruby-toolbox.com/categories/by_name
+    - https://www.libgosu.org/
 *** Week  1 - Intro to Editor, Ruby, Terminal
 - Set expectations
   - positive behaviour
@@ -161,6 +169,8 @@ as we choose appropriate ways to end a third which prepare them for the next one
   - [[https://github.com/Ada-Developers-Academy/daily-curriculum/blob/f3688db58b98237e6df6602179a7051d65ddd284/topic_resources/carrierwave.md][Carrierwave]]
   - Sqlite / Postgresql
   - Heroku
+  - [[https://gist.github.com/JoshCheek/cb48fcdd063e45bf5185][quiz topics]]
+  - N+1 queries and other improvements
 - Late Topics ::
   - [[https://github.com/Ada-Developers-Academy/daily-curriculum/blob/f3688db58b98237e6df6602179a7051d65ddd284/topic_resources/web-api-101.md][API examples]]
   - [[https://github.com/Ada-Developers-Academy/daily-curriculum/blob/f3688db58b98237e6df6602179a7051d65ddd284/topic_resources/consuming-an-api.md][Consuming an API]]
@@ -168,6 +178,7 @@ as we choose appropriate ways to end a third which prepare them for the next one
   - [[https://github.com/Ada-Developers-Academy/daily-curriculum/blob/f3688db58b98237e6df6602179a7051d65ddd284/topic_resources/omniauth.md][Authentication w/ Omniauth]]
 - Project Ideas::
   - THOUGHT: What if they build their own mini web framework, and then, before learning something in Rails, they add it to their framework? (is there time for that?)
+    - CONCLUSION: Do this!
   - Traffic Spy
   - Task Manager
   - Implement sessions
@@ -192,15 +203,41 @@ as we choose appropriate ways to end a third which prepare them for the next one
 - Resources ::
   - [[https://github.com/Ada-Developers-Academy/daily-curriculum/blob/f3688db58b98237e6df6602179a7051d65ddd284/cohort_schedules/C03_classroom.md#resources-14][Ada JS resources]]
   - [[https://github.com/turingschool/lesson_plans/blob/master/ruby_02-web_applications_with_ruby/introduction_to_javascript.markdown][Turing Module 2 Intro to js]]
+  - [[https://github.com/turingschool/intermission-assignments/blob/master/prep-for-module-4.markdown][Turing module 4 prep work]]
   - [[https://github.com/turingschool/lesson_plans/blob/master/ruby_02-web_applications_with_ruby/introduction_to_jquery.markdown][JQuery]]
 - Topics ::
   - JS object model (prototypes, constsructor, local vars, self, callstack, event queue/callbacks)
-  -
 - Project Ideas ::
   - Linked List in JavaScript
-*** Week 12 -
-*** Week 13 -
-*** Week 14 -
+*** Week 12 - Core JavaScript
+- http://advanced-js.github.io/deck/
+- MDN docs
+- getting feedback
+  - node basics so they can have a REPL
+  - functions to strings, reflective methods (eg Object.keys)
+- Arrays, Strings, Numbers, Objects, true, false, undefined, null
+- Property access
+- Array access
+- Closures / scope / local variables
+  - redo linked list with toplevel functions + objects
+- prototypical inheritance
+  - redo linked list with a constructor / prototype
+- The event loop and its implications (eg callbacks)
+- Hoisting
+*** Week 13 - Advanced JS, the web
+- http://javascriptissexy.com/
+- Understanding Events (probably do via jQuery b/c it's verbose)
+- Understanding `this`
+- namespacing and the global window object
+- npm
+- lodash, browserify, jQuery
+- ajax
+- in the asset pipeline
+- using Rails as an API
+*** Week 14 - Frontend
+- Using data-id for a selector so that design selectors and js selectors don't conflict
+  "Another thing I thought about for JS that I tried to teach all the time is proper use of DOM selectors for JS behavior. Classes and Ids are often used by designers so attaching to them for JS behavior becomes fragile, since they may rename or move the classes for style changes. I always like to use data-ids and then communicate that if you see a data-id that means JS is attached there. Any other part of it -- the HTML or the CSS is still liable to change. This also implies to not have your JS be dependent on a specific HTML structure as designers can change that a lot too." -- Ben Voss
+- Maybe React.js
 *** Week 15 -
 *** Week 16 -
 
