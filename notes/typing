@@ -1,0 +1,307 @@
+Typing
+  √ upload the code examples
+  choose 30 prose examples
+  upload prose examples
+  aggregate the links
+  organize the links
+  send the links to Rod
+
+Code
+  Drawing Fractals with Chunky PNG
+    source:    https://gist.github.com/JoshCheek/9e674e3f3a0dc636208a
+    challenge: http://10fastfingers.com/text/51460-dragon-curve-rb
+  Neural Network (enums)
+    source:    https://gist.github.com/JoshCheek/a11fbb71e5d81ee79d4e
+    challenge: http://10fastfingers.com/text/51461-prime-neural-network-rb
+  Rails controller tests
+    source:    https://gist.github.com/JoshCheek/f71d7d5d749401733a5e
+    challenge: http://10fastfingers.com/text/51462-testing-a-rails-controller-rb
+  complete me
+    source:    https://gist.github.com/JoshCheek/7ea3b62c367f8ee49052
+    challenge: http://10fastfingers.com/text/51463-complete-me-rb
+  Obj Model
+    source:    https://gist.github.com/JoshCheek/9f331e8c80b5a5773f4c
+    challenge: http://10fastfingers.com/text/publish/private/51464
+  ActiveRecord
+    source:    https://gist.github.com/JoshCheek/b87b49d7fe2063390977
+    challenge: http://10fastfingers.com/text/51465-active-record-example-rb
+  Minitest                           
+    source:    https://github.com/seattlerb/minitest/blob/master/lib/minitest/unit.rb
+    challenge: http://10fastfingers.com/text/51466-minitest-unit-rb
+  RSpec                              
+    source:    https://github.com/rspec/rspec-core/blob/master/lib/rspec/core/set.rb
+    challenge: http://10fastfingers.com/text/51467-rspec-core-set-rb
+  Mrspec                             
+    source:    https://github.com/JoshCheek/mrspec/blob/master/lib/mrspec/minitest_metadata.rb
+    challenge: http://10fastfingers.com/text/51468-mrspec-minitest-metadata-rb
+  eval_in languages                  
+    source:    https://github.com/JoshCheek/eval_in/blob/master/lib/eval_in/constants.rb
+    challenge: http://10fastfingers.com/text/51469-eval-in-constants-rb
+  SiB Result                         
+    source:    https://github.com/JoshCheek/seeing_is_believing/blob/master/lib/seeing_is_believing/result.rb
+    challenge: http://10fastfingers.com/text/51470-seeing-is-believing-result-rb
+  SiB deep nesting                   
+    source:    https://github.com/JoshCheek/seeing_is_believing/blob/master/lib/seeing_is_believing/event_stream/handlers/stream_json_events.rb
+    challenge: http://10fastfingers.com/text/51471-seeing-is-believing-event-stream-handlers-stream-json-events-rb
+  SiB enumerables                    
+    source:    https://github.com/JoshCheek/seeing_is_believing/blob/master/lib/seeing_is_believing/binary/align_line.rb
+    challenge: http://10fastfingers.com/text/51473-seeing-is-believing-binary-align-line-rb
+  ActiveRecord                       
+    source:    https://github.com/rails/rails/blob/master/activerecord/lib/active_record/association_relation.rb
+    challenge: http://10fastfingers.com/text/51474-active-record-association-relation-rb
+  ActiveRecord                       
+    source:    https://github.com/rails/rails/blob/master/activerecord/lib/active_record/base.rb
+    challenge: http://10fastfingers.com/text/51472-active-record-base-rb
+  POST request
+    challenge: http://10fastfingers.com/text/51475-post-request-example
+  GET request
+    challenge: http://10fastfingers.com/text/51476-get-request-example
+  200 response
+    http://10fastfingers.com/text/51477-http-response-200
+  301 response
+    http://10fastfingers.com/text/51478-HTTP-response-301
+  Example of test naming / patterns
+    http://10fastfingers.com/texts/draft/51480
+
+-----
+
+TIP #3
+STEAL WITHOUT APOLOGY
+
+We are often told that talented people acquire their skill by following their "natural instincts." This sounds nice, but in fact it is baloney. All improvement is about absorbing and applying new information, and the best source of information is top performers. So steal it.
+
+Stealing helps shed light on some mysterious patterns of talent—for instance, why the younger members of musical families so often are also the most talented.
+
+When you steal, focus on specifics, not general impressions. Capture concrete facts: the angle of a golfer's left elbow at the top of the backswing; the curve of a surgeon's wrist; the precise shape and tension of a singer's lips as he hits that high note; the exact length of time a comedian pauses before delivering the punch line.
+
+Ask yourself:
+* What, exactly, are the critical moves here?
+* How do they perform those moves differently than I do?
+
+-----
+
+TIP #5
+BE WILLING TO BE STUPID
+
+in other words, being willing to risk the emotional pain of making mistakes—is absolutely essential, because reaching, failing, and reaching again is the way your brain grows and forms new connections. When it comes to developing talent, remember, mistakes are not really mistakes—they are the guideposts you use to get better.
+
+---------------
+
+TIP #7
+BEFORE YOU START, FIGURE OUT IF IT’S A HARD SKILL OR A SOFT SKILL
+
+HARD, HIGH-PRECISION SKILLS are actions that are performed as correctly and consistently as possible, every time. They are skills that have one path to an ideal result; skills that you could imagine being performed by a reliable robot. Hard skills are about repeatable precision, and tend to be found in specialized pursuits, particularly physical ones.
+
+SOFT, HIGH-FLEXIBILITY SKILLS , on the other hand, are those that have many paths to a good result, not just one. These skills aren’t about doing the same thing perfectly every time, but rather about being agile and interactive; about instantly recognizing patterns as they unfold and making smart, timely choices.
+-----
+
+TIP #8
+TO BUILD HARD SKILLS, WORK LIKE A CAREFUL CARPENTER
+
+Precision especially matters early on, because the first reps establish the pathways for the future.
+
+When you learn hard skills, be precise and measured. Go slowly. Make one simple move at a time, repeating and perfecting it before you move on.
+
+Pay attention to errors, and fix them, particularly at the start. Learning fundamentals only seems boring—in fact, it’s the key moment of investment. If you build the right pathway now, you’ll save yourself a lot of time and trouble down the line.
+-----
+
+TIP #9
+TO BUILD SOFTSKILLS, PLAY LIKE A SKATEBOARDER
+
+to build soft skills you should behave less like a careful carpenter and more like a skateboarder in a skateboard park: aggressive, curious, and experimental, always seeking new ways to challenge yourself.
+
+-----
+
+TIP #10
+
+picture your talent as a big oak tree—a massive, thick trunk of hard skills with a towering canopy of flexible soft skills up above. First build the trunk. Then work on the branches.
+
+-----
+
+TIP #11
+DON’TFALL FOR THE PRODIGY MYTH
+
+If you have early success, do your best to ignore the praise and keep pushing yourself to the edges of your ability, where improvement happens. If you don’t have early success, don’t quit. Instead, treat your early efforts as experiments, not as verdicts.
+
+-----
+
+
+Many of us view practice as necessary drudgery, the equivalent of being forced to eat your vegetables, far less important or interesting than the big game or the big performance. But in the talent hotbeds I visited, practice was the big game, the center of their world, the main focus of their daily lives.
+
+The key to deep practice is to reach. This means to stretch yourself slightly beyond your current ability, spending time in the zone of difficulty called the sweet spot. It means embracing the power of repetition, so the action becomes fast and automatic.
+
+-----
+
+TIP #13
+FIND THE SWEET SPOT
+
+There is a place, right on the edge of your ability, where you learn best and fastest. It’s called the sweet spot. Here’s how to find it.
+
+Comfort Zone:
+Sensations: Ease, effortlessness. You’re working, but not reaching or struggling. Percentage of Successful Attempts: 80 percent and above.
+
+Sweet Spot:
+Sensations: Frustration, difficulty, alertness to errors. You’re fully engaged in an intense struggle—as if you’re stretching with all your might for a nearly unreachable goal, brushing it with your fingertips, then reaching again.
+Percentage of Successful Attempts: 50–80 percent.
+
+Survival Zone:
+Sensations: Confusion, desperation. You’re overmatched: scrambling, thrashing, and guessing. You guess right sometimes, but it’s mostly luck. Percentage of Successful Attempts: Below 50 percent.
+
+
+
+---
+Here’s what it looked like: Clarissa played a few notes. Then she made a mistake and immediately froze, as if the clarinet were electrified. She peered closely at the sheet music, reading the notes. She hummed the notes to herself. She fingered the keys in a fast, silent rehearsal. Then she started again, got a bit farther, made another mistake, stopped again, and went back to the start. In this fashion, working instinctively, she learned the song. McPherson calculated that Clarissa learned more in that span of five minutes than she would have learned in an entire month practicing her normal way, in which she played songs straight through, ignoring any mistakes.
+Why? Picture the wires of Clarissa’s brain during those five minutes. Each time she made a mistake, she was 1) sensing it and 2) fixing it, welding the right connection in her brain. Each time she repeated the passage, she was strengthening those connections and linking them together. She was not just practicing. She was building her brain.
+
+
+-----
+
+TIP #17
+EMBRACE STRUGGLE
+
+The struggle and frustration you feel at the edges of your abilities—that uncomfortable burn of “almost, almost”—is the sensation of constructing new neural connections, a phenomenon that the UCLA psychologist Robert Bjork calls “desirable difficulty.” Your brain works just like your muscles: no pain, no gain.
+
+-----
+
+TIP #18
+CHOOSE FIVE MINUTES A DAY OVER AN HOUR A WEEK
+
+With deep practice, small daily practice “snacks” are more effective than once-a-week practice binges.
+
+-----
+
+TIP #22
+PAY ATTENTION IMMEDIATELY AFTER YOU MAKE A MISTAKE
+
+Develop the habit of attending to your errors right away. Don’t wince, don’t close your eyes; look straight at them and see what really happened, and ask yourself what you can do next to improve. Take mistakes seriously, but never personally.
+
+-----
+
+TIP #23
+VISUALIZE THE WIRES OF YOUR BRAIN FORMING NEW CONNECTIONS
+
+
+The more you pay attention to mistakes and fix them, the more of the right connections you’ll be building inside your brain. Visualizing this process as it happens helps you reinterpret mistakes as what they actually are: tools for building skill.
+-----
+
+TIP #24
+VISUALIZE THE WIRES OF YOUR BRAIN GETTING FASTER
+
+
+Every time you practice deeply—the wires of your brain get faster. Over time, signal speeds increase to 200 mph from 2 mph.
+
+-----
+
+TIP #29
+WHEN YOU GETITRIGHT, MARK THE SPOT
+
+One of the most fulfilling moments of a practice session is when you have your first perfect rep. When this happens, freeze. Rewind the mental tape and play the move again in your mind. Memorize the feeling, the rhythm, the physical and mental sensations. The point is to mark this moment—this is the spot where you want to go again and again. This is not the finish—it’s the new starting line for perfecting the skill until it becomes automatic.
+
+-----
+
+TIP #44
+HAVE A BLUE-COLLAR MIND-SET
+
+From a distance, top performers seem to live charmed, cushy lives. When you look closer, however, you’ll find that they spend vast portions of their life intensively practicing their craft. Their mind-set is not entitled or arrogant; it’s 100-percent blue collar: They get up in the morning and go to work every day, whether they feel like it or not.
+
+-----
+
+
+
+-----
+
+Instead of wishing that your circumstances were different, use them as a cue that you are being challenged to find new resources within yourself.
+-Think or Sink p2
+
+I want to reiterate what I just said because for many it represents a significant paradigm shift. And one you must make if you are to find any power in a crisis. A crisis, failure or challenge can always serve you because it highlights, in plain view, what is missing. Once you know what is missing then you can take the necessary steps to get it.
+-Think or Sink p3
+
+This entire book is based on an important premise: everything in your life that happens to you is just feedback.
+-Think or Sink p33
+
+When you accept the premise that everything is feedback, you release yourself from being a prisoner of your circumstances because your outcomes are no longer judgment points. Your circumstances are nothing more than simple feedback; information that you can use on your journey to happiness.
+
+Quotes
+
+  "An educated person is one who has learned that information almost always turns out to be at best incomplete and very often false, misleading, fictitious, mendacious — just dead wrong. ~R. Baker"
+  "There is no failure, only feedback" – Robert Allen
+  "Success is the result of perfection, hard work, learning from failure, loyalty, and persistence." - Colin Powell
+  "Nothing in this world can take the place of persistence. Talent will not: nothing is more common than unsuccessful men with talent. Genius will not; unrewarded genius is almost a proverb. Education will not: the world is full of educated derelicts. Persistence and determination alone are omnipotent." -Calvin Coolidge
+  "Unless you're willing to have a go, fail miserably, and have another go, success won't happen."
+  "Failure is the first step to success."
+  "Falling down does not signify failure but staying there does."
+  "Nonviolence means avoiding not only external physical violence but also internal violence of spirit. You not only refuse to shoot a man, but you refuse to hate him." -- Martin Luther King, Jr.
+  "Whatever you focus on grows" -- Meg Casimir
+  Oppenheimer
+    "To try to be happy is to try to build a machine with no other specification than that it shall run noiselessly." Letter to his brother Frank (14 October 1929), published in Robert Oppenheimer : Letters and Recollections (1995) edited by Alice Kimball Smith, p. 136
+    "The people of this world must unite or they will perish." -- Oppenheimer discussing implications of nuclear bombs. (Acceptance Speech, Army-Navy "Excellence" Award (16 November 1945))
+    "We do not believe any group of men adequate enough or wise enough to operate without scrutiny or without criticism. We know that the only way to avoid error is to detect it, that the only way to detect it is to be free to enquire." -- (Address at Science Talent Institute, 6 Mar 1950), Bulletin of the Atomic Scientists, v.7, #1 (Jan 1951) p. 6-8
+  "Life and art rarely benefit from layering on more complexity." -- http://www.becomingminimalist.com/choose-yourself/
+  Richard Stallman
+    "Free software is a matter of liberty, not price. To understand the concept, you should think of free as in free speech, not as in free beer."
+    "Playfully doing something difficult, whether useful or not, that is hacking."
+  Smalltalk Best Practice Patterns
+    "A pattern is a decision an expert makes over and over"
+    "If there's a radical thought here, that's it; that when you program, you have to think about how someone will read your code, not just how a computer will interpret it." (pg 5)
+    "don't put two rates of change together" (pg 7)
+    "There are only so many things objects can do. Not in the sense that there are a limited number of applications, because there will always be new domains to model, but in the sense that the same structures of objects keep appearing over and over, regardless of the application." (14)
+    "Keep all the operations in a method at the same level of abstraction." (22)
+  "To do two things at once is to do neither." -- Publius Syrus
+  "Somewhere, something incredible is waiting to be known." -- Carl Sagan
+  "The secret of getting ahead is getting started" - Unknown
+  "Motivation will beat mere talent almost every time" - Norman R Augustine
+  "Strive for progress, not perfection" - Unknown
+  "Well done is better than well said" - Benjamin Franklin
+  "Isn't that the making of a little scientist?  Curiosity, asking questions, not getting the right answer, deciding to find out for yourself, making a mistake, not giving up, and learning patience. It was all there, and how easily my mother might have crushed that early curiosity and that little scientist in the making might have gone in a different direction." --Jane Goodall https://www.youtube.com/watch?v=vibssrQKm60#t=9m43s
+  http://boingboing.net/2015/02/02/david-graebers-the-utopia-of.html
+    "Bureaucracy begets bureaucracy. Every effort to do away with bureaucracy ends up with more bureaucracy."
+    "demand the impossible"
+
+  https://www.youtube.com/watch?v=_vS_b7cJn2A
+    "Systems theorists do tell us that the ease with which we can change the representation correlates to our willingness to improve the model"
+
+  https://en.wikipedia.org/wiki/Rational_emotive_behavior_therapy
+    "There’s nothing good or bad but thinking makes it so."
+      Shakespeare, many centuries later, rephrased this thought in Hamlet.
+
+  "And I tell them it’s okay. That we’re all just going to practice being brave over and over until we actually become brave, and we do. Every single year. And this is why I teach." -- Kristin Leong
+    https://medium.com/bright/why-i-teach-my-students-to-be-brave-2a6f15998e74
+
+  "True enlightenment is knowing you are a machine."
+    http://www.people.vcu.edu/~dbromley/esttrainingLink.html
+
+  Maxims for Revolutionists
+    "Every fool believes what his teachers tell him, and calls his credulity science or morality as confidently as his father called it divine revelation."
+
+    "a situation where one lets a normally unavailable opportunity pass by because it is not seen as being the optimal instance or form of that opportunity, despite the likelihood that such an optimal instance/form of the opportunity will likely never come"
+    "I've always been so fascinated by ambiguity, I have a great deal of respect for it. That’s one of the reasons why I tried to defeat it—to see if it could be defeated." -- Quijada
+
+  Born Standing Up -- Steve Martin
+    "I did stand-up comedy for eighteen years. Ten of those years were spent learning, four years were spent refining and four were spent in wild success." -p1
+    "I was not naturally talented -- I didn't sing, dance, or act -- though working around that minor detail made me inventive." - p3
+    "Despite a lack of natural ability, I did have the one element necessary to all early creativity: naivety, that favulous quality that keeps you from knowing just how unsuited you are for what you are about to do." - p54
+
+  Ho'oponopono
+    http://www.wanttoknow.info/070701imsorryiloveyoujoevitale.shtml
+    "Turns out that loving yourself is the greatest way to improve yourself, and as you improve yourself, you improve your world."
+
+  https://medium.com/@bradurani/improving-your-web-app-with-functional-object-oriented-design-5218f9732b74
+    "Enlightenment comes when you use objects in a server-side web app to model actions, not things."
+
+  Type Fu
+    Most of the important things in the world have been accomplished by the people who have kept on trying when there seemed to be no hope at all. -- Dale Carnegie
+    Success is the sum of small efforts, repeated day in and day out. -- Robert Collier
+    Practice yourself in little things, and thence proceed to greater. -- Epictetus
+    There seems to be some perverse human characteristic that likes to make easy things difficult. -- Warren Buffett
+    It's kind of fun to do the impossible. -- Walt Disney
+    The start is what stops most people. -- Don Shula
+    If we wait for the moment when everything, absolutely everything is ready, we shall never begin. -- Ivan Turgenev
+    Tell Wind and Fire where to stop but don't tell me.
+    To do two things at once is to do neither. -- Publius Syrus
+    Whether you think you can, or whether you think you can't, you're right.
+    The most drastic and usually the most effective remedy for fear is direct action -- William Burnham
+    Some men see things as they are and say why - I dream of things that never were and say why not. -- George Bernard Shaw
+    The way to get started is to quit talking and begin doing. -- Walt Disney
+    One thing life has taught me: if you are interested, you never have to look for new interests. They come to you. When you are genuinely interested in one thing, it will always lead to something else. -- Eleanor Rooseevelt
+    To escape criticism - do nothing, say nothing, be nothing. -- Elbert Hubbard
+    Never let your memories be greater than your dreams. -- Douglas Ivester
