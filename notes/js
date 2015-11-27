@@ -1,0 +1,154 @@
+- Resources ::
+  - http://advanced-js.github.io/deck/
+  - [[https://github.com/Ada-Developers-Academy/daily-curriculum/blob/f3688db58b98237e6df6602179a7051d65ddd284/cohort_schedules/C03_classroom.md#resources-14][Ada JS resources]]
+  - [[https://github.com/turingschool/lesson_plans/blob/master/ruby_02-web_applications_with_ruby/introduction_to_javascript.markdown][Turing Module 2 Intro to js]]
+  - [[https://github.com/turingschool/intermission-assignments/blob/master/prep-for-module-4.markdown][Turing module 4 prep work]]
+  - [[https://github.com/turingschool/lesson_plans/blob/master/ruby_02-web_applications_with_ruby/introduction_to_jquery.markdown][JQuery]]
+- Topics ::
+- JS object model (prototypes, constsructor, local vars, self, callstack, event queue/callbacks)
+- Project Ideas ::
+  - Linked List in JavaScript
+- http://javascriptissexy.com/
+
+Discuss these?
+- ajax
+- in the asset pipeline
+- using Rails as an API
+
+* Available Support
+- Companies bringing in support:
+  - Pivotal day on tdd / jasmie
+  - Hash rocket day or more on varying topics
+  - Essential Rails - Jeff Cohen
+- Andrea (CS @ Ohio University)
+
+Kevin discussion about what DBC covers
+  DOM manipulation
+    jQuery
+    event binding
+      events can go down and up
+      capturing (maybe irrelevent)
+    handler
+    js fns <-> ruby blocks
+    scope
+      var
+    this
+    ui
+      drag/drop
+    ajax
+    exercises
+      postit note
+        if you click within the note, allow it to be edited
+        otherwise add a note
+      form validator
+        to play with oo js
+    assets:
+      asset pipeline
+
+Steve discussion about what Turing mod 4 covers (nice curriculum, reminds me of RKS)
+  https://github.com/mdn/advanced-js-fundamentals-ck
+  5 major sections
+    https://github.com/mdn/advanced-js-fundamentals-ck/tree/gh-pages/tutorials
+
+    1.  Gaining context
+      array prototype methods
+      an easy entry to understanding how our knowledge from ruby translates
+        foreach and map as methods on array
+      anon functions / blocks
+      priming for JavaScript Object Model
+      Some DOM manipulation (gain context into where / how this is commonly used)
+        QUESTION: is DOM adequately introduced?
+    2. Functional Paradigm
+      Reconsider the order (swap 2 and 3)
+      01-calling-functions.md
+        var vs fn, hoisting, first-class, reference vs invocation, cursory behaviour of `this`
+      03-what-is-this.md
+        4 rules
+        call and apply (2 interfaces to do the same thing)
+        write your own bind
+        edge case: callbacks (TODO: discuss what a calback is)
+      02-currying-and-partial-application.md
+        Partial application (have them discover this)
+        Closures and scope
+        Examples / context
+      04-recursion.md
+      05-generators.md
+        Async / Generators
+        Understanding generators to better define what async is and where its boundaries are
+        (find that video where they define these constructs -- event queue)
+    3. Object Oriented JS (mechanics and paradigms)
+      01-introduction-to-object-oriented-javascript.md
+        JS Object Model
+        new keyword (have them implement their own?)
+        Constructors
+        `this` in an OO context
+        implicit return of the instance
+        Capitalization is convention
+      02-building-a-chainable-api.md
+        Common interface patterns (eg jQuery)
+        Contemplating abstraction
+      03-canvas-and-object-oriented-javascript.md
+        (as a vehicle for talking about OOJS)
+        First see what it looks like procedurally
+        Add the constraint to do this 10x
+        Refactoring to OO
+    4. Events / working with the DOM
+      01-basic-events.md
+        also builtin querying api
+        event listeners
+      02-event-bubbling.md / 03-adding-and-removing.md / 05-event-delegation.md
+        Maybe have them do the experiment and then define their own set of rules to explain it
+        Patterns for avoiding repetition (eg defining the event listener on the pre-existing elements and also on ones you add later)
+      04-keycodes.md
+        some exercises to do interesting stuff
+      06-data-attributes.md
+        purpose
+          "Another thing I thought about for
+          JS that I tried to teach all the time is proper use of DOM
+          selectors for JS behavior.
+          Classes and Ids are often used by designers so
+          attaching to them for JS behavior becomes fragile,
+          since they may rename or move the classes for style changes.
+          I always like to use data-ids and then communicate that
+          if you see a data-id that means JS is attached there.
+          Any other part of it -- the HTML or the CSS is still
+          liable to change. This also implies to not have your
+          JS be dependent on a specific HTML structure as designers
+          can change that a lot too." -- Ben Voss
+        C style namespacing
+    5. Async JS
+      not yet implemented, but would have them define their own:
+      More in depth event queue
+      implement their own promises
+    TODO: RKS CHALLENGES FOR RUBY
+    ****Questions:****
+      Rails integration
+        Is there some way to help them do JS with Rails?
+        Webpack is simpler than Browserify
+      Opinions on frameworks
+      Babel
+
+  Other stuff
+  Express intro
+  websockets by hand
+
+  Projects
+  Scale-up: pagination / infinite scrolling
+
+  ## Module 4
+  (missing "Realtime" and ideabox -- in the curriculum repo)
+  * Ideabox - gets them to make the mistakes that led to many of the common patterns
+  * [Game Time](https://github.com/turingschool/lesson_plans/blob/master/ruby_04-apis_and_scalability/gametime_project.markdown)
+  build their own game
+  put OO ideas into practice
+  * [The Scale Up](https://github.com/turingschool/curriculum/blob/master/source/projects/the_scale_up.markdown)
+  (might get cut)
+  Talk to Rails
+  pagination and such
+  * Realtime
+  Rails or Node for the backend
+  Uses websockets
+  This is really a design project
+  * [Flack](https://github.com/turingschool/curriculum/blob/master/source/projects/flack.markdown)
+  This has been replaced by Realtime b/c they weren't completing it
+  Make a Slack clone

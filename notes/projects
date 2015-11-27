@@ -1,0 +1,44 @@
+## Turing Module 1
+* [Sorting Suite](https://github.com/turingschool/sorting-suite)
+* [Mastermind](https://github.com/turingschool/curriculum/blob/master/source/projects/mastermind.markdown)
+* [Enigma](https://github.com/turingschool/curriculum/blob/master/source/projects/enigma.markdown)
+* [Chisel](https://github.com/turingschool/curriculum/blob/master/source/projects/chisel.markdown)
+* [Event Reporter](https://github.com/turingschool/curriculum/blob/master/source/projects/event_reporter.markdown)
+* [Linked List](https://github.com/turingschool/curriculum/blob/master/source/projects/linked_lists.markdown)
+* [Night Writer](https://github.com/turingschool/curriculum/blob/master/source/projects/night_writer.markdown)
+* [Jungle Beat](https://github.com/turingschool/curriculum/blob/master/source/projects/jungle_beat.markdown)
+* [Robodoku](https://github.com/turingschool/curriculum/blob/master/source/projects/robodoku.markdown)
+* [Headcount](https://github.com/turingschool/curriculum/blob/master/source/projects/headcount.markdown)
+* [Sales Engine](https://github.com/turingschool/curriculum/blob/master/source/projects/sales_engine.markdown)
+* [Sales Engine the SQL](https://github.com/turingschool/curriculum/blob/master/source/projects/sales_engine_the_sql.markdown)
+* [HTTP Yeah You Know Me](https://github.com/turingschool/curriculum/blob/master/source/projects/http_yeah_you_know_me.markdown)
+
+## Turing Module 2
+* [Traffic Spy](https://github.com/turingschool/curriculum/blob/master/source/projects/traffic_spy.markdown)
+* [Little Shop of Orders](https://github.com/turingschool/curriculum/blob/master/source/projects/little_shop.markdown)
+* [Rails Mini-Project](https://github.com/turingschool/challenges/blob/master/rails-mini-project.markdown)
+
+## Turing Module 3
+* [The Pivot](https://github.com/turingschool/curriculum/blob/master/source/projects/the_pivot.markdown)
+* [Apicurious](https://github.com/turingschool/curriculum/blob/master/source/projects/apicurious.markdown)
+* [Supper Skip](https://github.com/turingschool/curriculum/blob/master/source/projects/supper_skip.markdown)
+
+## Turing Module 4
+(missing "Realtime" and ideabox -- in the curriculum repo)
+Projects
+* Scale-up: pagination / infinite scrolling
+* Ideabox - gets them to make the mistakes that led to many of the common patterns
+* [Game Time](https://github.com/turingschool/lesson_plans/blob/master/ruby_04-apis_and_scalability/gametime_project.markdown)
+build their own game
+put OO ideas into practice
+* [The Scale Up](https://github.com/turingschool/curriculum/blob/master/source/projects/the_scale_up.markdown)
+(might get cut)
+Talk to Rails
+pagination and such
+* Realtime
+Rails or Node for the backend
+Uses websockets
+This is really a design project
+* [Flack](https://github.com/turingschool/curriculum/blob/master/source/projects/flack.markdown)
+This has been replaced by Realtime b/c they weren't completing it
+Make a Slack clone
