@@ -282,3 +282,5 @@ as we choose appropriate ways to end a third which prepare them for the next one
 *** Week 14/15 - Capstone Project
 *** Week 16 - Leaving this open
 - I historically understimate, so it makes sense to shoot for less time rather than perfect time.  Leaving this open to be allocated as appropriate.
+
+Unless otherwise noted, this curriculum by Josh Cheek is licensed under - [[http://creativecommons.org/licenses/by-nc-sa/3.0/][Creative Commons Attribution-NonCommercial-ShareAlike 3.0]]
