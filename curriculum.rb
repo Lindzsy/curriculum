@@ -1,48 +1,179 @@
-** (1/3) Environment, Ruby, Problem Solving, Good Habits
-- Maybe add ::
-  - More git
-  - [[https://github.com/Ada-Developers-Academy/daily-curriculum/blob/f3688db58b98237e6df6602179a7051d65ddd284/topic_resources/how-to-os-x.md][How to OSX]]
-  - [[https://github.com/Ada-Developers-Academy/daily-curriculum/blob/f3688db58b98237e6df6602179a7051d65ddd284/topic_resources/nix.md][Intro to Unix]]
-  - [[http://computers.tutsplus.com/tutorials/navigating-the-terminal-a-gentle-introduction--mac-3855][Navigating the Terminal: A Gentle Introduction]]
-  - Enumerables
-  - [[https://vimeo.com/130811302][Various Games]]
-  - a fun first day to help them see where their skills are going to take them
-    - https://twitter.com/josh_cheek/status/664795920467300352
-    - https://www.govtrack.us/developers/api
-    - https://github.com/phoet/asin
-    - https://www.ruby-toolbox.com/categories/api_clients
-    - https://www.ruby-toolbox.com/categories/visualizing_data
-    - https://www.ruby-toolbox.com/categories/by_name
-    - https://www.libgosu.org/
-*** Week  1 - Intro to Editor, Ruby, Terminal
-- Set expectations
-  - positive behaviour
-  - collaboration
-  - grit
-- Get to know each other
-  - Become familiar with editor (What editor do we want to use? Probably Atom or Emacs, might depend on dev env, eg are we doing cloud based?)
-    - Practice the mechanical skills of, making files, deleting them, editing them
-    - Learn first Keybindings
-    - Alternate between solving problems using [[https://github.com/JoshCheek/seeing_is_believing][SiB]] and practicing keybindings / editing
-    - Demonstrate that you can perform these tasks
-- Set up the terminal
-  - Some stuff from my [[https://github.com/JoshCheek/1508/blob/master/initial-setup.md][setup instructions]] and probably [[https://github.com/JoshCheek/dotfiles-for-students][dotfiles]]
-- Become familiar with the terminal
-  - Be able to perform [[https://github.com/JoshCheek/team_grit/blob/master/cheatsheets_other/shell.md][these katas]] by the end (mechanical practice)
-- Become familiar with the OS (Mac?)
-  - Practice poweruser keybindings
-- Have them create cheatsheets for the primitives (String, Integer, Array, Hash, booleans)
-  - [[https://github.com/JoshCheek/ruby-kickstart/tree/master/cheatsheets][example]]
-  - Demonstrate an [[http://orgmode.org/worg/org-faq.html#ecm][ECM]] eg to show how map works:
-    #+BEGIN_SRC ruby
-    ['a', 'b'].map { |c| c.upcase }  # => ["A", "B"]
-    #+END_SRC
-- Create a linked list using [[https://gist.github.com/JoshCheek/e8dfba74a0ec7e9d8400/53a6c7555284c2d3272bf5638f8d8efc78303ff9#file-15_ways_to_make_a_linked_list-rb-L31][toplevel methods and arrays]], tests will be provided
-- Create a linked list using [[https://gist.github.com/JoshCheek/e8dfba74a0ec7e9d8400/53a6c7555284c2d3272bf5638f8d8efc78303ff9#file-15_ways_to_make_a_linked_list-rb-L81][toplevel methods and hashes]], tests will be provided
-- [[https://github.com/JoshCheek/object-model-hash-style#objects-are-just-linked-lists][Structure of the Object Model]]
-  - Toplevel methods, local variables, callstack, parameters
-  - Objects (ivars/class)
-  - Classes (superclass/methods/constnats)
+require 'active_record'
+
+ActiveRecord::Base.establish_connection adapter: 'sqlite3', database: ':memory:'
+
+ActiveRecord::Schema.define do
+  self.verbose = false
+
+  create_table :topics do |t|
+    t.string :topic
+  end
+
+  create_table :section_topics do |t|
+    t.integer :section_id
+    t.integer :topic_id
+  end
+
+  create_table :week_topics do |t|
+    t.integer :week_id
+    t.integer :topic_id
+  end
+
+  create_table :activity_topics do |t|
+    t.integer :activity_id
+    t.integer :topic_id
+  end
+
+  create_table :sections do |t|
+    t.integer :order
+    t.string  :title
+  end
+
+  create_table :weeks do |t|
+    t.integer :section_id
+    t.integer :number
+  end
+
+  create_table :activities do |t|
+    t.integer :week_id
+    t.string  :name
+    t.string  :contents
+  end
+end
+
+class Section < ActiveRecord::Base
+  has_many :weeks
+  has_many :section_topics
+  has_many :topics, through: :section_topics
+end
+
+class SectionTopic < ActiveRecord::Base
+  belongs_to :section
+  belongs_to :topic
+end
+
+class Topic < ActiveRecord::Base
+  def self.forall(topics)
+    topics.map { |t| self.for t }
+  end
+  def self.for(topic)
+    find_or_create_by! topic: topic
+  end
+end
+
+class WeekTopic < ActiveRecord::Base
+  belongs_to :week
+  belongs_to :topic
+end
+
+class Week < ActiveRecord::Base
+  belongs_to :section
+  has_many :week_topics
+  has_many :topics, through: :week_topics
+  has_many :activities
+end
+
+class ActivityTopic < ActiveRecord::Base
+  belongs_to :activity
+  belongs_to :topic
+end
+
+class Activity < ActiveRecord::Base
+  belongs_to :week
+  has_many :activity_topics
+  has_many :topics, through: :activity_topics
+end
+
+
+Section.create! order: 1, title: "Introduction to programming with Ruby" do |section|
+  section.topics = Topic.forall ["Environment", "Ruby", "Problem Solving", "Good Habits"]
+
+  section.weeks.build do |week|
+    week.number = 1
+    week.topics = Topic.forall ['Editor', 'Ruby', 'Terminal']
+    week.activities.build do |activity|
+      activity.name   = "Set expectations"
+      activity.topics = Topic.forall ["positive behaviour", "collaboration", "grit"]
+    end
+    week.activities.build do |activity|
+      activity.name = 'Get to know each other'
+    end
+    week.activities.build do |activity|
+      activity.name = 'Become familiar with editor (What editor do we want to use? Probably Atom or Emacs, might depend on dev env, eg are we doing cloud based?)'
+      activity.contents = <<-CONTENTS.strip_heredoc
+      * Practice the mechanical skills of, making files, deleting them, editing them
+      * Learn first Keybindings
+      * Alternate between solving problems using [SiB](https://github.com/JoshCheek/seeing_is_believing) and practicing keybindings / editing
+      * Demonstrate that you can perform these tasks
+      CONTENTS
+    end
+    week.activities.build do |activity|
+      activity.name = 'Set up the terminal'
+      activity.contents = <<-CONTENTS.strip_heredoc
+      Some stuff from my [setup instructions](https://github.com/JoshCheek/1508/blob/master/initial-setup.md) and probably [dotfiles](https://github.com/JoshCheek/dotfiles-for-students)
+      CONTENTS
+    end
+    week.activities.build do |activity|
+      activity.name = 'Become familiar with the terminal'
+      activity.contents = <<-CONTENTS.strip_heredoc
+      Be able to perform [these katas](https://github.com/JoshCheek/team_grit/blob/master/cheatsheets_other/shell.md) by the end (mechanical practice)
+      CONTENTS
+    end
+    week.activities.build do |activity|
+      activity.name = 'Become familiar with the OS (Mac?)'
+      activity.contents = 'Practice poweruser keybindings'
+    end
+    week.activities.build do |activity|
+      activity.name = 'Have them create cheatsheets for the primitives (String, Integer, Array, Hash, booleans)'
+      activity.contents = <<-CONTENTS.strip_heredoc
+      * [example](https://github.com/JoshCheek/ruby-kickstart/tree/master/cheatsheets)
+      * Demonstrate an [ECM](http://orgmode.org/worg/org-faq.html#ecm) eg to show how map works:
+
+        ```ruby
+        ['a', 'b'].map { |c| c.upcase }  # => ["A", "B"]
+        ```
+      CONTENTS
+    end
+    week.activities.build do |activity|
+      activity.name = 'Exercises'
+      activity.contents = <<-CONTENTS.strip_heredoc
+      * Create a linked list using
+        [toplevel methods and arrays](https://gist.github.com/JoshCheek/e8dfba74a0ec7e9d8400/53a6c7555284c2d3272bf5638f8d8efc78303ff9#file-15_ways_to_make_a_linked_list-rb-L31),
+        tests will be provided
+      * Create a linked list using
+        [toplevel methods and hashes](https://gist.github.com/JoshCheek/e8dfba74a0ec7e9d8400/53a6c7555284c2d3272bf5638f8d8efc78303ff9#file-15_ways_to_make_a_linked_list-rb-L81),
+        tests will be provided
+      CONTENTS
+    end
+    week.activities.build do |activity|
+      activity.name = 'Structure of the Object Model'
+      activity.contents = <<-CONTENTS.strip_heredoc
+      [Structure of the Object Model](https://github.com/JoshCheek/object-model-hash-style#objects-are-just-linked-lists)
+
+      * Toplevel methods, local variables, callstack, parameters
+      * Objects (ivars/class)
+      * Classes (superclass/methods/constants)
+      CONTENTS
+    end
+  end
+end
+
+
+Section.order(:order).each do |section|
+  puts section.title
+  puts "Topics: #{section.topics.map(&:topic)}"
+  section.weeks.order(:number).each do |week|
+    puts "  Week #{week.number}"
+    puts "    Topics: #{week.topics.map(&:topic)}"
+    week.activities.each do |activity|
+      puts "    #{activity.name}"
+      puts activity.contents.gsub(/^/, '      ') if activity.contents
+    end
+  end
+end
+
+__END__
+
 *** Week  2 - Ruby in context
 - Unix: $PATH, input/output streams, file permissions, executbales
 - Ruby: $stdin / $stdout / $stderr / ARGV / ENV
@@ -110,6 +241,26 @@
 (or hashes https://github.com/turingschool/data_structures_and_algorithms/tree/master/hash_tables)
 - Webserver project https://github.com/turingschool/curriculum/blob/master/source/projects/http_yeah_you_know_me.markdown
 - Maybe build a miniature web framework for the server, then show that it works on something like Webrick or Puma, as well (eg https://gist.github.com/JoshCheek/a754fce5d1d5e5bb88a6)
+
+
+# - Maybe add ::
+#   - More git
+#   - [[https://github.com/Ada-Developers-Academy/daily-curriculum/blob/f3688db58b98237e6df6602179a7051d65ddd284/topic_resources/how-to-os-x.md][How to OSX]]
+#   - [[https://github.com/Ada-Developers-Academy/daily-curriculum/blob/f3688db58b98237e6df6602179a7051d65ddd284/topic_resources/nix.md][Intro to Unix]]
+#   - [[http://computers.tutsplus.com/tutorials/navigating-the-terminal-a-gentle-introduction--mac-3855][Navigating the Terminal: A Gentle Introduction]]
+#   - Enumerables
+#   - [[https://vimeo.com/130811302][Various Games]]
+#   - a fun first day to help them see where their skills are going to take them
+#     - https://twitter.com/josh_cheek/status/664795920467300352
+#     - https://www.govtrack.us/developers/api
+#     - https://github.com/phoet/asin
+#     - https://www.ruby-toolbox.com/categories/api_clients
+#     - https://www.ruby-toolbox.com/categories/visualizing_data
+#     - https://www.ruby-toolbox.com/categories/by_name
+#     - https://www.libgosu.org/
+
+
+__END__
 ** (2/3) Internet / Rails
 - Early Topics::
   - DOM / [[http://www.codecademy.com/en/tracks/web][Codecademy's HTML / CSS track]]
