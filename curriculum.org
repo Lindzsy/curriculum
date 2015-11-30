@@ -279,7 +279,13 @@ as we choose appropriate ways to end a third which prepare them for the next one
 - Project
   - Build their own game
   - https://github.com/turingschool/lesson_plans/blob/master/ruby_04-apis_and_scalability/gametime_project.markdown
+  - TODO: Some kind of project where JS is used to add dynamic functionality to a Rails app?
 *** Week 14/15 - Capstone Project
+- Objectives
+  - Work on a team
+  - Practice project management / agile on a larger scale
+- Possibilities
+  - Something that integrates a Rails backend with Google Maps
 *** Week 16 - Leaving this open
 - I historically understimate, so it makes sense to shoot for less time rather than perfect time.  Leaving this open to be allocated as appropriate.
 

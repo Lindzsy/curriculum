@@ -1,6 +1,6 @@
 Typing
   √ upload the code examples
-  choose 30 prose examples
+  √ choose 30 prose examples
   upload prose examples
   aggregate the links
   organize the links
@@ -25,31 +25,31 @@ Code
   ActiveRecord
     source:    https://gist.github.com/JoshCheek/b87b49d7fe2063390977
     challenge: http://10fastfingers.com/text/51465-active-record-example-rb
-  Minitest                           
+  Minitest
     source:    https://github.com/seattlerb/minitest/blob/master/lib/minitest/unit.rb
     challenge: http://10fastfingers.com/text/51466-minitest-unit-rb
-  RSpec                              
+  RSpec
     source:    https://github.com/rspec/rspec-core/blob/master/lib/rspec/core/set.rb
     challenge: http://10fastfingers.com/text/51467-rspec-core-set-rb
-  Mrspec                             
+  Mrspec
     source:    https://github.com/JoshCheek/mrspec/blob/master/lib/mrspec/minitest_metadata.rb
     challenge: http://10fastfingers.com/text/51468-mrspec-minitest-metadata-rb
-  eval_in languages                  
+  eval_in languages
     source:    https://github.com/JoshCheek/eval_in/blob/master/lib/eval_in/constants.rb
     challenge: http://10fastfingers.com/text/51469-eval-in-constants-rb
-  SiB Result                         
+  SiB Result
     source:    https://github.com/JoshCheek/seeing_is_believing/blob/master/lib/seeing_is_believing/result.rb
     challenge: http://10fastfingers.com/text/51470-seeing-is-believing-result-rb
-  SiB deep nesting                   
+  SiB deep nesting
     source:    https://github.com/JoshCheek/seeing_is_believing/blob/master/lib/seeing_is_believing/event_stream/handlers/stream_json_events.rb
     challenge: http://10fastfingers.com/text/51471-seeing-is-believing-event-stream-handlers-stream-json-events-rb
-  SiB enumerables                    
+  SiB enumerables
     source:    https://github.com/JoshCheek/seeing_is_believing/blob/master/lib/seeing_is_believing/binary/align_line.rb
     challenge: http://10fastfingers.com/text/51473-seeing-is-believing-binary-align-line-rb
-  ActiveRecord                       
+  ActiveRecord
     source:    https://github.com/rails/rails/blob/master/activerecord/lib/active_record/association_relation.rb
     challenge: http://10fastfingers.com/text/51474-active-record-association-relation-rb
-  ActiveRecord                       
+  ActiveRecord
     source:    https://github.com/rails/rails/blob/master/activerecord/lib/active_record/base.rb
     challenge: http://10fastfingers.com/text/51472-active-record-base-rb
   POST request
