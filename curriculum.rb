@@ -156,6 +156,247 @@ Section.create! order: 1, title: "Introduction to programming with Ruby" do |sec
       CONTENTS
     end
   end
+
+  section.weeks.build do |week|
+    week.number = 2
+    week.topics = Topic.forall ['Ruby in context']
+    week.activities.build do |activity|
+      activity.name = 'Unix'
+      activity.topics = Topic.forall ['$PATH', 'input/output streams', 'file permissions', 'executbales']
+    end
+    week.activities.build do |activity|
+      activity.name = 'Ruby'
+      activity.topics = Topic.forall ['$stdin', '$stdout', '$stderr', 'ARGV', 'ENV']
+    end
+    week.activities.build do |activity|
+      activity.name = 'Unix'
+      activity.topics = Topic.forall ['environment variables', 'pipes', 'redirecting input/output']
+    end
+    week.activities.build do |activity|
+      activity.name = 'Ruby Miniprojects'
+      activity.contents = <<-CONTENTS.strip_heredoc
+      Create these programs:
+
+      * [wc](https://github.com/JoshCheek/team_grit/blob/master/katas/wc.rb)
+      * [echo](https://github.com/JoshCheek/team_grit/blob/master/katas/echo.rb)
+      * [cat](https://github.com/JoshCheek/team_grit/blob/master/katas/cat.rb)
+      CONTENTS
+    end
+    week.activities.build do |activity|
+      activity.name = 'Ruby ecosystem'
+      activity.topics = Topic.forall ['Namespacing', 'multiple files in Ruby (load path)', 'naming conventions across files and classes']
+    end
+    week.activities.build do |activity|
+      activity.name = 'Pry'
+      activity.contents = <<-CONTENTS.strip_heredoc
+      [Pry](https://github.com/turingschool/curriculum/blob/master/source/topics/debugging/debugging.markdown#pry)
+
+      * Show how to add it to an existing program
+      * Practice imporant commands (whereami, show-source, ls, cd)
+      * Recognize that the shell / editor keybindings work here as well
+      * Create [pwd](https://github.com/JoshCheek/team_grit/blob/master/katas/pwd.rb)
+        by exploring in pry (no looking up docs, we have to make guesses and check them to see if they
+      * Use pry to explore objects based on what we predict from the object model
+      CONTENTS
+    end
+    week.activities.build do |activity|
+      activity.name = 'Exploring gems using pry'
+      activity.contents = <<-CONTENTS.strip_heredoc
+      Something like [this](https://github.com/JumpstartLab/tdd-class-8-dec/blob/master/12-dec-faker.rb)
+      CONTENTS
+    end
+    week.activities.build do |activity|
+      activity.name = 'Git fundamentals'
+      activity.contents = <<-CONTENTS.strip_heredoc
+      * The basic model to use when thinking
+      * My cardinal rule of git: "run git status after everything you do"
+      * Practice the commit workflow (I've got it written down somewhere, will have to find it)
+      * "Get over yourself" aka commit constantly
+      CONTENTS
+    end
+    week.activities.build do |activity|
+      activity.name = 'Ruby exercieses'
+      activity.contents = <<-CONTENTS.strip_heredoc
+      Various [ruby exercises](https://github.com/turingschool/ruby-exercises) (probably objects and methods)
+
+      * To practice modeling domains using objects
+      * To practice using git to commit
+      CONTENTS
+    end
+    week.activities.build do |activity|
+      activity.name = 'Maybe refactoring exercises'
+      activity.contents = <<-CONTENTS.strip_heredoc
+      Probably this materail: [material](https://github.com/JoshCheek/1508/blob/master/katas/blowing_bubbles_part1.rb)
+      Here is a video of me doing it: [https://vimeo.com/137837006](https://vimeo.com/137837006).
+      CONTENTS
+    end
+  end
+
+  section.weeks.build do |week|
+    week.number = 3
+    week.topics = Topic.forall ['Testing and More objects']
+    week.activities.build do |activity|
+      activity.name = 'Mechanics of testing'
+      activity.topics = Topic.forall ['testing']
+      activity.contents = <<-CONTENTS.strip_heredoc
+      [Mechanics of testing](https://github.com/JoshCheek/how-to-test) (the hard skills)
+
+      * TODO: Do we want to use minitest or RSpec, or don't care?
+      * Have them demonstrate they can repeat all the hard skills
+      CONTENTS
+    end
+    week.activities.build do |activity|
+      activity.name = 'How to explore'
+      activity.topics = Topic.forall ['explore', 'pry', 'testing']
+      activity.contents = <<-CONTENTS.strip_heredoc
+      Exploring with pry (to see how feedback is useful, and build intuition)
+      We'll use pry to go in and figure out how minitest runs our tests
+      (if we use RSpec instead, then it's probably not worth it,
+      b/c RSpec is much larger and more sophisticated, not ripe for entry level discovery)
+      CONTENTS
+    end
+    week.activities.build do |activity|
+      activity.name = 'Starting a project'
+      activity.topics = Topic.forall ['project management', 'bdd']
+      activity.contents = 'Discuss how to start a project [bdd](https://gist.github.com/JoshCheek/37e4cf3bea6541023bab)'
+    end
+    week.activities.build do |activity|
+      activity.name = 'Mindset of testing'
+      activity.topics = Topic.forall ['testing', 'tdd']
+      activity.contents = <<-CONTENTS.strip_heredoc
+      Show how this manifests in the [mindset of testing](https://github.com/JoshCheek/how-to-test#watch-me-build-a-calculator-in-this-way) (the soft skills)
+
+      * How to think about testing
+      * What tests to write
+      * Watch me do it
+      * Students repeat it
+      * Demonstrate they can mimic my process and thought patterns
+      CONTENTS
+    end
+    week.activities.build do |activity|
+      activity.name = 'Mechanics of testing'
+      activity.topics = Topic.forall ['testing', 'exercise', 'git']
+      activity.contents = 'Use testing and git on a linked list that uses toplevel methods and objects'
+    end
+    week.activities.build do |activity|
+      activity.name = 'Mechanics of testing'
+      activity.topics = Topic.forall ['testing', 'refactoring']
+      activity.contents = <<-CONTENTS.strip_heredoc
+      Use testing and git on a linked list where the behaviour is moved into the objects
+
+      * This will likely lead to test pain because each test probably uses the
+        interface directly. So we'll get to talk about tdd (in this case,
+        refactor the tests to introduce abstractions, then move the methods 1 at a time)
+      * Maybe have them set it aside and go through more
+        [refactoring exercises](https://github.com/JoshCheek/1508/blob/master/katas/blowing_bubbles_part2.rb)
+        (video of me doing it https://vimeo.com/137837005)
+      * Maybe them do both iterative solutions and recursive solutions,
+        pushing the logic down into the node.
+      CONTENTS
+    end
+    week.activities.build do |activity|
+      activity.name = 'Object Model: singleton classes'
+      activity.topics = Topic.forall ['object model', 'singleton classes']
+    end
+    week.activities.build do |activity|
+      activity.name = 'HTTP Parser'
+      activity.topics = Topic.forall ['testing', 'project']
+      activity.contents = <<-CONTENTS.strip_heredoc
+      [HTTP Parser](https://github.com/JoshCheek/programming_is_fun/blob/master/spec/request_spec.rb)
+      (uses streams, strings, testing, and we can define the interface as `ParseHttp.call`
+      which will use singleton classes, and starts prepping them for the web)
+      CONTENTS
+    end
+  end
+
+  section.weeks.build do |week|
+    week.number = 4
+    week.topics = Topic.forall ['How to approach a project']
+    week.activities.build do |activity|
+      activity.name = 'Practice starting a project'
+      activity.topics = Topic.forall ['project management', 'tdd']
+      activity.contents = <<-CONTENTS.strip_heredoc
+      Practice starting a project the way I do
+
+      * Watch me do Chisel, a markdown parser.
+        * [project](http://tutorials.jumpstartlab.com/projects/chisel.html)
+        * [video](https://vimeo.com/131588133)
+      * They attempt to mimic my approach
+      * Watch me do chisel again
+      * They attempt to mimic my approach again
+      * Watch me do chisel again (this time in 20ish minutes)
+      * They practice on one they haven't seen me do, [Character Count](https://vimeo.com/139372804)
+      CONTENTS
+    end
+    week.activities.build do |activity|
+      activity.name = 'Project: Building a gem'
+      activity.contents = <<-CONTENTS.strip_heredoc
+      Project: [building a gem](https://github.com/turingschool/lesson_plans/tree/master/electives/building-a-gem)
+      Uses all the stuff they learned last week + the stuff they learned this week,
+      lets us talk about design
+      CONTENTS
+    end
+  end
+
+  section.weeks.build do |week|
+    week.number = 5
+    week.topics = Topic.forall ['Modules', 'Blocks']
+    week.activities.build do |activity|
+      activity.name = 'Blocks'
+      activity.topics = Topic.forall ['blocks']
+      activity.contents = <<-CONTENTS.strip_heredoc
+      * How they work
+      * Follow the flow through the program
+      CONTENTS
+    end
+    week.activities.build do |activity|
+      activity.name = 'Your own #each'
+      activity.topics = Topic.forall ['blocks', 'enumerables']
+      activity.contents = <<-CONTENTS.strip_heredoc
+      Add `each` method to their linked list
+      CONTENTS
+    end
+    week.activities.build do |activity|
+      activity.name = 'Discovering modules'
+      activity.topics = Topic.forall ['object model', 'modules']
+      activity.contents = <<-CONTENTS.strip_heredoc
+      * Modules as mixins and namespaces
+      * Have them infer the structure from their knowledge of the object model
+      CONTENTS
+    end
+    week.activities.build do |activity|
+      activity.name = 'Enumerable#map'
+      activity.topics = Topic.forall ['blocks', 'enumerables']
+      activity.contents = 'Create Enumerable#map together'
+    end
+    week.activities.build do |activity|
+      activity.name = 'Project'
+      activity.topics = Topic.forall ['blocks', 'enumerables']
+      activity.contents = <<-CONTENTS.strip_heredoc
+      Project: create some subset of the Enumerable module
+      [example](https://vimeo.com/133626457)
+
+      Include it into their linked list so they can see that
+      they get the `map` methods and so forth
+      CONTENTS
+    end
+  end
+
+  section.weeks.build do |week|
+    week.number = 6
+    week.topics = Topic.forall ['HTTP']
+    week.activities.build do |activity|
+      activity.name = 'Project: HTTP / webserver'
+      activity.topics = Topic.forall ['blocks']
+      activity.contents = <<-CONTENTS.strip_heredoc
+      (or hashes https://github.com/turingschool/data_structures_and_algorithms/tree/master/hash_tables)
+
+      [Webserver project](https://github.com/turingschool/curriculum/blob/master/source/projects/http_yeah_you_know_me.markdown)
+
+      If any of their other work can be given a web interface, lets do that!
+      CONTENTS
+    end
+  end
 end
 
 
@@ -164,7 +405,7 @@ Section.order(:order).each do |section|
   puts "Topics: #{section.topics.map(&:topic)}"
   section.weeks.order(:number).each do |week|
     puts "  Week #{week.number}"
-    puts "    Topics: #{week.topics.map(&:topic)}"
+    puts "    Topics: #{week.topics.map(&:topic)}" if week.topics.any?
     week.activities.each do |activity|
       puts "    #{activity.name}"
       puts activity.contents.gsub(/^/, '      ') if activity.contents
@@ -173,74 +414,6 @@ Section.order(:order).each do |section|
 end
 
 __END__
-
-*** Week  2 - Ruby in context
-- Unix: $PATH, input/output streams, file permissions, executbales
-- Ruby: $stdin / $stdout / $stderr / ARGV / ENV
-- Unix: environment variables, pipes, redirecting input/output
-- Ruby Miniprojects
-  - Create [[https://github.com/JoshCheek/team_grit/blob/master/katas/wc.rb][wc]], [[https://github.com/JoshCheek/team_grit/blob/master/katas/echo.rb][echo]], [[https://github.com/JoshCheek/team_grit/blob/master/katas/cat.rb][cat]]
-- Namespacing, multiple files in Ruby (load path), naming conventions across files and classes
-- [[https://github.com/turingschool/curriculum/blob/master/source/topics/debugging/debugging.markdown#pry][Pry]]
-  - Show how to add it to an existing program
-  - Practice imporant commands (whereami, show-source, ls, cd)
-  - Recognize that the shell / editor keybindings work here as well
-  - Create [[https://github.com/JoshCheek/team_grit/blob/master/katas/pwd.rb][pwd]] by exploring in pry (no looking up docs, we have to make guesses and check them to see if they
-  - Use pry to explore objects based on what we predict from the object model
-- Exploring gems using pry
-  - Something like [[https://github.com/JumpstartLab/tdd-class-8-dec/blob/master/12-dec-faker.rb][this]]
-- Git fundamentals
-  - The basic model to use when thinking
-  - My cardinal rule of git: "run git status after everything you do"
-  - Practice the commit workflow (I've got it written down somewhere, will have to find it)
-  - "Get over yourself" aka commit constantly
-- Various [[https://github.com/turingschool/ruby-exercises][ruby exercises]] (probably objects and methods)
-  - To practice modeling domains using objects
-  - To practice using git to commit
-- Maybe refactoring exercises [[https://github.com/JoshCheek/1508/blob/master/katas/blowing_bubbles_part1.rb][material]] video of me doing it https://vimeo.com/137837006
-*** Week 3 - Testing and More objects
-- [[https://github.com/JoshCheek/how-to-test][Mechanics of testing]] (the hard skills)
-  - TODO Do we want to use minitest or RSpec, or don't care?
-  - Have them demonstrate they can repeat all the hard skills
-- Exploring with pry (to see how feedback is useful, and build intuition)
-  - We'll use pry to go in and figure out how minitest runs our tests (if we use RSpec instead, then it's probably not worth it, b/c RSpec is much larger and more sophisticated, not ripe for entry level discovery)
-- Discuss how to start a project (bdd) https://gist.github.com/JoshCheek/37e4cf3bea6541023bab
-- Show how this manifests in the [[https://github.com/JoshCheek/how-to-test#watch-me-build-a-calculator-in-this-way][mindset of testing]] (the soft skills)
-  - How to think about testing
-  - What tests to write
-  - Watch me do it
-  - Students repeat it
-  - Demonstrate they can mimic my process and thought patterns
-- Use testing and git on a linked list that uses toplevel methods and objects
-- Use testing and git on a linked list that moves the methods into the objects
-  - This will likely lead to test pain because each test probably uses the interface directly. So we'll get to talk about tdd (in this case, refactor the tests to introduce abstractions, then move the methods 1 at a time)
-  - Maybe have them set it aside and go through more [[https://github.com/JoshCheek/1508/blob/master/katas/blowing_bubbles_part2.rb][refactoring exercises]] (video of me doing it https://vimeo.com/137837005)
-  - Maybe them do both iterative solutions and recursive solutions, pushing the logic down into the node.
-- Object Model: Singleton classes
-- [[https://github.com/JoshCheek/programming_is_fun/blob/master/spec/request_spec.rb][HTTP Parser]] (uses streams, strings, testing, and we can define the interface as `ParseHttp.call` which will use singleton classes, and starts prepping them for the web)
-*** Week 4 - How to approach a project
-- Practice starting a project the way I do
-  - Watch me do Chisel (markdown parser) http://tutorials.jumpstartlab.com/projects/chisel.html https://vimeo.com/131588133
-  - They attempt to mimic my approach
-  - Watch me do chisel again
-  - They attempt to mimic my approach again
-  - Watch me do chisel again (this time in 20ish minutes)
-  - They practice on one they haven't seen me do, [[https://vimeo.com/139372804][Character Count]]
-- Project: [[https://github.com/turingschool/lesson_plans/tree/master/electives/building-a-gem][building a gem]] Uses all the stuff they learned last week + the stuff they learned this week, lets us talk about design
-*** Week 5 - Modules and Blocks
-- Blocks
-  - How they work
-  - Follow the flow through the program
-- Add `each` method to their linked list
-- Modules as mixins and namespaces
-  - Have them infer the structure from their knowledge of the object model
-- Create Enumerable#map together
-- Project: create some subset of [[https://vimeo.com/133626457][Enumerable]]
-- Include it into their linked list so they can see that they get the `map` methods and so forth
-*** Week 6 - HTTP / webservers
-(or hashes https://github.com/turingschool/data_structures_and_algorithms/tree/master/hash_tables)
-- Webserver project https://github.com/turingschool/curriculum/blob/master/source/projects/http_yeah_you_know_me.markdown
-- Maybe build a miniature web framework for the server, then show that it works on something like Webrick or Puma, as well (eg https://gist.github.com/JoshCheek/a754fce5d1d5e5bb88a6)
 
 
 # - Maybe add ::
@@ -261,6 +434,8 @@ __END__
 
 
 __END__
+Section2 example:
+https://gist.github.com/JoshCheek/a754fce5d1d5e5bb88a6
 ** (2/3) Internet / Rails
 - Early Topics::
   - DOM / [[http://www.codecademy.com/en/tracks/web][Codecademy's HTML / CSS track]]
