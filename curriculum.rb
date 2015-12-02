@@ -455,6 +455,198 @@ Section.create! order: 1, title: "Introduction to programming with Ruby" do |sec
   end
 end
 
+
+
+Section.create! order: 3, title: "Frontend and Javascript" do |section|
+  section.topics = Topic.forall ["Javascript", "Frontend"]
+
+  section.weeks.build do |week|
+    week.number = 12
+    week.topics = []
+    week.activities.build do |activity|
+      activity.name = 'Resources'
+      activity.topics = Topic.forall ['javascript', 'documentation']
+      activity.contents = <<-CONTENTS.strip_heredoc
+       Show them where the MDN docs are.
+
+       * [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+       * [Web](https://developer.mozilla.org/en-US/docs/Web/Reference/API)
+       CONTENTS
+    end
+    
+    week.activities.build do |activity|
+      activity.name = 'Getting feedback'
+      activity.topics = Topic.forall ['feedback']
+      activity.contents = <<-CONTENTS.strip_heredoc
+      * Setup node so they can have a REPL
+      * Show them a few tricks:
+        * functions to strings
+        * reflective methods (eg Object.keys)
+      CONTENTS
+    end
+    week.activities.build do |activity|
+      activity.name = 'Gaining context'
+      activity.topics = Topic.forall ['arrays', 'DOM', 'functions']
+      activity.contents = <<-CONTENTS.strip_heredoc
+      * https://github.com/mdn/advanced-js-fundamentals-ck/tree/1266706b188590da8d682cca046227ae5a307842/tutorials/01-array-prototype-methods
+      * Give them some challenges that require them to play with Arrays, Strings, Numbers, Objects, true, false, undefined, null, so that we don't spend a long time covering ideas they are already famiilar with (ie show them their Ruby knowledge translates and begin getting comfortable with JS)
+      * Cover Array prototype methods for the same reason, and b/c they're very useful, and it will give them an opportunity to ask any questions from the above.
+      * Cover anonymous functions / blocks to
+      * priming for JS Object model.
+      * Some DOM manipulation (gain context into where / how this is commonly used)
+      * Should there be more of an intro to the DOM? (We can play with it from Ruby, possibly build our own model like we've done with other examples)
+      CONTENTS
+    end
+    week.activities.build do |activity|
+      activity.name = 'Functional Paradigm'
+      activity.topics = Topic.forall ['functional programming']
+      activity.contents = <<-CONTENTS.strip_heredoc
+      * https://github.com/mdn/advanced-js-fundamentals-ck/tree/gh-pages/tutorials/02-functions
+      * This style is common in JS, and in functional languages (and it shows up from time to time in Ruby, too)
+      * It's also a gentler introduction, allowing them to be productive without knowing all the ins and outs of the object model.
+      * 01-calling-functions.md
+        * var vs fn, hoisting, first-class, reference vs invocation, cursory behaviour of `this`
+      * 03-what-is-this.md
+        * 4 rules of this
+        * call and apply (2 interfaces to do the same thing)
+        * write your own bind
+        * edge case: callbacks (TODO: discuss what a calback is)
+      * 02-currying-and-partial-application.md
+        * Partial application (have them discover this)
+        * Closures and scope
+        * Examples / context
+      * 04-recursion.md
+      * 05-generators.md
+        * Async / Generators
+        * Understanding generators to better define what async is and where its boundaries are
+        * (find that video where they define these constructs -- event queue)
+      CONTENTS
+    end
+    week.activities.build do |activity|
+      activity.name = 'JavaScript Challenges'
+      activity.topics = Topic.forall ['linked lists', 'jQuery', 'DOM']
+      activity.contents = <<-CONTENTS.strip_heredoc
+      * redo linked list with toplevel functions + objects
+      * Something with jQuery and the DOM to get them playing with it and see something practical they can apply these ideas to. Might be nice to introduce these things first, and then have their challenges be in this context so that as they learn the topics, they can contemplate how they might be used to manipulate the DOM, something they can see the effects of.
+      CONTENTS
+    end
+  end
+  
+  section.weeks.build do |week|
+    week.number = 13
+    week.topics = Topic.forall ['advanced JS', 'the web']
+    week.activities.build do |activity|
+      week.activities.build do |activity|
+        activity.name  = 'Object Oriented JS (mechanics and paradigms)'
+        activity.topics = Topic.forall []
+        activity.contents = <<-CONTENTS.strip_heredoc
+        * https://github.com/mdn/advanced-js-fundamentals-ck/tree/gh-pages/tutorials/03-object-oriented-javascript
+        * 01-introduction-to-object-oriented-javascript.md
+          * JS Object Model
+          * new keyword (have them implement their own?)
+          * Constructors
+          * `this` in an OO context
+          * implicit return of the instance
+          * Capitalization is convention
+        * 02-building-a-chainable-api.md
+          * Common interface patterns (eg jQuery)
+          * Contemplating abstraction
+        * 03-canvas-and-object-oriented-javascript.md
+          * (as a vehicle for talking about OOJS)
+          * First see what it looks like procedurally
+          * Add the constraint to do this 10x
+          * Refactoring to OO
+        CONTENTS
+      end
+      week.activities.build do |activity|
+        activity.name  = 'Challenge'
+        activity.topics = Topic.forall []
+        activity.contents = <<-CONTENTS.strip_heredoc
+        * Redo linked list with a constructor / prototype
+        * If we wind up introducing other data structures, we can have them swap out which one they do,
+          we'll be doing this one frequently enough that we can expand on it and do something more fun like binary search trees.
+        CONTENTS
+      end
+      week.activities.build do |activity|
+        activity.name  = 'Events / working with the DOM'
+        activity.topics = Topic.forall []
+        activity.contents = <<-CONTENTS.strip_heredoc
+        * https://github.com/mdn/advanced-js-fundamentals-ck/tree/1266706b188590da8d682cca046227ae5a307842/tutorials/04-events
+        * 01-basic-events.md
+          * also builtin querying api
+          * event listeners
+        * 02-event-bubbling.md / 03-adding-and-removing.md / 05-event-delegation.md
+          * Maybe have them do the experiment and then define their own set of rules to explain it
+          * Patterns for avoiding repetition (eg defining the event listener on the pre-existing elements and also on ones you add later)
+        * 04-keycodes.md
+          * some exercises to do interesting stuff
+        * 06-data-attributes.md
+          * "Another thing I thought about for JS that I tried to teach all the time is proper use of DOM selectors for JS behavior.
+            Classes and Ids are often used by designers so attaching to them for JS behavior becomes fragile,
+            since they may rename or move the classes for style changes.  I always like to use data-ids and then
+            communicate that if you see a data-id that means JS is attached there.  Any other part of it -- the HTML or the CSS is still liable to change.
+            This also implies to not have your JS be dependent on a specific HTML structure as designers can change that a lot too." -- Ben Voss
+          * C style namespacing
+        CONTENTS
+      end
+      week.activities.build do |activity|
+        activity.name  = 'Environment'
+        activity.topics = Topic.forall []
+        activity.contents = <<-CONTENTS.strip_heredoc
+        Npm, lodash, (browserify | webpack) -- find a good resource for the basics of these things
+        * Not necessary to know all their ins and outs, just enough to support the game time below
+        CONTENTS
+      end
+      week.activities.build do |activity|
+        activity.name  = 'Project'
+        activity.topics = Topic.forall []
+        activity.contents = <<-CONTENTS.strip_heredoc
+        * Build their own game
+        * https://github.com/turingschool/lesson_plans/blob/master/ruby_04-apis_and_scalability/gametime_project.markdown
+        * TODO: Some kind of project where JS is used to add dynamic functionality to a Rails app?
+        CONTENTS
+      end
+    end    
+  end
+  
+  
+  section.weeks.build do |week|
+    week.number = 14
+    week.activities.build do |activity|
+      activity.name = 'Capstone Project'
+      activity.topics = Topic.forall []
+      activity.contents = <<-CONTENTS.strip_heredoc
+      Objectives
+
+      * Work on a team
+      * Practice project management / agile on a larger scale
+
+      Possibilities
+
+      * Something that integrates a Rails backend with Google Maps
+      CONTENTS
+    end    
+  end
+
+  section.weeks.build do |week|
+    week.number = 15
+    week.activities.build do |activity|
+      activity.name = 'Capstone Project'
+      activity.topics = Topic.forall []
+      activity.contents = 'Continue Capstone project'
+    end
+  end
+  
+  section.weeks.build do |week|
+    week.number = 15
+    week.activities.build do |activity|
+      activity.name = 'Capstone Project'
+      activity.topics = Topic.forall ['Leaving this open']
+      activity.contents = 'I historically understimate, so it makes sense to shoot for less time rather than perfect time.  Leaving this open to be allocated as appropriate.'
+    end
+  end
+end
+
 # Section.create! order: 1, title: "Introduction to programming with Ruby" do |section|
 #   section.topics = Topic.forall ["Environment", "Ruby", "Problem Solving", "Good Habits"]
 
@@ -538,94 +730,5 @@ __END__
 
 
 __END__
-** (3/3) Frontend / Javascript
-*** Week 12 - Core JavaScript
-- Show them where the MDN docs are.
-  - https://developer.mozilla.org/en-US/docs/Web/JavaScript
-  - https://developer.mozilla.org/en-US/docs/Web/Reference/API
-- Getting feedback
-  - Setup node so they can have a REPL
-  - Show them a few tricks:
-    - functions to strings
-    - reflective methods (eg Object.keys)
-- Gaining context
-  - https://github.com/mdn/advanced-js-fundamentals-ck/tree/1266706b188590da8d682cca046227ae5a307842/tutorials/01-array-prototype-methods
-  - Give them some challenges that require them to play with Arrays, Strings, Numbers, Objects, true, false, undefined, null, so that we don't spend a long time covering ideas they are already famiilar with (ie show them their Ruby knowledge translates and begin getting comfortable with JS)
-  - Cover Array prototype methods for the same reason, and b/c they're very useful, and it will give them an opportunity to ask any questions from the above.
-  - Cover anonymous functions / blocks to
-  - priming for JS Object model.
-  - Some DOM manipulation (gain context into where / how this is commonly used)
-  - Should there be more of an intro to the DOM? (We can play with it from Ruby, possibly build our own model like we've done with other examples)
-- Functional Paradigm
-  - https://github.com/mdn/advanced-js-fundamentals-ck/tree/gh-pages/tutorials/02-functions
-  - This style is common in JS, and in functional languages (and it shows up from time to time in Ruby, too)
-  - It's also a gentler introduction, allowing them to be productive without knowing all the ins and outs of the object model.
-  - 01-calling-functions.md
-    - var vs fn, hoisting, first-class, reference vs invocation, cursory behaviour of `this`
-  - 03-what-is-this.md
-    - 4 rules of this
-    - call and apply (2 interfaces to do the same thing)
-    - write your own bind
-    - edge case: callbacks (TODO: discuss what a calback is)
-  - 02-currying-and-partial-application.md
-    - Partial application (have them discover this)
-    - Closures and scope
-    - Examples / context
-  - 04-recursion.md
-  - 05-generators.md
-    - Async / Generators
-    - Understanding generators to better define what async is and where its boundaries are
-    - (find that video where they define these constructs -- event queue)
-- Challenges
-  - redo linked list with toplevel functions + objects
-  - Something with jQuery and the DOM to get them playing with it and see something practical they can apply these ideas to. Might be nice to introduce these things first, and then have their challenges be in this context so that as they learn the topics, they can contemplate how they might be used to manipulate the DOM, something they can see the effects of.
-*** Week 13 - Advanced JS, the web
-- Object Oriented JS (mechanics and paradigms)
-  - https://github.com/mdn/advanced-js-fundamentals-ck/tree/gh-pages/tutorials/03-object-oriented-javascript
-  - 01-introduction-to-object-oriented-javascript.md
-    - JS Object Model
-    - new keyword (have them implement their own?)
-    - Constructors
-    - `this` in an OO context
-    - implicit return of the instance
-    - Capitalization is convention
-  - 02-building-a-chainable-api.md
-    - Common interface patterns (eg jQuery)
-    - Contemplating abstraction
-  - 03-canvas-and-object-oriented-javascript.md
-    - (as a vehicle for talking about OOJS)
-    - First see what it looks like procedurally
-    - Add the constraint to do this 10x
-    - Refactoring to OO
-- Challenge
-  - Redo linked list with a constructor / prototype
-  - If we wind up introducing other data structures, we can have them swap out which one they do, we'll be doing this one frequently enough that we can expand on it and do something more fun like binary search trees.
-- Events / working with the DOM
-  - https://github.com/mdn/advanced-js-fundamentals-ck/tree/1266706b188590da8d682cca046227ae5a307842/tutorials/04-events
-  - 01-basic-events.md
-    - also builtin querying api
-    - event listeners
-  - 02-event-bubbling.md / 03-adding-and-removing.md / 05-event-delegation.md
-    - Maybe have them do the experiment and then define their own set of rules to explain it
-    - Patterns for avoiding repetition (eg defining the event listener on the pre-existing elements and also on ones you add later)
-  - 04-keycodes.md
-    - some exercises to do interesting stuff
-  - 06-data-attributes.md
-    - "Another thing I thought about for JS that I tried to teach all the time is proper use of DOM selectors for JS behavior.  Classes and Ids are often used by designers so attaching to them for JS behavior becomes fragile, since they may rename or move the classes for style changes.  I always like to use data-ids and then communicate that if you see a data-id that means JS is attached there.  Any other part of it -- the HTML or the CSS is still liable to change. This also implies to not have your JS be dependent on a specific HTML structure as designers can change that a lot too." -- Ben Voss
-    - C style namespacing
-- Also discuss npm, lodash, (browserify | webpack) -- find a good resource for the basics of these things
-  - Not necessary to know all their ins and outs, just enough to support the game time below
-- Project
-  - Build their own game
-  - https://github.com/turingschool/lesson_plans/blob/master/ruby_04-apis_and_scalability/gametime_project.markdown
-  - TODO: Some kind of project where JS is used to add dynamic functionality to a Rails app?
-*** Week 14/15 - Capstone Project
-- Objectives
-  - Work on a team
-  - Practice project management / agile on a larger scale
-- Possibilities
-  - Something that integrates a Rails backend with Google Maps
-*** Week 16 - Leaving this open
-- I historically understimate, so it makes sense to shoot for less time rather than perfect time.  Leaving this open to be allocated as appropriate.
 
 Unless otherwise noted, this curriculum by Josh Cheek is licensed under - [[http://creativecommons.org/licenses/by-nc-sa/3.0/][Creative Commons Attribution-NonCommercial-ShareAlike 3.0]]
