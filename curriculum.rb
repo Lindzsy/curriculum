@@ -1,9 +1,30 @@
+# - Maybe add ::
+#   - More git
+#   - [[https://github.com/Ada-Developers-Academy/daily-curriculum/blob/f3688db58b98237e6df6602179a7051d65ddd284/topic_resources/how-to-os-x.md][How to OSX]]
+#   - [[https://github.com/Ada-Developers-Academy/daily-curriculum/blob/f3688db58b98237e6df6602179a7051d65ddd284/topic_resources/nix.md][Intro to Unix]]
+
+#   - [[http://computers.tutsplus.com/tutorials/navigating-the-terminal-a-gentle-introduction--mac-3855][Navigating the Terminal: A Gentle Introduction]]
+#   - Enumerables
+#   - [[https://vimeo.com/130811302][Various Games]]
+#   - a fun first day to help them see where their skills are going to take them
+#     - https://twitter.com/josh_cheek/status/664795920467300352
+#     - https://www.govtrack.us/developers/api
+#     - https://github.com/phoet/asin
+#     - https://www.ruby-toolbox.com/categories/api_clients
+#     - https://www.ruby-toolbox.com/categories/visualizing_data
+#     - https://www.ruby-toolbox.com/categories/by_name
+#     - https://www.libgosu.org/
+
 require 'active_record'
 
 ActiveRecord::Base.establish_connection adapter: 'sqlite3', database: ':memory:'
 
 ActiveRecord::Schema.define do
   self.verbose = false
+  
+  create_table :documents do |t|
+    t.string :license
+  end
 
   create_table :topics do |t|
     t.string :topic
@@ -27,6 +48,7 @@ ActiveRecord::Schema.define do
   create_table :sections do |t|
     t.integer :order
     t.string  :title
+    t.integer :document_id
   end
 
   create_table :weeks do |t|
@@ -41,7 +63,12 @@ ActiveRecord::Schema.define do
   end
 end
 
+class Document < ActiveRecord::Base
+  has_many :sections
+end
+
 class Section < ActiveRecord::Base
+  belongs_to :document
   has_many :weeks
   has_many :section_topics
   has_many :topics, through: :section_topics
@@ -85,7 +112,11 @@ class Activity < ActiveRecord::Base
 end
 
 
-Section.create! order: 1, title: "Introduction to programming with Ruby" do |section|
+document = Document.create! do |document|
+  document.license = 'Unless otherwise noted, this curriculum by Josh Cheek is licensed under - [Creative Commons Attribution-NonCommercial-ShareAlike 3.0](http://creativecommons.org/licenses/by-nc-sa/3.0/)'
+end
+
+document.sections.create! order: 1, title: "Introduction to programming with Ruby" do |section|
   section.topics = Topic.forall ["Environment", "Ruby", "Problem Solving", "Good Habits"]
 
   section.weeks.build do |week|
@@ -397,7 +428,56 @@ Section.create! order: 1, title: "Introduction to programming with Ruby" do |sec
       CONTENTS
     end
   end
-  
+end
+
+
+document.sections.create!  order: 2, title: "Internet / Rails" do |section|
+  section.topics = Topic.forall ['internet', 'rails'] # :P
+  # Section2 example:
+  # https://gist.github.com/JoshCheek/a754fce5d1d5e5bb88a6
+  # ** (2/3) Internet / Rails
+  # - Early Topics::
+  #   - DOM / [[http://www.codecademy.com/en/tracks/web][Codecademy's HTML / CSS track]]
+  #   - [[https://github.com/Ada-Developers-Academy/daily-curriculum/blob/f3688db58b98237e6df6602179a7051d65ddd284/topic_resources/submitting-forms.md][Forms]]
+  #   - MVC
+  #   - [[https://github.com/Ada-Developers-Academy/daily-curriculum/blob/f3688db58b98237e6df6602179a7051d65ddd284/topic_resources/html.md][HTML]]
+  #   - [[https://github.com/turingschool/lesson_plans/blob/master/ruby_02-web_applications_with_ruby/how_the_web_works.markdown][Intro to the web]] Looks like it could be good, so does [[https://github.com/Ada-Developers-Academy/daily-curriculum/blob/f3688db58b98237e6df6602179a7051d65ddd284/topic_resources/networking.md][Ada's networking material]]
+  #   - [[https://github.com/turingschool/lesson_plans/blob/master/ruby_02-web_applications_with_ruby/introduction_to_bootstrap.markdown][Intro to bootstrap]]
+  #   - [[https://github.com/turingschool/challenges/blob/master/parsing_html.markdown][Nokogiri Challenge]]
+  #   - [[https://github.com/turingschool/lesson_plans/blob/master/ruby_02-web_applications_with_ruby/feature_testing_in_sinatra_with_capybara.markdown][Capybara]] / [[https://github.com/turingschool/lesson_plans/blob/master/ruby_02-web_applications_with_ruby/feature_testing_rails_minitest_rspec.markdown][Feature Testing]] / [[https://gist.github.com/JoshCheek/f71d7d5d749401733a5e][Minimal Testing Example]]
+  #   - [[https://github.com/turingschool/lesson_plans/blob/master/ruby_02-web_applications_with_ruby/database_design_modeling.markdown][Database Design & Modeling]] / [[https://github.com/turingschool/lesson_plans/blob/master/ruby_02-web_applications_with_ruby/database_schema_design.markdown][Database / Schema design]]
+  #   - [[https://github.com/turingschool/lesson_plans/blob/master/ruby_02-web_applications_with_ruby/rest_routing_and_controllers_in_rails.markdown][REST]]
+  #   - [[https://github.com/turingschool/challenges/blob/master/models_databases_relationships_routes_controllers_oh_my.markdown][Rails Basics Challenge]]
+  #   - [[https://github.com/turingschool/lesson_plans/blob/master/ruby_02-web_applications_with_ruby/forms_and_route_helpers_in_rails.markdown][Form and Route helpers]]
+  #   - [[https://github.com/turingschool/lesson_plans/blob/master/ruby_02-web_applications_with_ruby/sessions_cookies_and_flashes.markdown][Sessions / Cookies / Flashes]] / [[https://gist.github.com/JoshCheek/7b1c1eb231dfa83098be][Decrypting a Rails Session]] / [[https://github.com/Ada-Developers-Academy/daily-curriculum/blob/f3688db58b98237e6df6602179a7051d65ddd284/topic_resources/rails/session..md][Ada's sessions]]
+  #   - [[http://guides.rubyonrails.org/action_controller_overview.html#filters][Controller Filters]]
+  #   - [[https://github.com/turingschool/lesson_plans/blob/master/ruby_02-web_applications_with_ruby/authentication.markdown][Turing's Authentication]] / [[https://github.com/Ada-Developers-Academy/daily-curriculum/blob/f3688db58b98237e6df6602179a7051d65ddd284/topic_resources/user-authentication.md][Ada's authentication]]
+  #   - [[https://github.com/turingschool/lesson_plans/blob/master/ruby_02-web_applications_with_ruby/authorization.markdown][Authorization]]
+  #   - [[https://github.com/turingschool/lesson_plans/blob/master/ruby_02-web_applications_with_ruby/rails_views_tips_and_techniques.markdown][Rails Views]]
+  #   - Extracting logic from the view/controller/model
+  #   - [[https://github.com/turingschool/lesson_plans/blob/master/ruby_02-web_applications_with_ruby/intro_to_the_asset_pipeline.markdown][Asset Pipeline]]
+  #   - [[https://github.com/turingschool/lesson_plans/blob/master/ruby_02-web_applications_with_ruby/transactions_scopes_callbacks.markdown][Transactions/callbacks/scopes]]
+  #   - [[https://github.com/Ada-Developers-Academy/daily-curriculum/blob/f3688db58b98237e6df6602179a7051d65ddd284/topic_resources/rails/active_record.md][ActiveRecord]]
+  #   - [[https://github.com/Ada-Developers-Academy/daily-curriculum/blob/f3688db58b98237e6df6602179a7051d65ddd284/topic_resources/rails/active_record_practice.md][ActiveRecord practice]]
+  #   - [[https://github.com/Ada-Developers-Academy/daily-curriculum/blob/f3688db58b98237e6df6602179a7051d65ddd284/topic_resources/carrierwave.md][Carrierwave]]
+  #   - Sqlite / Postgresql
+  #   - Heroku
+  #   - [[https://gist.github.com/JoshCheek/cb48fcdd063e45bf5185][quiz topics]]
+  #   - N+1 queries and other improvements
+  # - Late Topics ::
+  #   - [[https://github.com/Ada-Developers-Academy/daily-curriculum/blob/f3688db58b98237e6df6602179a7051d65ddd284/topic_resources/web-api-101.md][API examples]]
+  #   - [[https://github.com/Ada-Developers-Academy/daily-curriculum/blob/f3688db58b98237e6df6602179a7051d65ddd284/topic_resources/consuming-an-api.md][Consuming an API]]
+  #   - [[https://github.com/Ada-Developers-Academy/daily-curriculum/blob/f3688db58b98237e6df6602179a7051d65ddd284/topic_resources/consuming-an-api.md#practice][Consuming an API]]
+  #   - [[https://github.com/Ada-Developers-Academy/daily-curriculum/blob/f3688db58b98237e6df6602179a7051d65ddd284/topic_resources/omniauth.md][Authentication w/ Omniauth]]
+  # - Project Ideas::
+  #   - THOUGHT: What if they build their own mini web framework, and then, before learning something in Rails, they add it to their framework? (is there time for that?)
+  #     - CONCLUSION: Do this!
+  #   - Traffic Spy
+  #   - Task Manager
+  #   - Implement sessions
+  #   - Implement Authentication
+  #   - [[https://github.com/Ada-Developers-Academy/C3Projects--bEtsy][Betsy]]
+  #   - [[https://github.com/Ada-Developers-Academy/C3Projects--SeeMore][See More]]  
   section.weeks.build do |week|
     week.number = 7
     week.topics = Topic.forall ['Databases', 'templating languages']
@@ -457,7 +537,7 @@ end
 
 
 
-Section.create! order: 3, title: "Frontend and Javascript" do |section|
+document.sections.create! order: 3, title: "Frontend and Javascript" do |section|
   section.topics = Topic.forall ["Javascript", "Frontend"]
 
   section.weeks.build do |week|
@@ -609,7 +689,6 @@ Section.create! order: 3, title: "Frontend and Javascript" do |section|
     end    
   end
   
-  
   section.weeks.build do |week|
     week.number = 14
     week.activities.build do |activity|
@@ -647,56 +726,9 @@ Section.create! order: 3, title: "Frontend and Javascript" do |section|
   end
 end
 
-# Section.create! order: 1, title: "Introduction to programming with Ruby" do |section|
-#   section.topics = Topic.forall ["Environment", "Ruby", "Problem Solving", "Good Habits"]
 
-# Section2 example:
-# https://gist.github.com/JoshCheek/a754fce5d1d5e5bb88a6
-# ** (2/3) Internet / Rails
-# - Early Topics::
-#   - DOM / [[http://www.codecademy.com/en/tracks/web][Codecademy's HTML / CSS track]]
-#   - [[https://github.com/Ada-Developers-Academy/daily-curriculum/blob/f3688db58b98237e6df6602179a7051d65ddd284/topic_resources/submitting-forms.md][Forms]]
-#   - MVC
-#   - [[https://github.com/Ada-Developers-Academy/daily-curriculum/blob/f3688db58b98237e6df6602179a7051d65ddd284/topic_resources/html.md][HTML]]
-#   - [[https://github.com/turingschool/lesson_plans/blob/master/ruby_02-web_applications_with_ruby/how_the_web_works.markdown][Intro to the web]] Looks like it could be good, so does [[https://github.com/Ada-Developers-Academy/daily-curriculum/blob/f3688db58b98237e6df6602179a7051d65ddd284/topic_resources/networking.md][Ada's networking material]]
-#   - [[https://github.com/turingschool/lesson_plans/blob/master/ruby_02-web_applications_with_ruby/introduction_to_bootstrap.markdown][Intro to bootstrap]]
-#   - [[https://github.com/turingschool/challenges/blob/master/parsing_html.markdown][Nokogiri Challenge]]
-#   - [[https://github.com/turingschool/lesson_plans/blob/master/ruby_02-web_applications_with_ruby/feature_testing_in_sinatra_with_capybara.markdown][Capybara]] / [[https://github.com/turingschool/lesson_plans/blob/master/ruby_02-web_applications_with_ruby/feature_testing_rails_minitest_rspec.markdown][Feature Testing]] / [[https://gist.github.com/JoshCheek/f71d7d5d749401733a5e][Minimal Testing Example]]
-#   - [[https://github.com/turingschool/lesson_plans/blob/master/ruby_02-web_applications_with_ruby/database_design_modeling.markdown][Database Design & Modeling]] / [[https://github.com/turingschool/lesson_plans/blob/master/ruby_02-web_applications_with_ruby/database_schema_design.markdown][Database / Schema design]]
-#   - [[https://github.com/turingschool/lesson_plans/blob/master/ruby_02-web_applications_with_ruby/rest_routing_and_controllers_in_rails.markdown][REST]]
-#   - [[https://github.com/turingschool/challenges/blob/master/models_databases_relationships_routes_controllers_oh_my.markdown][Rails Basics Challenge]]
-#   - [[https://github.com/turingschool/lesson_plans/blob/master/ruby_02-web_applications_with_ruby/forms_and_route_helpers_in_rails.markdown][Form and Route helpers]]
-#   - [[https://github.com/turingschool/lesson_plans/blob/master/ruby_02-web_applications_with_ruby/sessions_cookies_and_flashes.markdown][Sessions / Cookies / Flashes]] / [[https://gist.github.com/JoshCheek/7b1c1eb231dfa83098be][Decrypting a Rails Session]] / [[https://github.com/Ada-Developers-Academy/daily-curriculum/blob/f3688db58b98237e6df6602179a7051d65ddd284/topic_resources/rails/session..md][Ada's sessions]]
-#   - [[http://guides.rubyonrails.org/action_controller_overview.html#filters][Controller Filters]]
-#   - [[https://github.com/turingschool/lesson_plans/blob/master/ruby_02-web_applications_with_ruby/authentication.markdown][Turing's Authentication]] / [[https://github.com/Ada-Developers-Academy/daily-curriculum/blob/f3688db58b98237e6df6602179a7051d65ddd284/topic_resources/user-authentication.md][Ada's authentication]]
-#   - [[https://github.com/turingschool/lesson_plans/blob/master/ruby_02-web_applications_with_ruby/authorization.markdown][Authorization]]
-#   - [[https://github.com/turingschool/lesson_plans/blob/master/ruby_02-web_applications_with_ruby/rails_views_tips_and_techniques.markdown][Rails Views]]
-#   - Extracting logic from the view/controller/model
-#   - [[https://github.com/turingschool/lesson_plans/blob/master/ruby_02-web_applications_with_ruby/intro_to_the_asset_pipeline.markdown][Asset Pipeline]]
-#   - [[https://github.com/turingschool/lesson_plans/blob/master/ruby_02-web_applications_with_ruby/transactions_scopes_callbacks.markdown][Transactions/callbacks/scopes]]
-#   - [[https://github.com/Ada-Developers-Academy/daily-curriculum/blob/f3688db58b98237e6df6602179a7051d65ddd284/topic_resources/rails/active_record.md][ActiveRecord]]
-#   - [[https://github.com/Ada-Developers-Academy/daily-curriculum/blob/f3688db58b98237e6df6602179a7051d65ddd284/topic_resources/rails/active_record_practice.md][ActiveRecord practice]]
-#   - [[https://github.com/Ada-Developers-Academy/daily-curriculum/blob/f3688db58b98237e6df6602179a7051d65ddd284/topic_resources/carrierwave.md][Carrierwave]]
-#   - Sqlite / Postgresql
-#   - Heroku
-#   - [[https://gist.github.com/JoshCheek/cb48fcdd063e45bf5185][quiz topics]]
-#   - N+1 queries and other improvements
-# - Late Topics ::
-#   - [[https://github.com/Ada-Developers-Academy/daily-curriculum/blob/f3688db58b98237e6df6602179a7051d65ddd284/topic_resources/web-api-101.md][API examples]]
-#   - [[https://github.com/Ada-Developers-Academy/daily-curriculum/blob/f3688db58b98237e6df6602179a7051d65ddd284/topic_resources/consuming-an-api.md][Consuming an API]]
-#   - [[https://github.com/Ada-Developers-Academy/daily-curriculum/blob/f3688db58b98237e6df6602179a7051d65ddd284/topic_resources/consuming-an-api.md#practice][Consuming an API]]
-#   - [[https://github.com/Ada-Developers-Academy/daily-curriculum/blob/f3688db58b98237e6df6602179a7051d65ddd284/topic_resources/omniauth.md][Authentication w/ Omniauth]]
-# - Project Ideas::
-#   - THOUGHT: What if they build their own mini web framework, and then, before learning something in Rails, they add it to their framework? (is there time for that?)
-#     - CONCLUSION: Do this!
-#   - Traffic Spy
-#   - Task Manager
-#   - Implement sessions
-#   - Implement Authentication
-#   - [[https://github.com/Ada-Developers-Academy/C3Projects--bEtsy][Betsy]]
-#   - [[https://github.com/Ada-Developers-Academy/C3Projects--SeeMore][See More]]
 
-Section.order(:order).each do |section|
+document.sections.order(:order).each do |section|
   puts section.title
   puts "Topics: #{section.topics.map(&:topic)}"
   section.weeks.order(:number).each do |week|
@@ -708,27 +740,5 @@ Section.order(:order).each do |section|
     end
   end
 end
-
-__END__
-
-
-# - Maybe add ::
-#   - More git
-#   - [[https://github.com/Ada-Developers-Academy/daily-curriculum/blob/f3688db58b98237e6df6602179a7051d65ddd284/topic_resources/how-to-os-x.md][How to OSX]]
-#   - [[https://github.com/Ada-Developers-Academy/daily-curriculum/blob/f3688db58b98237e6df6602179a7051d65ddd284/topic_resources/nix.md][Intro to Unix]]
-#   - [[http://computers.tutsplus.com/tutorials/navigating-the-terminal-a-gentle-introduction--mac-3855][Navigating the Terminal: A Gentle Introduction]]
-#   - Enumerables
-#   - [[https://vimeo.com/130811302][Various Games]]
-#   - a fun first day to help them see where their skills are going to take them
-#     - https://twitter.com/josh_cheek/status/664795920467300352
-#     - https://www.govtrack.us/developers/api
-#     - https://github.com/phoet/asin
-#     - https://www.ruby-toolbox.com/categories/api_clients
-#     - https://www.ruby-toolbox.com/categories/visualizing_data
-#     - https://www.ruby-toolbox.com/categories/by_name
-#     - https://www.libgosu.org/
-
-
-__END__
-
-Unless otherwise noted, this curriculum by Josh Cheek is licensed under - [[http://creativecommons.org/licenses/by-nc-sa/3.0/][Creative Commons Attribution-NonCommercial-ShareAlike 3.0]]
+puts
+puts document.license
