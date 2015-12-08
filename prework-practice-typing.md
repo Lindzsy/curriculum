@@ -7,17 +7,19 @@ how many hurdles are between the spark of a thought and its manifestation on you
 
 When you type well, you optimize for typing: you type in tandem with thinking,
 thus the disparity between your thought and the computer is minimal.
-This gives you quick guiding feedback.
+This grants you quick guiding feedback.
 
 When you type poorly, you optimize against typing: you do your thinking independently,
 and thus rely much more heavily on your brain's ability to play computer.
-Given that you're new at this, your brain is especially unprepared for this task.
+Your brain is bad at this task. If you are inhibited by typing, you will suffer
+a constant cloud of confusion. You will frequently lose information because
+you couldn't cache it in your brain long enough to transfer it to your computer.
 
 Your typing affects your behaviour, and as a consequence,
 poor typing skills can utterly cripple a new developer.
 
 Fortunately, typing is a hard-skill. Focus on it carefully, being attentive to precision,
-correcting mistakes, pushing yourself to improve... and you will.
+correcting mistakes, pushing yourself to improve... and you will!
 
 
 Foundation
