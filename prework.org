@@ -120,5 +120,12 @@
       staging directory
       sha
       head
+  other
+    pointing
+    pointer
+    reference
+    editor
+    text editor
+    IDE
   #+END_SRC
 
