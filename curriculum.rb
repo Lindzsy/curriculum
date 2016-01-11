@@ -21,7 +21,7 @@ ActiveRecord::Base.establish_connection adapter: 'sqlite3', database: ':memory:'
 
 ActiveRecord::Schema.define do
   self.verbose = false
-  
+
   create_table :documents do |t|
     t.string :license
   end
@@ -123,7 +123,7 @@ document.sections.create! order: 1, title: "Introduction to programming with Rub
     week.number = 1
     week.topics = Topic.forall ['Editor', 'Ruby', 'Terminal']
     week.activities.build do |activity|
-      activity.name   = "Set expectations"
+      activity.name   = "Define the Relationship"
       activity.topics = Topic.forall ["positive behaviour", "collaboration", "grit"]
     end
     week.activities.build do |activity|
@@ -139,7 +139,7 @@ document.sections.create! order: 1, title: "Introduction to programming with Rub
       CONTENTS
     end
     week.activities.build do |activity|
-      activity.name = 'Set up the terminal'
+      activity.name = 'Initial Setup'
       activity.contents = <<-CONTENTS.strip_heredoc
       Some stuff from my [setup instructions](https://github.com/JoshCheek/1508/blob/master/initial-setup.md) and probably [dotfiles](https://github.com/JoshCheek/dotfiles-for-students)
       CONTENTS
@@ -155,6 +155,18 @@ document.sections.create! order: 1, title: "Introduction to programming with Rub
       activity.contents = 'Practice poweruser keybindings'
     end
     week.activities.build do |activity|
+      activity.name = 'Smart is a choice'
+      activity.contents = <<-CONTENTS.strip_heredoc
+      Choose to behave in an empowered manner.
+      CONTENTS
+    end
+    week.activities.build do |activity|
+      activity.name = 'Seeing Is Believing'
+      activity.contents = <<-CONTENTS.strip_heredoc
+      Introduce our laboratory
+      CONTENTS
+    end
+    week.activities.build do |activity|
       activity.name = 'Have them create cheatsheets for the primitives (String, Integer, Array, Hash, booleans)'
       activity.contents = <<-CONTENTS.strip_heredoc
       * [example](https://github.com/JoshCheek/ruby-kickstart/tree/master/cheatsheets)
@@ -164,6 +176,14 @@ document.sections.create! order: 1, title: "Introduction to programming with Rub
         ['a', 'b'].map { |c| c.upcase }  # => ["A", "B"]
         ```
       CONTENTS
+    end
+    week.activities.build do |activity|
+      activity.name = 'Structures for representing nouns'
+      activity.contents = 'The JSON data types, across representations'
+    end
+    week.activities.build do |activity|
+      activity.name = 'Representing nouns'
+      activity.contents = 'How to model data using the JSON data types.'
     end
     week.activities.build do |activity|
       activity.name = 'Exercises'
@@ -233,8 +253,13 @@ document.sections.create! order: 1, title: "Introduction to programming with Rub
     week.activities.build do |activity|
       activity.name = 'Exploring gems using pry'
       activity.contents = <<-CONTENTS.strip_heredoc
-      Something like [this](https://github.com/JumpstartLab/tdd-class-8-dec/blob/master/12-dec-faker.rb)
+      Go through [Discovery With Pry](https://vimeo.com/151341394),
+      along with me, where we figure out the FFaker gem by looking around in pry.
       CONTENTS
+    end
+    week.activities.build do |activity|
+      activity.name = 'Nokogiri Challenge'
+      activity.contents = 'https://github.com/turingschool/challenges/blob/master/parsing_html.markdown'
     end
     week.activities.build do |activity|
       activity.name = 'Git fundamentals'
@@ -417,12 +442,18 @@ document.sections.create! order: 1, title: "Introduction to programming with Rub
     week.number = 6
     week.topics = Topic.forall ['HTTP']
     week.activities.build do |activity|
-      activity.name = 'Project: HTTP / webserver'
+      activity.name = 'Project: HTTP / web framework / web server'
       activity.topics = Topic.forall ['blocks']
       activity.contents = <<-CONTENTS.strip_heredoc
-      (or hashes https://github.com/turingschool/data_structures_and_algorithms/tree/master/hash_tables)
+      * [Webserver project](https://github.com/turingschool/curriculum/blob/master/source/projects/http_yeah_you_know_me.markdown)
+      * [My reflections](https://gist.github.com/JoshCheek/9e5bf0ed673ed80ec010)
+      * My web framework
 
-      [Webserver project](https://github.com/turingschool/curriculum/blob/master/source/projects/http_yeah_you_know_me.markdown)
+      * Build the project in the way we described
+      * Refactor to achieve clarity / modularity
+      * Refactor to support the Rack interface?
+      * Extract the server and framework into gems
+      * Add more status code support
 
       If any of their other work can be given a web interface, lets do that!
       CONTENTS
@@ -434,53 +465,36 @@ end
 document.sections.create!  order: 2, title: "Internet / Rails" do |section|
   section.topics = Topic.forall ['internet', 'rails'] # :P
   # Section2 example:
-  # https://gist.github.com/JoshCheek/a754fce5d1d5e5bb88a6
-  # ** (2/3) Internet / Rails
-  # - Early Topics::
-  #   - DOM / [[http://www.codecademy.com/en/tracks/web][Codecademy's HTML / CSS track]]
-  #   - [[https://github.com/Ada-Developers-Academy/daily-curriculum/blob/f3688db58b98237e6df6602179a7051d65ddd284/topic_resources/submitting-forms.md][Forms]]
-  #   - MVC
-  #   - [[https://github.com/Ada-Developers-Academy/daily-curriculum/blob/f3688db58b98237e6df6602179a7051d65ddd284/topic_resources/html.md][HTML]]
-  #   - [[https://github.com/turingschool/lesson_plans/blob/master/ruby_02-web_applications_with_ruby/how_the_web_works.markdown][Intro to the web]] Looks like it could be good, so does [[https://github.com/Ada-Developers-Academy/daily-curriculum/blob/f3688db58b98237e6df6602179a7051d65ddd284/topic_resources/networking.md][Ada's networking material]]
-  #   - [[https://github.com/turingschool/lesson_plans/blob/master/ruby_02-web_applications_with_ruby/introduction_to_bootstrap.markdown][Intro to bootstrap]]
-  #   - [[https://github.com/turingschool/challenges/blob/master/parsing_html.markdown][Nokogiri Challenge]]
-  #   - [[https://github.com/turingschool/lesson_plans/blob/master/ruby_02-web_applications_with_ruby/feature_testing_in_sinatra_with_capybara.markdown][Capybara]] / [[https://github.com/turingschool/lesson_plans/blob/master/ruby_02-web_applications_with_ruby/feature_testing_rails_minitest_rspec.markdown][Feature Testing]] / [[https://gist.github.com/JoshCheek/f71d7d5d749401733a5e][Minimal Testing Example]]
-  #   - [[https://github.com/turingschool/lesson_plans/blob/master/ruby_02-web_applications_with_ruby/database_design_modeling.markdown][Database Design & Modeling]] / [[https://github.com/turingschool/lesson_plans/blob/master/ruby_02-web_applications_with_ruby/database_schema_design.markdown][Database / Schema design]]
-  #   - [[https://github.com/turingschool/lesson_plans/blob/master/ruby_02-web_applications_with_ruby/rest_routing_and_controllers_in_rails.markdown][REST]]
-  #   - [[https://github.com/turingschool/challenges/blob/master/models_databases_relationships_routes_controllers_oh_my.markdown][Rails Basics Challenge]]
-  #   - [[https://github.com/turingschool/lesson_plans/blob/master/ruby_02-web_applications_with_ruby/forms_and_route_helpers_in_rails.markdown][Form and Route helpers]]
-  #   - [[https://github.com/turingschool/lesson_plans/blob/master/ruby_02-web_applications_with_ruby/sessions_cookies_and_flashes.markdown][Sessions / Cookies / Flashes]] / [[https://gist.github.com/JoshCheek/7b1c1eb231dfa83098be][Decrypting a Rails Session]] / [[https://github.com/Ada-Developers-Academy/daily-curriculum/blob/f3688db58b98237e6df6602179a7051d65ddd284/topic_resources/rails/session..md][Ada's sessions]]
-  #   - [[http://guides.rubyonrails.org/action_controller_overview.html#filters][Controller Filters]]
-  #   - [[https://github.com/turingschool/lesson_plans/blob/master/ruby_02-web_applications_with_ruby/authentication.markdown][Turing's Authentication]] / [[https://github.com/Ada-Developers-Academy/daily-curriculum/blob/f3688db58b98237e6df6602179a7051d65ddd284/topic_resources/user-authentication.md][Ada's authentication]]
-  #   - [[https://github.com/turingschool/lesson_plans/blob/master/ruby_02-web_applications_with_ruby/authorization.markdown][Authorization]]
-  #   - [[https://github.com/turingschool/lesson_plans/blob/master/ruby_02-web_applications_with_ruby/rails_views_tips_and_techniques.markdown][Rails Views]]
-  #   - Extracting logic from the view/controller/model
-  #   - [[https://github.com/turingschool/lesson_plans/blob/master/ruby_02-web_applications_with_ruby/intro_to_the_asset_pipeline.markdown][Asset Pipeline]]
-  #   - [[https://github.com/turingschool/lesson_plans/blob/master/ruby_02-web_applications_with_ruby/transactions_scopes_callbacks.markdown][Transactions/callbacks/scopes]]
-  #   - [[https://github.com/Ada-Developers-Academy/daily-curriculum/blob/f3688db58b98237e6df6602179a7051d65ddd284/topic_resources/rails/active_record.md][ActiveRecord]]
-  #   - [[https://github.com/Ada-Developers-Academy/daily-curriculum/blob/f3688db58b98237e6df6602179a7051d65ddd284/topic_resources/rails/active_record_practice.md][ActiveRecord practice]]
-  #   - [[https://github.com/Ada-Developers-Academy/daily-curriculum/blob/f3688db58b98237e6df6602179a7051d65ddd284/topic_resources/carrierwave.md][Carrierwave]]
+  # [Database Design & Modeling](https://github.com/turingschool/lesson_plans/blob/master/ruby_02-web_applications_with_ruby/database_design_modeling.markdown)
+  # [Database / Schema design](https://github.com/turingschool/lesson_plans/blob/master/ruby_02-web_applications_with_ruby/database_schema_design.markdown)
+  # [REST](https://github.com/turingschool/lesson_plans/blob/master/ruby_02-web_applications_with_ruby/rest_routing_and_controllers_in_rails.markdown)
+  # [Rails Basics Challenge](https://github.com/turingschool/challenges/blob/master/models_databases_relationships_routes_controllers_oh_my.markdown)
+  # [Authorization](https://github.com/turingschool/lesson_plans/blob/master/ruby_02-web_applications_with_ruby/authorization.markdown)
+  # extracting logic from the view/controller/model
+  # [Asset Pipeline] (https://github.com/turingschool/lesson_plans/blob/master/ruby_02-web_applications_with_ruby/intro_to_the_asset_pipeline.markdown)
+  # [Transactions/callbacks/scopes](https://github.com/turingschool/lesson_plans/blob/master/ruby_02-web_applications_with_ruby/transactions_scopes_callbacks.markdown)
+  # [ActiveRecord](https://github.com/Ada-Developers-Academy/daily-curriculum/blob/f3688db58b98237e6df6602179a7051d65ddd284/topic_resources/rails/active_record.md)
+  # [ActiveRecord practice](https://github.com/Ada-Developers-Academy/daily-curriculum/blob/f3688db58b98237e6df6602179a7051d65ddd284/topic_resources/rails/active_record_practice.md)
+  # [Carrierwave](https://github.com/Ada-Developers-Academy/daily-curriculum/blob/f3688db58b98237e6df6602179a7051d65ddd284/topic_resources/carrierwave.md)
   #   - Sqlite / Postgresql
   #   - Heroku
   #   - [[https://gist.github.com/JoshCheek/cb48fcdd063e45bf5185][quiz topics]]
   #   - N+1 queries and other improvements
-  # - Late Topics ::
-  #   - [[https://github.com/Ada-Developers-Academy/daily-curriculum/blob/f3688db58b98237e6df6602179a7051d65ddd284/topic_resources/web-api-101.md][API examples]]
-  #   - [[https://github.com/Ada-Developers-Academy/daily-curriculum/blob/f3688db58b98237e6df6602179a7051d65ddd284/topic_resources/consuming-an-api.md][Consuming an API]]
-  #   - [[https://github.com/Ada-Developers-Academy/daily-curriculum/blob/f3688db58b98237e6df6602179a7051d65ddd284/topic_resources/consuming-an-api.md#practice][Consuming an API]]
-  #   - [[https://github.com/Ada-Developers-Academy/daily-curriculum/blob/f3688db58b98237e6df6602179a7051d65ddd284/topic_resources/omniauth.md][Authentication w/ Omniauth]]
   # - Project Ideas::
-  #   - THOUGHT: What if they build their own mini web framework, and then, before learning something in Rails, they add it to their framework? (is there time for that?)
-  #     - CONCLUSION: Do this!
-  #   - Traffic Spy
-  #   - Task Manager
   #   - Implement sessions
   #   - Implement Authentication
-  #   - [[https://github.com/Ada-Developers-Academy/C3Projects--bEtsy][Betsy]]
-  #   - [[https://github.com/Ada-Developers-Academy/C3Projects--SeeMore][See More]]  
   section.weeks.build do |week|
     week.number = 7
-    week.topics = Topic.forall ['Databases', 'templating languages']
+    # Intro to the web
+    #   - [[https://github.com/turingschool/lesson_plans/blob/master/ruby_02-web_applications_with_ruby/how_the_web_works.markdown][Intro to the web]] Looks like it could be good, so does [[https://github.com/Ada-Developers-Academy/daily-curriculum/blob/f3688db58b98237e6df6602179a7051d65ddd284/topic_resources/networking.md][Ada's networking material]]
+    #   Has a nice picture:
+    #     https://github.com/Ada-Developers-Academy/daily-curriculum/blob/f3688db58b98237e6df6602179a7051d65ddd284/topic_resources/networking.md
+    # HTML / CSS
+    #   - DOM / [[http://www.codecademy.com/en/tracks/web][Codecademy's HTML / CSS track]]
+    #   - [[https://github.com/Ada-Developers-Academy/daily-curriculum/blob/f3688db58b98237e6df6602179a7051d65ddd284/topic_resources/html.md][HTML]]
+    # CSS
+    #   - [[https://github.com/turingschool/lesson_plans/blob/master/ruby_02-web_applications_with_ruby/introduction_to_bootstrap.markdown][Intro to bootstrap]]
+    week.topics = Topic.forall ['Databases', 'templating languages', 'html']
     week.activities.build do |activity|
       activity.name = 'ActiveRecord without Rails'
       activity.topics = Topic.forall ['Seeing is Believing', 'ActiveRecord', 'db patterns', 'interfaces', 'CRUD', 'validating']
@@ -496,39 +510,114 @@ document.sections.create!  order: 2, title: "Internet / Rails" do |section|
       activity.topics = Topic.forall ['erb']
       activity.contents = 'ERB in plain Ruby'
     end
+    week.activities.build do |activity|
+      activity.name = 'Project: C is for cookie, and cookie is for me!'
+      activity.topics = Topic.forall ['cookies']
+      activity.contents = 'Add the ability to get / set cookies to their web framework'
+    end
+    week.activities.build do |activity|
+      activity.name = 'Project: build our own active record'
+      activity.topics = Topic.forall ['erb']
+      activity.contents = 'Build our own ActiveRecord'
+    end
   end
-  
+
   section.weeks.build do |week|
     week.number = 8
-    week.topics = Topic.forall ['Rails']
+    week.topics = Topic.forall ['Rails', 'MVC', 'Cookies', 'Sessions', 'ActiveRecord', 'ActiveSupport', 'Migrations']
     week.activities.build do |activity|
       activity.name = 'Intro to Rails'
-      activity.topics = Topic.forall ['Rails']
-      activity.contents = 'High level (what are the pieces, why are they there, how do they fit together?)'
+      activity.topics = Topic.forall ['Rails', 'MVC']
+      activity.contents = 'High level (what are the pieces, why are they there, how do they fit together?) They need to be able to define the scaffolded pieces of Rails, by hand by the end of this.'
     end
     week.activities.build do |activity|
       activity.name = 'ActiveRecord in Rails'
       activity.topics = Topic.forall ['ActiveRecord', 'migrations', 'models']
-      activity.contents = 'ActiveRecord in Rails (migrations, models)'
+      activity.contents = 'ActiveRecord in Rails migrations, config'
     end
     week.activities.build do |activity|
       activity.name = 'Rails in isolation'
       activity.topics = Topic.forall ['Rails']
-      activity.contents = 'Various Rails pieces in isolation [[https://github.com/JoshCheek/playgrounds][Example]]'
+      activity.contents = "Various Rails pieces in isolation [[https://github.com/JoshCheek/playgrounds][Example]];\n" +
+      "Know how to discover What ActiveSuport gives them\n" +
+      "Know how to discover what ViewHelpers give them\n" +
+      "Routing\n" +
+      "Query Params and forms\n"+ # maybe add this to their framework?
+      "Forms\n"
     end
     week.activities.build do |activity|
-      activity.name = 'Rails project'
+      activity.name = 'Build a single page Rails app that serves a linked list'
       activity.topics = Topic.forall ['Rails']
+      activity.contents = "Using the ides from the prev lesson, we just need a nodes resource, where each node has the id of some other node. Then the show page contains a link to that node. They need to pattern match to be able to explain how this is a linked list."
+    end
+      # Rails Views
+      #   - [[https://github.com/turingschool/lesson_plans/blob/master/ruby_02-web_applications_with_ruby/rails_views_tips_and_techniques.markdown][Rails Views]]
+      # Form / Route helpers
+      #   - [[https://github.com/turingschool/lesson_plans/blob/master/ruby_02-web_applications_with_ruby/forms_and_route_helpers_in_rails.markdown][Form and Route helpers]]
+      # Controller filters
+      #   - [[http://guides.rubyonrails.org/action_controller_overview.html#filters][Controller Filters]]
+    week.activities.build do |activity|
+      activity.name = 'Validations'
+      activity.topics = Topic.forall ['Validations']
+      activity.contents = 'Test suite where they have to show they can use the 5 or so most common validations'
+    end
+    week.activities.build do |activity|
+      activity.name = 'Authentication'
+      activity.topics = Topic.forall ['Authentication', 'Sessions'] # <-- this is annoying, I don't want to tell them it's sessions, I want to tell them what authentication is, then have them discover sessions!
+      activity.contents = <<-CONTENTS.strip_heredoc
+        Tell them what authentication is.
+        Have them figure out how to use it (eg, like below)
+        The conceptual idea for discovering sessions, from my HYYKM notes:
+        In the morning tell them "each user\'s hello_count needs to be unique", then the morning class is to guide their exploration until they realize they can do this with cookies. Afternoon is to implement the solution (code to parse and write cookies). Next day\'s class: have them figure out how to tamper with their hello count, then "Don\'t allow your hello count to be tampered with", guide their exploration until they think of encryption. Give them the smallest viable example, now go do it. Later, after they\'ve seen it in Rails, have them extract their session data.
+
+        Then have them add it to their web app
+        Use the image from here?:
+
+        These might be relevant:
+        * [https://github.com/turingschool/lesson_plans/blob/master/ruby_02-web_applications_with_ruby/sessions_cookies_and_flashes.markdown](Sessions / Cookies / Flashes)
+        * [https://github.com/Ada-Developers-Academy/daily-curriculum/blob/f3688db58b98237e6df6602179a7051d65ddd284/topic_resources/rails/session.md)
+
+        Get code samples from here: [Ada's authentication](https://github.com/Ada-Developers-Academy/daily-curriculum/blob/f3688db58b98237e6df6602179a7051d65ddd284/topic_resources/user-authentication.md)
+      CONTENTS
+    end
+    week.activities.build do |activity|
+      activity.name = 'Authentication'
+      activity.topics = Topic.forall ['Authentication', 'Rails']
+      activity.contents = <<-CONTENTS.strip_heredoc
+      Have them implement authentication in Rails
+      [Turing's authentication](https://github.com/turingschool/lesson_plans/blob/master/ruby_02-web_applications_with_ruby/authentication.markdown)
+
+      Have them decrypt it from the browser (or put this later to remind them of the topic?)
+      [Decrypting a Rails Session](https://gist.github.com/JoshCheek/7b1c1eb231dfa83098be)
+      CONTENTS
+    end
+
+    # [[https://github.com/turingschool/lesson_plans/blob/master/ruby_02-web_applications_with_ruby/feature_testing_in_sinatra_with_capybara.markdown][Capybara]] / [[https://github.com/turingschool/lesson_plans/blob/master/ruby_02-web_applications_with_ruby/feature_testing_rails_minitest_rspec.markdown][Feature Testing]] / [[https://gist.github.com/JoshCheek/f71d7d5d749401733a5e][Minimal Testing Example]]
+    week.activities.build do |activity|
+      activity.name = 'Rails project'
+      activity.topics = Topic.forall ['Rails', 'MVC', 'Authentication']
+      activity.contents = '[Betsy](https://github.com/Ada-Developers-Academy/C3Projects--bEtsy)'
     end
   end
-  
+
   section.weeks.build do |week|
     week.number = 9
-    week.topics = Topic.forall ['APIs']
+    # [Forms](https://github.com/Ada-Developers-Academy/daily-curriculum/blob/f3688db58b98237e6df6602179a7051d65ddd284/topic_resources/submitting-forms.md)
   end
 
   section.weeks.build do |week|
     week.number = 10
+    week.topics = Topic.forall ['APIs']
+    # - Late Topics ::
+    #   [API examples](https://github.com/Ada-Developers-Academy/daily-curriculum/blob/f3688db58b98237e6df6602179a7051d65ddd284/topic_resources/web-api-101.md)
+    #   [Consuming an API](https://github.com/Ada-Developers-Academy/daily-curriculum/blob/f3688db58b98237e6df6602179a7051d65ddd284/topic_resources/consuming-an-api.md)
+    #   [Consuming an API](https://github.com/Ada-Developers-Academy/daily-curriculum/blob/f3688db58b98237e6df6602179a7051d65ddd284/topic_resources/consuming-an-api.md#practice)
+    #   [Authentication w/ Omniauth](https://github.com/Ada-Developers-Academy/daily-curriculum/blob/f3688db58b98237e6df6602179a7051d65ddd284/topic_resources/omniauth.md)
+    week.activities.build do |activity|
+      activity.name = 'API project'
+      activity.topics = Topic.forall ['APIs']
+      activity.contents = "https://github.com/Ada-Developers-Academy/C3Projects--SeeMore"
+    end
   end
   section.weeks.build do |week|
     week.number = 11
@@ -553,7 +642,7 @@ document.sections.create! order: 3, title: "Frontend and Javascript" do |section
        * [Web](https://developer.mozilla.org/en-US/docs/Web/Reference/API)
        CONTENTS
     end
-    
+
     week.activities.build do |activity|
       activity.name = 'Getting feedback'
       activity.topics = Topic.forall ['feedback']
@@ -611,7 +700,7 @@ document.sections.create! order: 3, title: "Frontend and Javascript" do |section
       CONTENTS
     end
   end
-  
+
   section.weeks.build do |week|
     week.number = 13
     week.topics = Topic.forall ['advanced JS', 'the web']
@@ -686,9 +775,9 @@ document.sections.create! order: 3, title: "Frontend and Javascript" do |section
         * TODO: Some kind of project where JS is used to add dynamic functionality to a Rails app?
         CONTENTS
       end
-    end    
+    end
   end
-  
+
   section.weeks.build do |week|
     week.number = 14
     week.activities.build do |activity|
@@ -704,7 +793,7 @@ document.sections.create! order: 3, title: "Frontend and Javascript" do |section
 
       * Something that integrates a Rails backend with Google Maps
       CONTENTS
-    end    
+    end
   end
 
   section.weeks.build do |week|
@@ -715,7 +804,7 @@ document.sections.create! order: 3, title: "Frontend and Javascript" do |section
       activity.contents = 'Continue Capstone project'
     end
   end
-  
+
   section.weeks.build do |week|
     week.number = 15
     week.activities.build do |activity|
