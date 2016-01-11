@@ -1,4 +1,8 @@
 Curriculum
+  Add the load path
+  Move "contents" out into their own files
+  Rename "JSON data types" and "representing nouns" to "data structures"
+  Intersperse the topics in M2 better, right now they're too linear
   Do we discuss project management?
   Do we discuss consuming/producing APIs?
   Ruby interactivity (Gosu?)
