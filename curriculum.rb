@@ -546,16 +546,48 @@ document.sections.create!  order: 2, title: "Internet / Rails" do |section|
       "Forms\n"
     end
     week.activities.build do |activity|
+      activity.name = 'Rails Views Tips and Techniques'
+      activity.topics = Topic.forall ['Rails']
+      activity.contents = "https://github.com/turingschool/lesson_plans/blob/master/ruby_02-web_applications_with_ruby/rails_views_tips_and_techniques.markdown"
+    end
+    week.activities.build do |activity|
       activity.name = 'Build a single page Rails app that serves a linked list'
       activity.topics = Topic.forall ['Rails']
       activity.contents = "Using the ides from the prev lesson, we just need a nodes resource, where each node has the id of some other node. Then the show page contains a link to that node. They need to pattern match to be able to explain how this is a linked list."
     end
-      # Rails Views
-      #   - [[https://github.com/turingschool/lesson_plans/blob/master/ruby_02-web_applications_with_ruby/rails_views_tips_and_techniques.markdown][Rails Views]]
-      # Form / Route helpers
-      #   - [[https://github.com/turingschool/lesson_plans/blob/master/ruby_02-web_applications_with_ruby/forms_and_route_helpers_in_rails.markdown][Form and Route helpers]]
-      # Controller filters
-      #   - [[http://guides.rubyonrails.org/action_controller_overview.html#filters][Controller Filters]]
+    week.activities.build do |activity|
+      activity.name = 'Testing with Capybara'
+      activity.topics = Topic.forall ['capybara', 'testing']
+      activity.contents = <<-CONTENTS
+      * [Minimal Testing Example](https://gist.github.com/JoshCheek/f71d7d5d749401733a5e)
+      * [Feature Testing](https://github.com/turingschool/lesson_plans/blob/master/ruby_02-web_applications_with_ruby/feature_testing_rails_minitest_rspec.markdown)
+      * [Capybara](https://github.com/turingschool/lesson_plans/blob/master/ruby_02-web_applications_with_ruby/feature_testing_in_sinatra_with_capybara.markdown)
+      CONTENTS
+    end
+    week.activities.build do |activity|
+      activity.name = 'Rails project'
+      activity.topics = Topic.forall ['Rails', 'MVC', 'Authentication']
+      activity.contents = '[Betsy](https://github.com/Ada-Developers-Academy/C3Projects--bEtsy)'
+    end
+  end
+
+  section.weeks.build do |week|
+    week.number = 9
+    week.activities.build do |activity|
+      activity.name  = 'Form / Route helpers'
+      activity.topics = Topic.forall ['forms', 'routes']
+      activity.contents = <<-CONTENTS.strip_heredoc
+      [Forms](https://github.com/Ada-Developers-Academy/daily-curriculum/blob/f3688db58b98237e6df6602179a7051d65ddd284/topic_resources/submitting-forms.md)
+      [Form and Route helpers](https://github.com/turingschool/lesson_plans/blob/master/ruby_02-web_applications_with_ruby/forms_and_route_helpers_in_rails.markdown)
+      CONTENTS
+    end
+    week.activities.build do |activity|
+      activity.name = 'Controller filters'
+      activity.topics = Topic.forall ['Controller filters']
+      activity.contents = <<-CONTENTS
+      [Controller Filters][http://guides.rubyonrails.org/action_controller_overview.html#filters
+      CONTENTS
+    end
     week.activities.build do |activity|
       activity.name = 'Validations'
       activity.topics = Topic.forall ['Validations']
@@ -592,35 +624,71 @@ document.sections.create!  order: 2, title: "Internet / Rails" do |section|
       CONTENTS
     end
 
-    # [[https://github.com/turingschool/lesson_plans/blob/master/ruby_02-web_applications_with_ruby/feature_testing_in_sinatra_with_capybara.markdown][Capybara]] / [[https://github.com/turingschool/lesson_plans/blob/master/ruby_02-web_applications_with_ruby/feature_testing_rails_minitest_rspec.markdown][Feature Testing]] / [[https://gist.github.com/JoshCheek/f71d7d5d749401733a5e][Minimal Testing Example]]
-    week.activities.build do |activity|
-      activity.name = 'Rails project'
-      activity.topics = Topic.forall ['Rails', 'MVC', 'Authentication']
-      activity.contents = '[Betsy](https://github.com/Ada-Developers-Academy/C3Projects--bEtsy)'
-    end
-  end
-
-  section.weeks.build do |week|
-    week.number = 9
-    # [Forms](https://github.com/Ada-Developers-Academy/daily-curriculum/blob/f3688db58b98237e6df6602179a7051d65ddd284/topic_resources/submitting-forms.md)
   end
 
   section.weeks.build do |week|
     week.number = 10
     week.topics = Topic.forall ['APIs']
+
+    week.activities.build do |activity|
+      # 1 day
+      activity.name = 'Consuming an API'
+      activity.topics = Topic.forall ['APIs']
+      activity.contents = <<-CONTENTS
+        * [Consuming an API](https://github.com/Ada-Developers-Academy/daily-curriculum/blob/f3688db58b98237e6df6602179a7051d65ddd284/topic_resources/consuming-an-api.md#practice)
+        * Add a challenge for each of the APIs at the bottom of this page. eg:
+          * Find me titles of books dealing with HTTP
+        * What else can you find? (maybe make a mashup of several of these?)
+      CONTENTS
+    end
+
+    week.activities.build do |activity|
+      # 1 day - 1.5
+      activity.name = 'Build an HTTP client'
+      activity.topics = Topic.forall ['APIs', 'HTTP']
+      activity.contents = 'Build Your own HTTP client'
+    end
+
+    week.activities.build do |activity|
+      activity.name = 'Project: Ant sparring!'
+      activity.topics = Topic.forall ['APIs', 'project']
+      activity.contents = <<-CONTENTS
+        * [Ant Sparring](https://github.com/slagyr/ant_sparring)
+
+        * Use your HTTP client to talk to the ant game!
+        * Practice separating the game logic from the API so that you can test it and play it w/o the server running
+        * Work on designing your app so that you can do all of these things,
+          but still have all the functionality available when the server is not runing
+        * Prepare for Enova API by practicing against the ant game (assuming their project is similar)
+      CONTENTS
+    end
+  end
+
+
+  section.weeks.build do |week|
+    week.number = 11
+    # Should we add some of this stuff: ?
     # - Late Topics ::
     #   [API examples](https://github.com/Ada-Developers-Academy/daily-curriculum/blob/f3688db58b98237e6df6602179a7051d65ddd284/topic_resources/web-api-101.md)
-    #   [Consuming an API](https://github.com/Ada-Developers-Academy/daily-curriculum/blob/f3688db58b98237e6df6602179a7051d65ddd284/topic_resources/consuming-an-api.md)
-    #   [Consuming an API](https://github.com/Ada-Developers-Academy/daily-curriculum/blob/f3688db58b98237e6df6602179a7051d65ddd284/topic_resources/consuming-an-api.md#practice)
     #   [Authentication w/ Omniauth](https://github.com/Ada-Developers-Academy/daily-curriculum/blob/f3688db58b98237e6df6602179a7051d65ddd284/topic_resources/omniauth.md)
+    week.topics = Topic.forall ['API', 'OAuth', 'JRuby'] #, maybe sorting algorithms?
     week.activities.build do |activity|
       activity.name = 'API project'
       activity.topics = Topic.forall ['APIs']
       activity.contents = "https://github.com/Ada-Developers-Academy/C3Projects--SeeMore"
     end
-  end
-  section.weeks.build do |week|
-    week.number = 11
+
+    week.activities.build do |activity|
+      activity.name = 'Make a sorting video with JRuby!'
+      activity.topics = Topic.forall ['JRuby', 'Java', 'sorting', 'algorithms']
+      activity.contents = <<-CONTENTS
+        * Build sorting algorithms, then draw them using JRuby!
+        * [Example](https://vimeo.com/channels/sortalgorithms)
+        * We could do other fun JRuby things, eg Robot for automation, Swing for GUI apps,
+          but this seems like a good one to me b/c it lets us do algorithms at the same
+          time, and it lets us reflect on how different algorithms work!
+      CONTENTS
+    end
   end
 end
 
@@ -806,9 +874,9 @@ document.sections.create! order: 3, title: "Frontend and Javascript" do |section
   end
 
   section.weeks.build do |week|
-    week.number = 15
+    week.number = 16
     week.activities.build do |activity|
-      activity.name = 'Capstone Project'
+      activity.name = 'Unallocated'
       activity.topics = Topic.forall ['Leaving this open']
       activity.contents = 'I historically understimate, so it makes sense to shoot for less time rather than perfect time.  Leaving this open to be allocated as appropriate.'
     end
