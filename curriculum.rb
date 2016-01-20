@@ -30,8 +30,8 @@ ActiveRecord::Schema.define do
     t.string :topic
   end
 
-  create_table :section_topics do |t|
-    t.integer :section_id
+  create_table :phase_topics do |t|
+    t.integer :phase_id
     t.integer :topic_id
   end
 
@@ -45,14 +45,14 @@ ActiveRecord::Schema.define do
     t.integer :topic_id
   end
 
-  create_table :sections do |t|
+  create_table :phases do |t|
     t.integer :order
     t.string  :title
     t.integer :document_id
   end
 
   create_table :weeks do |t|
-    t.integer :section_id
+    t.integer :phase_id
     t.integer :number
   end
 
@@ -64,18 +64,18 @@ ActiveRecord::Schema.define do
 end
 
 class Document < ActiveRecord::Base
-  has_many :sections
+  has_many :phases
 end
 
-class Section < ActiveRecord::Base
+class Phase < ActiveRecord::Base
   belongs_to :document
   has_many :weeks
-  has_many :section_topics
-  has_many :topics, through: :section_topics
+  has_many :phase_topics
+  has_many :topics, through: :phase_topics
 end
 
-class SectionTopic < ActiveRecord::Base
-  belongs_to :section
+class PhaseTopic < ActiveRecord::Base
+  belongs_to :phases
   belongs_to :topic
 end
 
@@ -94,7 +94,7 @@ class WeekTopic < ActiveRecord::Base
 end
 
 class Week < ActiveRecord::Base
-  belongs_to :section
+  belongs_to :phase
   has_many :week_topics
   has_many :topics, through: :week_topics
   has_many :activities
@@ -116,10 +116,10 @@ document = Document.create! do |document|
   document.license = 'Unless otherwise noted, this curriculum by Josh Cheek is licensed under - [Creative Commons Attribution-NonCommercial-ShareAlike 3.0](http://creativecommons.org/licenses/by-nc-sa/3.0/)'
 end
 
-document.sections.create! order: 1, title: "Introduction to programming with Ruby" do |section|
-  section.topics = Topic.forall ["Environment", "Ruby", "Problem Solving", "Good Habits"]
+document.phases.create! order: 1, title: "Introduction to programming with Ruby" do |phase|
+  phase.topics = Topic.forall ["Environment", "Ruby", "Problem Solving", "Good Habits"]
 
-  section.weeks.build do |week|
+  phase.weeks.build do |week|
     week.number = 1
     week.topics = Topic.forall ['Editor', 'Ruby', 'Terminal']
     week.activities.build do |activity|
@@ -208,7 +208,7 @@ document.sections.create! order: 1, title: "Introduction to programming with Rub
     end
   end
 
-  section.weeks.build do |week|
+  phase.weeks.build do |week|
     week.number = 2
     week.topics = Topic.forall ['Ruby in context']
     week.activities.build do |activity|
@@ -288,7 +288,7 @@ document.sections.create! order: 1, title: "Introduction to programming with Rub
     end
   end
 
-  section.weeks.build do |week|
+  phase.weeks.build do |week|
     week.number = 3
     week.topics = Topic.forall ['Testing and More objects']
     week.activities.build do |activity|
@@ -365,7 +365,7 @@ document.sections.create! order: 1, title: "Introduction to programming with Rub
     end
   end
 
-  section.weeks.build do |week|
+  phase.weeks.build do |week|
     week.number = 4
     week.topics = Topic.forall ['How to approach a project']
     week.activities.build do |activity|
@@ -394,7 +394,7 @@ document.sections.create! order: 1, title: "Introduction to programming with Rub
     end
   end
 
-  section.weeks.build do |week|
+  phase.weeks.build do |week|
     week.number = 5
     week.topics = Topic.forall ['Modules', 'Blocks']
     week.activities.build do |activity|
@@ -438,7 +438,7 @@ document.sections.create! order: 1, title: "Introduction to programming with Rub
     end
   end
 
-  section.weeks.build do |week|
+  phase.weeks.build do |week|
     week.number = 6
     week.topics = Topic.forall ['HTTP']
     week.activities.build do |activity|
@@ -462,8 +462,8 @@ document.sections.create! order: 1, title: "Introduction to programming with Rub
 end
 
 
-document.sections.create!  order: 2, title: "Internet / Rails" do |section|
-  section.topics = Topic.forall ['internet', 'rails'] # :P
+document.phases.create!  order: 2, title: "Internet / Rails" do |phase|
+  phase.topics = Topic.forall ['internet', 'rails'] # :P
   # Section2 example:
   # [Database Design & Modeling](https://github.com/turingschool/lesson_plans/blob/master/ruby_02-web_applications_with_ruby/database_design_modeling.markdown)
   # [Database / Schema design](https://github.com/turingschool/lesson_plans/blob/master/ruby_02-web_applications_with_ruby/database_schema_design.markdown)
@@ -483,7 +483,7 @@ document.sections.create!  order: 2, title: "Internet / Rails" do |section|
   # - Project Ideas::
   #   - Implement sessions
   #   - Implement Authentication
-  section.weeks.build do |week|
+  phase.weeks.build do |week|
     week.number = 7
     # Intro to the web
     #   - [[https://github.com/turingschool/lesson_plans/blob/master/ruby_02-web_applications_with_ruby/how_the_web_works.markdown][Intro to the web]] Looks like it could be good, so does [[https://github.com/Ada-Developers-Academy/daily-curriculum/blob/f3688db58b98237e6df6602179a7051d65ddd284/topic_resources/networking.md][Ada's networking material]]
@@ -522,7 +522,7 @@ document.sections.create!  order: 2, title: "Internet / Rails" do |section|
     end
   end
 
-  section.weeks.build do |week|
+  phase.weeks.build do |week|
     week.number = 8
     week.topics = Topic.forall ['Rails', 'MVC', 'Cookies', 'Sessions', 'ActiveRecord', 'ActiveSupport', 'Migrations']
     week.activities.build do |activity|
@@ -571,7 +571,7 @@ document.sections.create!  order: 2, title: "Internet / Rails" do |section|
     end
   end
 
-  section.weeks.build do |week|
+  phase.weeks.build do |week|
     week.number = 9
     week.activities.build do |activity|
       activity.name  = 'Form / Route helpers'
@@ -626,7 +626,7 @@ document.sections.create!  order: 2, title: "Internet / Rails" do |section|
 
   end
 
-  section.weeks.build do |week|
+  phase.weeks.build do |week|
     week.number = 10
     week.topics = Topic.forall ['APIs']
 
@@ -665,7 +665,7 @@ document.sections.create!  order: 2, title: "Internet / Rails" do |section|
   end
 
 
-  section.weeks.build do |week|
+  phase.weeks.build do |week|
     week.number = 11
     # Should we add some of this stuff: ?
     # - Late Topics ::
@@ -694,10 +694,10 @@ end
 
 
 
-document.sections.create! order: 3, title: "Frontend and Javascript" do |section|
-  section.topics = Topic.forall ["Javascript", "Frontend"]
+document.phases.create! order: 3, title: "Frontend and Javascript" do |phase|
+  phase.topics = Topic.forall ["Javascript", "Frontend"]
 
-  section.weeks.build do |week|
+  phase.weeks.build do |week|
     week.number = 12
     week.topics = []
     week.activities.build do |activity|
@@ -769,7 +769,7 @@ document.sections.create! order: 3, title: "Frontend and Javascript" do |section
     end
   end
 
-  section.weeks.build do |week|
+  phase.weeks.build do |week|
     week.number = 13
     week.topics = Topic.forall ['advanced JS', 'the web']
     week.activities.build do |activity|
@@ -846,7 +846,7 @@ document.sections.create! order: 3, title: "Frontend and Javascript" do |section
     end
   end
 
-  section.weeks.build do |week|
+  phase.weeks.build do |week|
     week.number = 14
     week.activities.build do |activity|
       activity.name = 'Capstone Project'
@@ -864,7 +864,7 @@ document.sections.create! order: 3, title: "Frontend and Javascript" do |section
     end
   end
 
-  section.weeks.build do |week|
+  phase.weeks.build do |week|
     week.number = 15
     week.activities.build do |activity|
       activity.name = 'Capstone Project'
@@ -873,7 +873,7 @@ document.sections.create! order: 3, title: "Frontend and Javascript" do |section
     end
   end
 
-  section.weeks.build do |week|
+  phase.weeks.build do |week|
     week.number = 16
     week.activities.build do |activity|
       activity.name = 'Unallocated'
@@ -885,10 +885,10 @@ end
 
 
 
-document.sections.order(:order).each do |section|
-  puts section.title
-  puts "Topics: #{section.topics.map(&:topic)}"
-  section.weeks.order(:number).each do |week|
+document.phases.order(:order).each do |phase|
+  puts phase.title
+  puts "Topics: #{phase.topics.map(&:topic)}"
+  phase.weeks.order(:number).each do |week|
     puts "  Week #{week.number}"
     puts "    Topics: #{week.topics.map(&:topic)}" if week.topics.any?
     week.activities.each do |activity|
