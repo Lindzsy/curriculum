@@ -123,7 +123,7 @@ document.phases.create! order: 1, title: "Introduction to programming with Ruby"
     week.number = 1
     week.topics = Topic.forall ['Editor', 'Ruby', 'Terminal']
     week.activities.build do |activity|
-      activity.name   = "Define the Relationship"
+      activity.name   = "What to expect"
       activity.topics = Topic.forall ["positive behaviour", "collaboration", "grit"]
     end
     week.activities.build do |activity|
@@ -558,7 +558,7 @@ document.phases.create!  order: 2, title: "Internet / Rails" do |phase|
     week.activities.build do |activity|
       activity.name = 'Testing with Capybara'
       activity.topics = Topic.forall ['capybara', 'testing']
-      activity.contents = <<-CONTENTS
+      activity.contents = <<-CONTENTS.strip_heredoc
       * [Minimal Testing Example](https://gist.github.com/JoshCheek/f71d7d5d749401733a5e)
       * [Feature Testing](https://github.com/turingschool/lesson_plans/blob/master/ruby_02-web_applications_with_ruby/feature_testing_rails_minitest_rspec.markdown)
       * [Capybara](https://github.com/turingschool/lesson_plans/blob/master/ruby_02-web_applications_with_ruby/feature_testing_in_sinatra_with_capybara.markdown)
@@ -584,7 +584,7 @@ document.phases.create!  order: 2, title: "Internet / Rails" do |phase|
     week.activities.build do |activity|
       activity.name = 'Controller filters'
       activity.topics = Topic.forall ['Controller filters']
-      activity.contents = <<-CONTENTS
+      activity.contents = <<-CONTENTS.strip_heredoc
       [Controller Filters][http://guides.rubyonrails.org/action_controller_overview.html#filters
       CONTENTS
     end
@@ -634,7 +634,7 @@ document.phases.create!  order: 2, title: "Internet / Rails" do |phase|
       # 1 day
       activity.name = 'Consuming an API'
       activity.topics = Topic.forall ['APIs']
-      activity.contents = <<-CONTENTS
+      activity.contents = <<-CONTENTS.strip_heredoc
         * [Consuming an API](https://github.com/Ada-Developers-Academy/daily-curriculum/blob/f3688db58b98237e6df6602179a7051d65ddd284/topic_resources/consuming-an-api.md#practice)
         * Add a challenge for each of the APIs at the bottom of this page. eg:
           * Find me titles of books dealing with HTTP
@@ -652,7 +652,7 @@ document.phases.create!  order: 2, title: "Internet / Rails" do |phase|
     week.activities.build do |activity|
       activity.name = 'Project: Ant sparring!'
       activity.topics = Topic.forall ['APIs', 'project']
-      activity.contents = <<-CONTENTS
+      activity.contents = <<-CONTENTS.strip_heredoc
         * [Ant Sparring](https://github.com/slagyr/ant_sparring)
 
         * Use your HTTP client to talk to the ant game!
@@ -681,7 +681,7 @@ document.phases.create!  order: 2, title: "Internet / Rails" do |phase|
     week.activities.build do |activity|
       activity.name = 'Make a sorting video with JRuby!'
       activity.topics = Topic.forall ['JRuby', 'Java', 'sorting', 'algorithms']
-      activity.contents = <<-CONTENTS
+      activity.contents = <<-CONTENTS.strip_heredoc
         * Build sorting algorithms, then draw them using JRuby!
         * [Example](https://vimeo.com/channels/sortalgorithms)
         * We could do other fun JRuby things, eg Robot for automation, Swing for GUI apps,
@@ -773,76 +773,74 @@ document.phases.create! order: 3, title: "Frontend and Javascript" do |phase|
     week.number = 13
     week.topics = Topic.forall ['advanced JS', 'the web']
     week.activities.build do |activity|
-      week.activities.build do |activity|
-        activity.name  = 'Object Oriented JS (mechanics and paradigms)'
-        activity.topics = Topic.forall []
-        activity.contents = <<-CONTENTS.strip_heredoc
-        * https://github.com/mdn/advanced-js-fundamentals-ck/tree/gh-pages/tutorials/03-object-oriented-javascript
-        * 01-introduction-to-object-oriented-javascript.md
-          * JS Object Model
-          * new keyword (have them implement their own?)
-          * Constructors
-          * `this` in an OO context
-          * implicit return of the instance
-          * Capitalization is convention
-        * 02-building-a-chainable-api.md
-          * Common interface patterns (eg jQuery)
-          * Contemplating abstraction
-        * 03-canvas-and-object-oriented-javascript.md
-          * (as a vehicle for talking about OOJS)
-          * First see what it looks like procedurally
-          * Add the constraint to do this 10x
-          * Refactoring to OO
-        CONTENTS
-      end
-      week.activities.build do |activity|
-        activity.name  = 'Challenge'
-        activity.topics = Topic.forall []
-        activity.contents = <<-CONTENTS.strip_heredoc
-        * Redo linked list with a constructor / prototype
-        * If we wind up introducing other data structures, we can have them swap out which one they do,
-          we'll be doing this one frequently enough that we can expand on it and do something more fun like binary search trees.
-        CONTENTS
-      end
-      week.activities.build do |activity|
-        activity.name  = 'Events / working with the DOM'
-        activity.topics = Topic.forall []
-        activity.contents = <<-CONTENTS.strip_heredoc
-        * https://github.com/mdn/advanced-js-fundamentals-ck/tree/1266706b188590da8d682cca046227ae5a307842/tutorials/04-events
-        * 01-basic-events.md
-          * also builtin querying api
-          * event listeners
-        * 02-event-bubbling.md / 03-adding-and-removing.md / 05-event-delegation.md
-          * Maybe have them do the experiment and then define their own set of rules to explain it
-          * Patterns for avoiding repetition (eg defining the event listener on the pre-existing elements and also on ones you add later)
-        * 04-keycodes.md
-          * some exercises to do interesting stuff
-        * 06-data-attributes.md
-          * "Another thing I thought about for JS that I tried to teach all the time is proper use of DOM selectors for JS behavior.
-            Classes and Ids are often used by designers so attaching to them for JS behavior becomes fragile,
-            since they may rename or move the classes for style changes.  I always like to use data-ids and then
-            communicate that if you see a data-id that means JS is attached there.  Any other part of it -- the HTML or the CSS is still liable to change.
-            This also implies to not have your JS be dependent on a specific HTML structure as designers can change that a lot too." -- Ben Voss
-          * C style namespacing
-        CONTENTS
-      end
-      week.activities.build do |activity|
-        activity.name  = 'Environment'
-        activity.topics = Topic.forall []
-        activity.contents = <<-CONTENTS.strip_heredoc
-        Npm, lodash, (browserify | webpack) -- find a good resource for the basics of these things
-        * Not necessary to know all their ins and outs, just enough to support the game time below
-        CONTENTS
-      end
-      week.activities.build do |activity|
-        activity.name  = 'Project'
-        activity.topics = Topic.forall []
-        activity.contents = <<-CONTENTS.strip_heredoc
-        * Build their own game
-        * https://github.com/turingschool/lesson_plans/blob/master/ruby_04-apis_and_scalability/gametime_project.markdown
-        * TODO: Some kind of project where JS is used to add dynamic functionality to a Rails app?
-        CONTENTS
-      end
+      activity.name  = 'Object Oriented JS (mechanics and paradigms)'
+      activity.topics = Topic.forall []
+      activity.contents = <<-CONTENTS.strip_heredoc
+      * https://github.com/mdn/advanced-js-fundamentals-ck/tree/gh-pages/tutorials/03-object-oriented-javascript
+      * 01-introduction-to-object-oriented-javascript.md
+        * JS Object Model
+        * new keyword (have them implement their own?)
+        * Constructors
+        * `this` in an OO context
+        * implicit return of the instance
+        * Capitalization is convention
+      * 02-building-a-chainable-api.md
+        * Common interface patterns (eg jQuery)
+        * Contemplating abstraction
+      * 03-canvas-and-object-oriented-javascript.md
+        * (as a vehicle for talking about OOJS)
+        * First see what it looks like procedurally
+        * Add the constraint to do this 10x
+        * Refactoring to OO
+      CONTENTS
+    end
+    week.activities.build do |activity|
+      activity.name  = 'Challenge'
+      activity.topics = Topic.forall []
+      activity.contents = <<-CONTENTS.strip_heredoc
+      * Redo linked list with a constructor / prototype
+      * If we wind up introducing other data structures, we can have them swap out which one they do,
+        we'll be doing this one frequently enough that we can expand on it and do something more fun like binary search trees.
+      CONTENTS
+    end
+    week.activities.build do |activity|
+      activity.name  = 'Events / working with the DOM'
+      activity.topics = Topic.forall []
+      activity.contents = <<-CONTENTS.strip_heredoc
+      * https://github.com/mdn/advanced-js-fundamentals-ck/tree/1266706b188590da8d682cca046227ae5a307842/tutorials/04-events
+      * 01-basic-events.md
+        * also builtin querying api
+        * event listeners
+      * 02-event-bubbling.md / 03-adding-and-removing.md / 05-event-delegation.md
+        * Maybe have them do the experiment and then define their own set of rules to explain it
+        * Patterns for avoiding repetition (eg defining the event listener on the pre-existing elements and also on ones you add later)
+      * 04-keycodes.md
+        * some exercises to do interesting stuff
+      * 06-data-attributes.md
+        * "Another thing I thought about for JS that I tried to teach all the time is proper use of DOM selectors for JS behavior.
+          Classes and Ids are often used by designers so attaching to them for JS behavior becomes fragile,
+          since they may rename or move the classes for style changes.  I always like to use data-ids and then
+          communicate that if you see a data-id that means JS is attached there.  Any other part of it -- the HTML or the CSS is still liable to change.
+          This also implies to not have your JS be dependent on a specific HTML structure as designers can change that a lot too." -- Ben Voss
+        * C style namespacing
+      CONTENTS
+    end
+    week.activities.build do |activity|
+      activity.name  = 'Environment'
+      activity.topics = Topic.forall []
+      activity.contents = <<-CONTENTS.strip_heredoc
+      Npm, lodash, (browserify | webpack) -- find a good resource for the basics of these things
+      * Not necessary to know all their ins and outs, just enough to support the game time below
+      CONTENTS
+    end
+    week.activities.build do |activity|
+      activity.name  = 'Project'
+      activity.topics = Topic.forall []
+      activity.contents = <<-CONTENTS.strip_heredoc
+      * Build their own game
+      * https://github.com/turingschool/lesson_plans/blob/master/ruby_04-apis_and_scalability/gametime_project.markdown
+      * TODO: Some kind of project where JS is used to add dynamic functionality to a Rails app?
+      CONTENTS
     end
   end
 
@@ -885,17 +883,32 @@ end
 
 
 
+puts "Code Platoon - Curriculum"
+puts "========================="
+puts
+
 document.phases.order(:order).each do |phase|
-  puts phase.title
-  puts "Topics: #{phase.topics.map(&:topic)}"
+  puts "#{phase.title}\n-----------------\n\n"
+  puts
+  puts "Topics: #{phase.topics.map(&:topic).join(", ")}"
+  puts
   phase.weeks.order(:number).each do |week|
-    puts "  Week #{week.number}"
-    puts "    Topics: #{week.topics.map(&:topic)}" if week.topics.any?
+    puts "### Week #{week.number}\n\n"
+    puts
+    puts "Topics: #{week.topics.map(&:topic).join(", ")}" if week.topics.any?
+    puts
     week.activities.each do |activity|
-      puts "    #{activity.name}"
-      puts activity.contents.gsub(/^/, '      ') if activity.contents
+      puts "#### #{activity.name}"
+      puts
+      puts "Topics: #{activity.topics.map(&:topic).join(", ")}\n" if activity.topics.any?
+      puts activity.contents if activity.contents
+      puts
     end
   end
 end
+
 puts
+puts
+puts 'License'
+puts '-------'
 puts document.license
