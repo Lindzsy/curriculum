@@ -1,7 +1,7 @@
 Code Platoon - Curriculum
 =========================
 
-Introduction to programming with Ruby
+Phase 1 - Introduction to programming with Ruby
 -----------------
 
 
@@ -296,7 +296,7 @@ Topics: blocks
 
 If any of their other work can be given a web interface, lets do that!
 
-Internet / Rails
+Phase 2 - Internet / Rails
 -----------------
 
 
@@ -473,7 +473,7 @@ Topics: JRuby, Java, sorting, algorithms
   but this seems like a good one to me b/c it lets us do algorithms at the same
   time, and it lets us reflect on how different algorithms work!
 
-Frontend and Javascript
+Phase 3 - Frontend and Javascript
 -----------------
 
 

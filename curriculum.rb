@@ -888,7 +888,7 @@ puts "========================="
 puts
 
 document.phases.order(:order).each do |phase|
-  puts "#{phase.title}\n-----------------\n\n"
+  puts "Phase #{phase.order} - #{phase.title}\n-----------------\n\n"
   puts
   puts "Topics: #{phase.topics.map(&:topic).join(", ")}"
   puts
