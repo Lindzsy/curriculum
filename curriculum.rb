@@ -123,8 +123,9 @@ document.phases.create! order: 1, title: "Introduction to programming with Ruby"
     week.number = 1
     week.topics = Topic.forall ['Editor', 'Ruby', 'Terminal']
     week.activities.build do |activity|
-      activity.name   = "What to expect"
-      activity.topics = Topic.forall ["positive behaviour", "collaboration", "grit"]
+      activity.name     = "Expectations"
+      activity.topics   = Topic.forall ["positive behaviour", "collaboration", "grit"]
+      activity.contents = '[material](https://github.com/CodePlatoon/curriculum/blob/master/phase1/expectations.md)'
     end
     week.activities.build do |activity|
       activity.name = 'Get to know each other'

@@ -12,9 +12,10 @@ Topics: Environment, Ruby, Problem Solving, Good Habits
 
 Topics: Editor, Ruby, Terminal
 
-#### What to expect
+#### Expectations
 
 Topics: positive behaviour, collaboration, grit
+[material](https://github.com/CodePlatoon/curriculum/blob/master/phase1/expectations.md)
 
 #### Get to know each other
 
