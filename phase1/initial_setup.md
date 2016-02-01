@@ -8,14 +8,16 @@ Purpose
 * Get a development environment set up
 
 
-TODO:
------
+Instructions
+------------
 
-* Pull in my setup from 1508
-* Amend it for cloud 9
-* Add to it: make a cheatsheets directory
+We'll approximately follow the instructions from the last time I did this:
+[link](https://github.com/JoshCheek/dotfiles-for-students).
 
-Local dev environment
----------------------
 
-* If anyone is going to develop locally, get their computers set up.
+Which environments?
+-------------------
+
+* Get a list of all the environments.
+* If anyone's seems untenable, they can use https://c9.io/ (will use `apt-get` instead of homebrew)
+* Figure out the nuances of their environments so we don't get surprised in class.

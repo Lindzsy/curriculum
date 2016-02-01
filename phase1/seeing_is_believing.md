@@ -6,13 +6,20 @@ Purpose
 
 * Familiarize them with our laboratory
 
+What is it?
+-----------
+
+A tool that lets you evaluate and see the result of Ruby code from your editor.
+[https://github.com/JoshCheek/seeing_is_believing](https://github.com/JoshCheek/seeing_is_believing)
+
+![Seeing is Believing example](https://s3.amazonaws.com/josh.cheek/images/scratch/sib-example1.gif)
+
 Make sure it is installed
 -------------------------
 
-I probably need to make an integration for the ACE editor
-...or maybe just make them use vim?
-
-* [https://github.com/JoshCheek/seeing_is_believing](https://github.com/JoshCheek/seeing_is_believing)
+TODO: Vim installation instructions can go here,
+if I figure them out for vim in time.
+Then include the keybindings below.
 
 The manifestations
 ------------------

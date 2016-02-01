@@ -1,11 +1,10 @@
-Smart is a Choice
-=================
-
+Mindset of a Learner
+====================
 
 Purpose
 -------
 
-* Let go of the Maybeline Mindset
+* How to know what you know, given the massive quantity of unknowns you'll be dealing with constantly?
 * Learn how to tell whether what you're doing is effective
 
 
@@ -14,6 +13,14 @@ Knowledge has no upper bound
 
 You can never reach 100% understanding, instead, as you get closer,
 you will discover entire dimensions of context that change how you perceive everything.
+
+
+Process: Science
+----------------
+
+* If you know nothing, "measure" (just get in there and get some info)
+* If you have some knowledge, hypothesize (predict other things based on what you know)
+* If you know it reasonably, find all the things that don't make sense, and figure out why.
 
 
 Measuring Knowledge
