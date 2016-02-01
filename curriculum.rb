@@ -156,10 +156,8 @@ document.phases.create! order: 1, title: "Introduction to programming with Ruby"
       activity.contents = 'Practice poweruser keybindings'
     end
     week.activities.build do |activity|
-      activity.name = 'Smart is a choice'
-      activity.contents = <<-CONTENTS.strip_heredoc
-      Choose to behave in an empowered manner.
-      CONTENTS
+      activity.name = 'Mindset of a learner'
+      activity.contents = '[material](https://github.com/CodePlatoon/curriculum/blob/master/phase1/mindset_of_a_learner.md)'
     end
     week.activities.build do |activity|
       activity.name = 'Seeing Is Believing'

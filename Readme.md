@@ -39,9 +39,9 @@ Be able to perform [these katas](https://github.com/JoshCheek/team_grit/blob/mas
 
 Practice poweruser keybindings
 
-#### Smart is a choice
+#### Mindset of a learner
 
-Choose to behave in an empowered manner.
+[material](https://github.com/CodePlatoon/curriculum/blob/master/phase1/mindset_of_a_learner.md)
 
 #### Seeing Is Believing
 
