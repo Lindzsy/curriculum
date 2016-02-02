@@ -69,19 +69,29 @@ account balances not as integers, but as numbers containing decimal places.
 
 Submit this program as Banking-5.rb
 
-Step 6:  In your program from Step 5, define a method named deposit.  This method:
+Step 6
+------
+In your program from Step 5, define a method named deposit.  This method:
+
   * accepts only one parameter, which is the amount to be deposited
   * adds the amount to be deposited to the account balance
   * and that's all it does.
+
 Output the account holder's name and the updated balance in the main body of the program,
 not in the deposit method.
-a.  doing this will cause lots of problems...what are they, and why do they occur?
+
+1.  doing this will cause lots of problems...what are they, and why do they occur?
+
 Write a couple of lines/paragraphs describing what's going wrong and the reasons for it (and, 
 if possible, the solutions.)
+
 Submit this explanation as Banking-6.md
 
-Extra challenge (optional):  At the end of the fiscal year, even our bank must do some accounting.  
+Extra challenge (optional)
+--------------------------
+At the end of the fiscal year, even our bank must do some accounting.  
 In your program from Step 5, add up the balances in all of the accounts, and output this sum.
+
 Submit this program as Banking-7.rb
 
 
