@@ -3,8 +3,8 @@ BANKING HOMEWORK
 The problems are graduated; each one builds on the previous one.  
 Write and test your code for each step, and don't move on to the next step
 until you are satisfied that it works properly and you know why. 
-After completing each step, submit in your GitHub repo (the one
-we set up on Tuesday, Feb. 2)
+After completing each step, submit your code for that step 
+in your GitHub repo (the one we set up on Tuesday, Feb. 2)
 ----------------------------------------------------------------
 
 Joe has a bank account containing $250
@@ -17,7 +17,7 @@ b.  add $200 to the balance
 c.  output the updated balance.
 Submit this program as Banking-1.rb
 
-Step 2:  Write a Ruby program to add money to Sally's bank account:
+Step 2:  Write a Ruby program to depost money in Sally's bank account:
 a.  output the beginning balance in Sally's account
 b.  read in an amount from the user at the keyboard and add it to the balance
 c.  output the updated balance.
@@ -61,8 +61,7 @@ if possible, the solutions.)
 Submit this text as Banking-6.md
 
 Extra challenge (optional):  At the end of the fiscal year, even our bank must do some accounting.  
-Write a Ruby program to add up the balances in all of the accounts in your program from Step 5,
-and output this sum.
+In your program from Step 5, add up the balances in all of the accounts, and output this sum.
 Submit this program as Banking-7.rb
 
 
