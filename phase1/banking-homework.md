@@ -1,9 +1,10 @@
 BANKING HOMEWORK - Tuesday, Feb. 2
 -----------------------------------------------------------------
+
 The problems are graduated; each one builds on the previous one.  
 Write and test your code for each step, and don't move on to the next step
 until you are satisfied that it works properly and you know why. 
-----------------------------------------------------------------
+
 
 Joe has a bank account containing $250
 Sally has a bank account containing $4,000
