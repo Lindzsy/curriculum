@@ -1,23 +1,26 @@
-Banking homework
+BANKING HOMEWORK
 The problems are graduated; each one builds on the previous one.  
-Don't move on to the next step until the previous step works,
-and you are satisfied that you understand why it works the way it does.  
-Submit your code from each step at....
+Write and test the code for each step, and don't move on to the next step
+until you are satisfied that it works properly and you know why. 
+After completing each step, submit your code at gist.github.com
 
 Joe has a bank account containing $250
 Sally has a bank account containing $4,000
 Implement the names as strings and the account balances as integers.
 
-Step 1:  Write a Ruby program to add money to Sally's bank account:
+Step 1:  Write a Ruby program to deposit money in Sally's bank account:
 a.  output the beginning balance in Sally's account
 b.  add $200 to the balance
-c.  output the updated balance
+c.  output the updated balance.
+Submit this program as Banking-1.rb
 
 Step 2:  Write a Ruby program to add money to Sally's bank account:
 a.  output the beginning balance in Sally's account
 b.  read in an amount from the user at the keyboard and add it to the balance
-c.  output the updated balance
-d.  What if the user types in hotdog for the amount to be added?  Make the program handle this gracefully.
+c.  output the updated balance.
+d.  What if the user types in hotdog for the amount to be added?  Make the program handle such
+input gracefully.
+Submit this program as Banking-2.rb
 
 Step 3:  Let's make this more realistic.  Write a Ruby program that outputs Sally's bank account
 as $4000.00, not as 4000
@@ -25,6 +28,7 @@ a.  implement this change by modifying the output only; don't modify the data ty
 balance, which should remain an integer.
 b.  Extra challenge (optional):  output the balance with commas preceding every 3 digits, so that
 Sally's balance is output as $4,000.00
+Submit this program as Banking-3.rb
 
 Step 4:  Implement the bank accounts as key/value pairs (hashes) 
 containing the account holder's name (key) and the amount in the account (value).  
@@ -35,10 +39,12 @@ b.  output account holder's name and the beginning balance in the account
 c.  read in an amount to be deposited
 d.  output account holder's name and the updated balance
 e.  What if the user enters a name that is not associated with an account?  Make the program handle this gracefully.
+Submit this program as Banking-4.rb
 
 Step 5:  The accounts even in this rudimentary bank should be able to handle dollars and cents!  Implement the
 account balances not as integers, but as numbers containing decimal places. 
 a.  make all necessary changes to your program from Step 4.
+Submit this program as Banking-5.rb
 
 Step 6:  In your program from Step 5, define a method named deposit.  This method:
   * takes only one input argument, which is the amount to be added
@@ -49,9 +55,11 @@ not in the deposit method.
 a.  doing this will cause lots of problems...what are they, and why do they occur?
 Write a couple of lines/paragraphs describing what's going wrong and the reasons for it (and, 
 if possible, the solutions.)
+Submit this explanation as Banking-6.md (or whatever the file type is)
 
 Extra challenge (optional):  At the end of the fiscal year, even our bank must do some accounting.  
-Write a Ruby program to add up the balances in all of the accounts, and output this sum.
-
+Write a Ruby program to add up the balances in all of the accounts in your program from Step 5,
+and output this sum.
+Submit this program as Banking-7.rb
 
 
