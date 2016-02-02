@@ -19,7 +19,14 @@ b.  read in an amount from the user at the keyboard and add it to the balance
 c.  output the updated balance
 d.  What if the user types in hotdog for the amount to be added?  Make the program handle this gracefully.
 
-Step 3:  Implement the bank accounts as key/value pairs (hashes) 
+Step 3:  Let's make this more realistic.  Write a Ruby program that outputs Sally's bank account
+as $4000.00, not as 4000
+a.  implement this change by modifying the output only; don't modify the data type of the account 
+balance, which should remain an integer.
+b.  Extra challenge (optional):  output the balance with commas preceding every 3 digits, so that
+Sally's balance is output as $4,000.00
+
+Step 4:  Implement the bank accounts as key/value pairs (hashes) 
 containing the account holder's name and the amount in the account.  Create an array of hashes 
 and add a few more accounts to your liking (e.g. Wanda, $2) to the array
 Write a Ruby program to mimic a bank teller:
@@ -38,12 +45,16 @@ c.  read in an amount to be deposited
 d.  output account holder's name and the updated balance
 e.  What if the user enters a name that is not associated with an account?  Make the program handle this gracefully.
 
-Step 5.  The accounts in this rudimentary bank should be able to handle dollars and cents.  Implement the
+Step 5:  The accounts in this rudimentary bank should be able to handle dollars and cents!  Implement the
 account balances not as integers, but as numbers containing decimal places. 
-a.  make all necessary changes to your program from Step 4.
+a.  make all necessary changes to your program from Step 5.
 
-Step 6:  In your program from Step 4, define a method named deposit that takes one input argument, 
-which is the amount to be added to the account balance.  
+Step 6:  In your program from Step 5, define a method named deposit.  This method:
+  * takes only one input argument, which is the amount to be added
+  * adds this input value to the account balance
+  * and that's all it does.
+Output the account holder's name and the updated balance in the main body of the program,
+not in the deposit method.
 a.  doing this will cause all kinds of problems...what are they, and why do they occur?
 Write a couple of lines/paragraphs describing what's going wrong and the reasons for it (and, 
 if possible, the solutions.)
