@@ -50,15 +50,15 @@ a.  make all necessary changes to your program from Step 4.
 Submit this program as Banking-5.rb
 
 Step 6:  In your program from Step 5, define a method named deposit.  This method:
-  * takes only one argument, which is the amount to be added
-  * adds the amount to be added to the account balance
+  * accepts only one parameter, which is the amount to be deposited
+  * adds the amount to be deposited to the account balance
   * and that's all it does.
 Output the account holder's name and the updated balance in the main body of the program,
 not in the deposit method.
 a.  doing this will cause lots of problems...what are they, and why do they occur?
 Write a couple of lines/paragraphs describing what's going wrong and the reasons for it (and, 
 if possible, the solutions.)
-Submit this text as Banking-6.md
+Submit this explanation as Banking-6.md
 
 Extra challenge (optional):  At the end of the fiscal year, even our bank must do some accounting.  
 In your program from Step 5, add up the balances in all of the accounts, and output this sum.
