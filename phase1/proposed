@@ -1,8 +1,10 @@
 Banking homework
-The problems are graduated; each one builds on the previous one.  Don't move on to the next step until the previous step works and you are satisfied that you understand why it works the way it does.
+The problems are graduated; each one builds on the previous one.  
+Don't move on to the next step until the previous step works,
+and you are satisfied that you understand why it works the way it does.
 
-Joe has a bank account containing $250.00
-Sally has a bank account containing $4,000.00
+Joe has a bank account containing $250
+Sally has a bank account containing $4,000
 
 Step 1:  Write a Ruby program to add money to Sally's bank account:
 a.  output the beginning balance in Sally's account
@@ -15,4 +17,12 @@ b.  read in an amount from the user at the keyboard and add it to the balance
 c.  output the updated balance
 d.  What if the user types in hotdog for the amount to be added?  Make the program handle this gracefully.
 
-Step 3:  You may have done so already, but if not, implement the accounts as key/value pairs (hashes) containing the account holder's name and the amount in the account.  Create an array of hashes and add a few more accounts to your liking (e.g. Wanda, $2.50).
+Step 3:  Implement the bank accounts as key/value pairs (hashes) 
+containing the account holder's name and the amount in the account.  Create an array of hashes 
+and add a few more accounts to your liking (e.g. Wanda, $2)
+Write a Ruby program to mimic a teller:
+a.  read in the account holder's name
+b.  output account holder's name and the beginning balance in the account 
+c.  read in an amount to be deposited
+d.  output account holder's name and the updated balance
+
