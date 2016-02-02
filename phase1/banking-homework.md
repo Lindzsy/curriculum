@@ -16,9 +16,10 @@ Implement the names as strings and the account balances as integers.
 Step 1 
 ------
 Write a Ruby program to deposit money in Sally's bank account:
-1.  output the beginning balance in Sally's account
-2.  add $200 to the balance
-3.  output the updated balance.
+
+1. output the beginning balance in Sally's account
+2. add $200 to the balance
+3. output the updated balance.
 
 Submit this program as Banking-1.rb
 
