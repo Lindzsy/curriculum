@@ -1,10 +1,12 @@
 Banking homework
 The problems are graduated; each one builds on the previous one.  
 Don't move on to the next step until the previous step works,
-and you are satisfied that you understand why it works the way it does.
+and you are satisfied that you understand why it works the way it does.  
+Submit your code from each step at....
 
 Joe has a bank account containing $250
 Sally has a bank account containing $4,000
+Implement the names as two strings and the account balances as two integers.
 
 Step 1:  Write a Ruby program to add money to Sally's bank account:
 a.  output the beginning balance in Sally's account
@@ -36,4 +38,7 @@ c.  read in an amount to be deposited
 d.  output account holder's name and the updated balance
 e.  What if the user enters a name that is not associated with an account?  Make the program handle this gracefully.
 
-Step 5:  D
+
+
+Step 5:  In your program from Step 4, define a method that takes one input argument and 
+
