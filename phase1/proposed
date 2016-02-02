@@ -6,7 +6,7 @@ Submit your code from each step at....
 
 Joe has a bank account containing $250
 Sally has a bank account containing $4,000
-Implement the names as two strings and the account balances as two integers.
+Implement the names as strings and the account balances as integers.
 
 Step 1:  Write a Ruby program to add money to Sally's bank account:
 a.  output the beginning balance in Sally's account
@@ -35,10 +35,6 @@ b.  output account holder's name and the beginning balance in the account
 c.  read in an amount to be deposited
 d.  output account holder's name and the updated balance
 e.  What if the user enters a name that is not associated with an account?  Make the program handle this gracefully.
-
-Step 5:  In your program from Step 4, the account holder names should not be implemented as strings;
-they should just be labels. 
-a.  implement this change in your program from Step 4 so that nothing changes in the program input and output.
 
 Step 6:  The accounts even in this rudimentary bank should be able to handle dollars and cents!  Implement the
 account balances not as integers, but as numbers containing decimal places. 
