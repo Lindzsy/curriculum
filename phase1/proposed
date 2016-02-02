@@ -50,8 +50,8 @@ a.  make all necessary changes to your program from Step 4.
 Submit this program as Banking-5.rb
 
 Step 6:  In your program from Step 5, define a method named deposit.  This method:
-  * takes only one input argument, which is the amount to be added
-  * adds this input value to the account balance
+  * takes only one argument, which is the amount to be added
+  * adds the amount to be added to the account balance
   * and that's all it does.
 Output the account holder's name and the updated balance in the main body of the program,
 not in the deposit method.
