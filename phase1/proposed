@@ -54,8 +54,8 @@ a.  doing this will cause lots of problems...what are they, and why do they occu
 Write a couple of lines/paragraphs describing what's going wrong and the reasons for it (and, 
 if possible, the solutions.)
 
-Extra challenge (optional):  At the end of the fiscal year, our bank must do some accounting.  
-Write a Ruby program to 
+Extra challenge (optional):  At the end of the fiscal year, even our bank must do some accounting.  
+Write a Ruby program to add up the balances in all of the accounts, and output this sum.
 
 
 
