@@ -23,12 +23,16 @@ Write a Ruby program to deposit money in Sally's bank account:
 
 Submit this program as Banking-1.rb
 
-Step 2:  Write a Ruby program to deposit money in Sally's bank account:
-a.  output the beginning balance in Sally's account
-b.  read in an amount from the user at the keyboard and add it to the balance
-c.  output the updated balance.
-d.  What if the user types in hotdog for the amount to be added?  Make the program handle such
+Step 2 
+------
+Write a Ruby program to deposit money in Sally's bank account:
+
+1.  output the beginning balance in Sally's account
+2.  read in an amount from the user at the keyboard and add it to the balance
+3.  output the updated balance.
+4.  What if the user types in hotdog for the amount to be added?  Make the program handle such
 input gracefully.
+
 Submit this program as Banking-2.rb
 
 Step 3:  Let's make this more realistic.  Write a Ruby program that outputs Sally's bank account
