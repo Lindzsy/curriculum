@@ -36,11 +36,11 @@ c.  read in an amount to be deposited
 d.  output account holder's name and the updated balance
 e.  What if the user enters a name that is not associated with an account?  Make the program handle this gracefully.
 
-Step 6:  The accounts even in this rudimentary bank should be able to handle dollars and cents!  Implement the
+Step 5:  The accounts even in this rudimentary bank should be able to handle dollars and cents!  Implement the
 account balances not as integers, but as numbers containing decimal places. 
-a.  make all necessary changes to your program from Step 5.
+a.  make all necessary changes to your program from Step 4.
 
-Step 7:  In your program from Step 6, define a method named deposit.  This method:
+Step 6:  In your program from Step 5, define a method named deposit.  This method:
   * takes only one input argument, which is the amount to be added
   * adds this input value to the account balance
   * and that's all it does.
