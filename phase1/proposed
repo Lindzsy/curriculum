@@ -1,8 +1,11 @@
 BANKING HOMEWORK
+-----------------------------------------------------------------
 The problems are graduated; each one builds on the previous one.  
-Write and test the code for each step, and don't move on to the next step
+Write and test your code for each step, and don't move on to the next step
 until you are satisfied that it works properly and you know why. 
-After completing each step, submit your code at gist.github.com
+After completing each step, submit in your GitHub repo (the one
+we set up on Tuesday, Feb. 2)
+----------------------------------------------------------------
 
 Joe has a bank account containing $250
 Sally has a bank account containing $4,000
@@ -55,7 +58,7 @@ not in the deposit method.
 a.  doing this will cause lots of problems...what are they, and why do they occur?
 Write a couple of lines/paragraphs describing what's going wrong and the reasons for it (and, 
 if possible, the solutions.)
-Submit this explanation as Banking-6.md (or whatever the file type is)
+Submit this text as Banking-6.md
 
 Extra challenge (optional):  At the end of the fiscal year, even our bank must do some accounting.  
 Write a Ruby program to add up the balances in all of the accounts in your program from Step 5,
