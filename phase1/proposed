@@ -17,7 +17,7 @@ b.  add $200 to the balance
 c.  output the updated balance.
 Submit this program as Banking-1.rb
 
-Step 2:  Write a Ruby program to depost money in Sally's bank account:
+Step 2:  Write a Ruby program to deposit money in Sally's bank account:
 a.  output the beginning balance in Sally's account
 b.  read in an amount from the user at the keyboard and add it to the balance
 c.  output the updated balance.
