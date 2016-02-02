@@ -7,14 +7,19 @@ until you are satisfied that it works properly and you know why.
 
 Problem
 -------
-* Joe has a bank account containing $250
-* Sally has a bank account containing $4,000
+Joe has a bank account containing $250
+
+Sally has a bank account containing $4,000
+
 Implement the names as strings and the account balances as integers.
 
-Step 1:  Write a Ruby program to deposit money in Sally's bank account:
-a.  output the beginning balance in Sally's account
-b.  add $200 to the balance
-c.  output the updated balance.
+Step 1 
+------
+Write a Ruby program to deposit money in Sally's bank account:
+1.  output the beginning balance in Sally's account
+2.  add $200 to the balance
+3.  output the updated balance.
+
 Submit this program as Banking-1.rb
 
 Step 2:  Write a Ruby program to deposit money in Sally's bank account:
