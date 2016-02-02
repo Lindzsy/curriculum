@@ -1,4 +1,4 @@
-BANKING HOMEWORK - Tuesday, Feb. 2
+Banking Homework - Tuesday, Feb. 2
 ==================================
 
 The problems are graduated; each one builds on the previous one.  
