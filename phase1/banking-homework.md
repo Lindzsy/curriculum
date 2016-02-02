@@ -35,28 +35,38 @@ input gracefully.
 
 Submit this program as Banking-2.rb
 
-Step 3:  Let's make this more realistic.  Write a Ruby program that outputs Sally's bank account
+Step 3
+------
+Let's make this more realistic.  Write a Ruby program that outputs Sally's bank account
 as $4000.00, not as 4000
-a.  implement this change by modifying the output only; don't modify the data type of the account 
+
+1.  implement this change by modifying the output only; don't modify the data type of the account 
 balance, which should remain an integer.
-b.  Extra challenge (optional):  output the balance with commas preceding every 3 digits, so that
+2.  Extra challenge (optional):  output the balance with commas preceding every 3 digits, so that
 Sally's balance is output as $4,000.00
+
 Submit this program as Banking-3.rb
 
-Step 4:  Implement the bank accounts as key/value pairs (hashes) 
-containing the account holder's name (key) and the amount in the account (value).  
-Create an array of hashes and add a few more accounts to your liking (e.g. Wanda, $2) to the array.
+Step 4
+------
+Implement the bank accounts as key/value pairs (hashes) containing the account holder's name (key) and the amount in the account (value).  Create an array of hashes and add a few more accounts to your liking (e.g. Wanda, $2) to the array.
 Write a Ruby program to mimic a bank teller:
-a.  read in the account holder's name
-b.  output account holder's name and the beginning balance in the account 
-c.  read in an amount to be deposited
-d.  output account holder's name and the updated balance
-e.  What if the user enters a name that is not associated with an account?  Make the program handle this gracefully.
+
+1.  read in the account holder's name
+2.  output account holder's name and the beginning balance in the account 
+3.  read in an amount to be deposited
+4.  output account holder's name and the updated balance
+5.  What if the user enters a name that is not associated with an account?  Make the program handle this gracefully.
+6.  
 Submit this program as Banking-4.rb
 
-Step 5:  The accounts even in this rudimentary bank should be able to handle dollars and cents!  Implement the
+Step 5
+------
+The accounts even in this rudimentary bank should be able to handle dollars and cents!  Implement the
 account balances not as integers, but as numbers containing decimal places. 
-a.  make all necessary changes to your program from Step 4.
+
+1.  make all necessary changes to your program from Step 4.
+
 Submit this program as Banking-5.rb
 
 Step 6:  In your program from Step 5, define a method named deposit.  This method:
