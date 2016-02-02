@@ -44,7 +44,7 @@ Step 6:  The accounts even in this rudimentary bank should be able to handle dol
 account balances not as integers, but as numbers containing decimal places. 
 a.  make all necessary changes to your program from Step 5.
 
-Step 6:  In your program from Step 6, define a method named deposit.  This method:
+Step 7:  In your program from Step 6, define a method named deposit.  This method:
   * takes only one input argument, which is the amount to be added
   * adds this input value to the account balance
   * and that's all it does.
@@ -53,6 +53,9 @@ not in the deposit method.
 a.  doing this will cause lots of problems...what are they, and why do they occur?
 Write a couple of lines/paragraphs describing what's going wrong and the reasons for it (and, 
 if possible, the solutions.)
+
+Extra challenge (optional):  At the end of the fiscal year, our bank must do some accounting.  
+Write a Ruby program to 
 
 
 
