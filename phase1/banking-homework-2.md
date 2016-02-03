@@ -102,9 +102,13 @@ Write a Ruby program that parses a $PATH string, and separates it into an array 
 then the output should be
 
 /usr/local/bin
+
 /usr/bin
+
 /bin
+
 /usr/sbin
+
 /sbin
 
 Hints:
