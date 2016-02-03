@@ -114,5 +114,5 @@ then the output should be
 
 Hints:
 
-1. Copy the output of `$env | grep PATH` into your Ruby program as a literal string (this is the easy way.)
+1. Copy the output of `$env | grep PATH` from your terminal into your Ruby program as a literal string (this is the easy way.)
 2. Search through the $PATH string to find the delimiters, and start a new array element every time you encounter a delimiter.
