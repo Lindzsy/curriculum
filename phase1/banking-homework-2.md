@@ -1,7 +1,7 @@
 Banking Homework - Wednesday, Feb. 3
 ==================================
 
-Please start with whichever Step you did not complete yesterday.  
+Please start with whichever Step you did not complete yesterday, and continue to the end. 
 
 Problem
 -------
@@ -95,7 +95,8 @@ Submit this program as Banking-7.rb
 Step 8
 ------
 New problem:  This has nothing to do with banking.
-Write a Ruby program that parses a $PATH string, and separates it into an array of directories, and outputs that array.   For example, if the $PATH string contains
+
+Write a Ruby program that parses a $PATH string, and separates it into an array of directories (represented as strings), and outputs that array.   For example, if the $PATH string contains
 
 /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 
