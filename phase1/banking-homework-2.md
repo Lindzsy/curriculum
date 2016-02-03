@@ -96,9 +96,9 @@ Step 8
 ------
 New problem:  This has nothing to do with banking.
 
-Write a Ruby program that parses a $PATH string, and separates it into an array of directories (represented as strings), and outputs that array.   For example, if the $PATH string contains
+Write a Ruby program that parses a `$PATH` string, and separates it into an array of directories (represented as strings), and outputs that array.   For example, if the `$PATH` string contains
 
-/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+`/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin`
 
 then the output should be
 
@@ -114,5 +114,5 @@ then the output should be
 
 Hints:
 
-1. don't bother trying to redirect the output from $echo $PATH into your Ruby program.  Instead, take the easy way out:  copy the $PATH from the terminal and paste it into your Ruby program as a literal string.  
+1. don't bother trying to redirect the output from `$echo $PATH` into your Ruby program.  Instead, take the easy way out:  copy the $PATH from the terminal and paste it into your Ruby program as a literal string.  
 2. search through the $PATH string to find the delimiters, and start a new array element every time you encounter a delimiter.
