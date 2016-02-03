@@ -1,9 +1,7 @@
-Banking Homework - Tuesday, Feb. 2
+Banking Homework - Wednesday, Feb. 3
 ==================================
 
-The problems are graduated; each one builds on the previous one.  
-Write and test your code for each step, and don't move on to the next step
-until you are satisfied that it works properly and you know why. 
+Please start with whichever Step you did not complete yesterday.  
 
 Problem
 -------
@@ -87,9 +85,15 @@ if possible, the solutions.)
 
 Submit this explanation as Banking-6.md
 
-Extra challenge (optional)
---------------------------
+Step 7
+------
 At the end of the fiscal year, even our bank must do some accounting.  
 In your program from Step 5, add up the balances in all of the accounts, and output this sum.
 
 Submit this program as Banking-7.rb
+
+Step 8
+------
+New problem:  This has nothing to do with banking.
+Write a Ruby program that parses a $PATH string, and separates it into an array of directories.  For example,
+if the $PATH returns  /User/bin
