@@ -34,13 +34,21 @@ We'll do this part together.
 
 ### The 6 core values
 
-* Nothingness
-* True / False
 * Text
-* Collections by order
-* Collections by name
 * Numbers
+* True / False
+* Collections by name
+* Collections by order
+* Nothingness
 
+### In our words:
+
+* Name
+* SKU (stock keeping unit)
+* Coin Flip
+* Warehouses
+* Boxes
+* Floor Space
 
 ### Ruby
 
@@ -127,7 +135,7 @@ Working with these structures
 -----------------------------
 
 Lets take a detour to look at how we can interact with these structures.
-Go ahead and make [your first cheatsheets](first_cheatsheets.md).
+Go ahead and make [your first cheatsheets](first_cheatsheet.md).
 
 We'll walk through one or two together, then break out into groups to do a couple together
 from each section, and then, do the remaining ones from each section by yourself.
@@ -155,6 +163,7 @@ Try to answer these questions.
   * Which is your favourite (and why)?
   * Why these structures?
   * Can you think of any other types of data that we don't have a structure for?
+  * What would we lose if we removed some of these?
 * Look up the words "syntax" and "semantics" and write down the definitions.
   Which part of what you learned today is syntax? Which part is semantics?
   Include specific examples.
