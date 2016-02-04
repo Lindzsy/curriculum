@@ -133,3 +133,13 @@ If there is time.
 
 * Clojure?
 * Forms after break?
+
+
+Notes for future instructors:
+-----------------------------
+
+We wound up doing this over two days,
+[here](https://gist.github.com/JoshCheek/e90efc577610ce4e4341)
+are the notes from the first day,
+[here](https://gist.github.com/JoshCheek/dabc6894eb1696acbce2)
+are the the notes from the second day.
