@@ -52,7 +52,7 @@ so we give each object the `"class"` key,
 in order to locate the methods we can call on it.
 
 ```ruby
-{ "class"       someclass, # in reality, not nil, but one of the hashes defined below
+{ "class" =>    someclass, # in reality, not nil, but one of the hashes defined below
   "instance_variables" => {
     "@year"  => 1994,      # some example instance variables.
     "@make"  => "Toyota",  # in reality, the values are other objects (other hashes like this one)
