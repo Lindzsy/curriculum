@@ -6,7 +6,11 @@ Expectations
 
 * With these, use `.each` where it is appropriate, rather than the `while` loop,
   unless the problem specifically says to do otherwise.
-
+* Compare your solutions with mine once you finish them, or if you
+  get stuck for more than 20 minutes (but not until then).
+  If you get stuck and look at my solution, then after you finish it,
+  erase it and write it without looking (cache the knowledge you gain!)
+  https://gist.github.com/JoshCheek/765e5b89c271fe170bdd
 
 How to receive command line arguments
 -------------------------------------
@@ -95,16 +99,16 @@ First argument determines whether first or last
 -----------------------------------------------
 
 ```
-$ ruby print_last_longest.rb first abc d efg
+$ ruby print_choose_longest.rb first abc d efg
 abc
 
-$ ruby print_last_longest.rb last abc d efg
+$ ruby print_choose_longest.rb last abc d efg
 efg
 
-$ ruby print_last_longest.rb first a bcde fg
+$ ruby print_choose_longest.rb first a bcde fg
 bcde
 
-$ ruby print_last_longest.rb first abc de fg
+$ ruby print_choose_longest.rb first abc de fg
 abc
 ```
 
@@ -112,21 +116,20 @@ abc
 First argument chooses which argument to print
 ----------------------------------------------
 
-Note that it prints nothing in the second to last example.
-
 ```
-$ ruby  0 a b c
+$ ruby  print_at.rb 0 a b c
 a
 
-$ ruby  1 a b c
+$ ruby  print_at.rb 1 a b c
 b
 
-$ ruby  2 a b c
+$ ruby  print_at.rb 2 a b c
 c
 
-$ ruby  3 a b c
+$ ruby  print_at.rb 3 a b c
 
-$ ruby -1 a b c
+
+$ ruby print_at.rb -1 a b c
 a
 ```
 
@@ -136,20 +139,21 @@ Print whether two strings are equal
 
 For this problem, only, don't use the `==` method on strings,
 instead loop over each character to see whether they're equal.
-If the strings have different length... well, then you already know whether they're equal ;)
+If the strings have different length... well, then you already
+know whether they're equal ;)
 
 ```
 $ ruby strings_equal.rb abc abc
 equal
 
 $ ruby strings_equal.rb abc abcd
-Not equal
+not equal
 
 $ ruby strings_equal.rb abcd abc
-Not equal
+not equal
 
 $ ruby strings_equal.rb axc abc
-Not equal
+not equal
 ```
 
 
@@ -157,7 +161,8 @@ Calculator
 ----------
 
 Don't worry about order of operations on this one, we'll say that each operation
-applies in the order that it was provided.
+applies in the order that it was provided. Spend a few minutes noticing patterns
+in the arguments before you try thinking through this one.
 
 
 ```
@@ -170,13 +175,13 @@ $ ruby calculator.rb 1 + 2 + 10
 $ ruby calculator.rb 10 - 3 + 6
 13.0
 
-$ ruby calculator.rb 4 * 5
+$ ruby calculator.rb 4 '*' 5
 20.0
 
-$ ruby calculator.rb 1 + 4 * 5
+$ ruby calculator.rb 1 + 4 '*' 5
 25.0
 
-$ ruby calculator.rb 2 + 4 * 5
+$ ruby calculator.rb 2 + 4 '*' 5
 30.0
 
 $ ruby calculator.rb 20 / 4
@@ -185,6 +190,6 @@ $ ruby calculator.rb 20 / 4
 $ ruby calculator.rb 20 / 8
 2.5
 
-$ ruby calculator.rb 100 / 5 / 2 + 5 * 2 - 15 / 3
-5
+$ ruby calculator.rb 100 / 5 / 2 + 5 '*' 2 - 15 / 3
+5.0
 ```
