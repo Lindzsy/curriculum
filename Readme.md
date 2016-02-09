@@ -60,6 +60,10 @@ Introduce our laboratory
 
 The JSON data types, across representations
 
+#### The power and danger of abstractions
+
+[material](phase1/the_power_and_danger_of_abstractions.md)
+
 #### Representing nouns
 
 How to model data using the JSON data types.
@@ -109,6 +113,7 @@ Create these programs:
 #### Ruby ecosystem
 
 Topics: Namespacing, multiple files in Ruby (load path), naming conventions across files and classes
+[material](phase1/ruby_ecosystem.md)
 
 #### Pry
 
@@ -118,9 +123,7 @@ Topics: Namespacing, multiple files in Ruby (load path), naming conventions acro
 * Practice imporant commands (whereami, show-source, ls, cd)
 * Recognize that the shell / editor keybindings work here as well
 * Create [pwd](https://github.com/JoshCheek/team_grit/blob/master/katas/pwd.rb)
-  by exploring in pry (no looking up docs, we have to make guesses and check them to see if they.
-  [Here](https://github.com/turingschool/waypoints/blob/master/waypoints/pwd_and_pry.md) 
-  is a documentation of what I'm expecting it to look like.
+  by exploring in pry (no looking up docs, we have to make guesses and check them to see if they
 * Use pry to explore objects based on what we predict from the object model
 
 #### Exploring gems using pry

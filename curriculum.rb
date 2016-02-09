@@ -239,6 +239,7 @@ document.phases.create! order: 1, title: "Introduction to programming with Ruby"
     week.activities.build do |activity|
       activity.name = 'Ruby ecosystem'
       activity.topics = Topic.forall ['Namespacing', 'multiple files in Ruby (load path)', 'naming conventions across files and classes']
+      activity.contents = '[material](phase1/ruby_ecosystem.md)'
     end
     week.activities.build do |activity|
       activity.name = 'Pry'
