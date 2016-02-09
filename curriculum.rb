@@ -181,6 +181,10 @@ document.phases.create! order: 1, title: "Introduction to programming with Ruby"
       activity.contents = 'The JSON data types, across representations'
     end
     week.activities.build do |activity|
+      activity.name = 'The power and danger of abstractions'
+      activity.contents = '[material](phase1/the_power_and_danger_of_abstractions.md)'
+    end
+    week.activities.build do |activity|
       activity.name = 'Representing nouns'
       activity.contents = 'How to model data using the JSON data types.'
     end
