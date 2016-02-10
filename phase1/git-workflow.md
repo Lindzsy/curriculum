@@ -1,6 +1,9 @@
 Git Workflow
 ------------
 
+* [https://vimeo.com/154774489](https://vimeo.com/154774489)
+* [going through this material](https://vimeo.com/154897603)
+
 Model
 -----
 

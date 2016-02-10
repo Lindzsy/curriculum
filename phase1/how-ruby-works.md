@@ -3,6 +3,8 @@ How Ruby Works
 
 AKA object model.
 
+[https://vimeo.com/154796161](https://vimeo.com/154796161)
+
 
 Purpose
 -------

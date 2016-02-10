@@ -1,6 +1,9 @@
 Pry Intro
 =========
 
+* [https://vimeo.com/154897607](https://vimeo.com/154897607)
+* [https://vimeo.com/154897604](https://vimeo.com/154897604)
+
 
 Purpose
 -------
@@ -36,6 +39,7 @@ $ gem install pry-doc
 * In vim: `<Leader>-p`
 * You can start it from the shell with `$ pry`
 
+
 When in the pager
 -----------------
 
@@ -46,6 +50,7 @@ too much to fit on the page (you might get stuck in it).
 * `j` to go down
 * `k` to go up
 * `C-l` to clear (Control-L)
+
 
 Commands
 --------
@@ -61,6 +66,7 @@ Commands
 * `edit` - Allows you to edit code without rerunning the program. I use it to put another pry into a method that I'm about to call.
 * `exit` - Quit out of current pry session. C-D also works.
 * `exit!` - Quit the program
+
 
 Your turn, practice on these
 ----------------------------

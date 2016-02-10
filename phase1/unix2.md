@@ -1,6 +1,8 @@
 Things I Give My Children
 =========================
 
+[https://vimeo.com/154897608](https://vimeo.com/154897608)
+
 * Redirecting
   * `$ echo hello > some_file` Write echo's stdout to the file named `somefile`
   * `$ echo world >> some_file` Append echo's stdout to the file named `somefile`
@@ -26,6 +28,8 @@ Questions
 
 Things My Parents Gave Me
 =========================
+
+[https://vimeo.com/154909703](https://vimeo.com/154909703)
 
 * `$stdin` the input stream (keyboard or file or something)
 * `$stdout` the output strem (monitor or file or something)
