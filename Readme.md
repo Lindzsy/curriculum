@@ -115,16 +115,9 @@ Create these programs:
 Topics: Namespacing, multiple files in Ruby (load path), naming conventions across files and classes
 [material](phase1/ruby_ecosystem.md)
 
-#### Pry
+#### Pry Intro
 
-[Pry](https://github.com/turingschool/curriculum/blob/master/source/topics/debugging/debugging.markdown#pry)
-
-* Show how to add it to an existing program
-* Practice imporant commands (whereami, show-source, ls, cd)
-* Recognize that the shell / editor keybindings work here as well
-* Create [pwd](https://github.com/JoshCheek/team_grit/blob/master/katas/pwd.rb)
-  by exploring in pry (no looking up docs, we have to make guesses and check them to see if they
-* Use pry to explore objects based on what we predict from the object model
+phase1/pry-intro.md
 
 #### Exploring gems using pry
 

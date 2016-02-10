@@ -242,17 +242,8 @@ document.phases.create! order: 1, title: "Introduction to programming with Ruby"
       activity.contents = '[material](phase1/ruby_ecosystem.md)'
     end
     week.activities.build do |activity|
-      activity.name = 'Pry'
-      activity.contents = <<-CONTENTS.strip_heredoc
-      [Pry](https://github.com/turingschool/curriculum/blob/master/source/topics/debugging/debugging.markdown#pry)
-
-      * Show how to add it to an existing program
-      * Practice imporant commands (whereami, show-source, ls, cd)
-      * Recognize that the shell / editor keybindings work here as well
-      * Create [pwd](https://github.com/JoshCheek/team_grit/blob/master/katas/pwd.rb)
-        by exploring in pry (no looking up docs, we have to make guesses and check them to see if they
-      * Use pry to explore objects based on what we predict from the object model
-      CONTENTS
+      activity.name = 'Pry Intro'
+      activity.contents = 'phase1/pry-intro.md'
     end
     week.activities.build do |activity|
       activity.name = 'Exploring gems using pry'
