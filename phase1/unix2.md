@@ -20,7 +20,8 @@ Questions
 * What kind of variable is $PATH?
 * How many environment variables do you have? (`env` and `wc`)
 * Why do you have to use `echo` to see the environment variable?
-* If environment variables are sent to child processes, which structure do they probably come in as, in a Ruby program?
+* If environment variables are sent to child processes,
+  which structure do they probably come in as, in a Ruby program?
 
 
 Things My Parents Gave Me
@@ -31,6 +32,13 @@ Things My Parents Gave Me
 * `$stderr` a second output stream for reporting errors and other metadata
 * `ARGV` an array of strings which were passed to the program when it was run
 * `ENV` a hash of the environment variables
+
+
+Things I Gave My Parents
+========================
+
+* Exit status
+
 
 Questions
 ---------
