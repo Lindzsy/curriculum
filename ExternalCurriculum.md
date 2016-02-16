@@ -1,7 +1,7 @@
+DEVOPS:
+=======
   
-  ### DEVOPS:
-  
-  Basics of Operations
+Basics of Operations
 -----------------------
   
   Week2: Seems like a good place to discuss basics of Operations.  Good place to explain a high level overview of Networking, Servers (Virtual, Cloud), Security, Infrastructure as Code, etc.  My idea would be to guide the class to seeing the big picture. Where they fit in a larger organization and bring up early DevOps practices like communication, empathy, and culture.
