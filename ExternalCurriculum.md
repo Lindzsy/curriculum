@@ -1,5 +1,5 @@
 DEVOPS:
-=======
+======= 
   
 Basics of Operations
 -----------------------
