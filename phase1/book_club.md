@@ -71,5 +71,11 @@ We'll get together and agree on how the book club should go.
 Part 4: Translate description to code
 -------------------------------------
 
+Choose syntax that makes it easy to talk about the book club.
+
+
 Part 5: Implement
 -----------------
+
+Lets get together and say "what would it take to make this bit work"?
+We don't really know where we're going, just what the next step is.
