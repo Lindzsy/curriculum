@@ -43,14 +43,19 @@ Iterations
 To complete this project, you need to iteratively add small bits of functionality
 to a working program. You will only get credit for completed iterations.
 
+![How to iterate](http://herdingcats.typepad.com/.a/6a00d8341ca4d953ef01a511e114a3970c-pi)
+
 **All iterations must be test driven, and in your git history**
 
-(note that I've literally provided acceptance tests, and the
-[building a gem](https://github.com/turingschool/lesson_plans/tree/master/electives/building-a-gem)
+(note that I've literally provided numerous examples that you can use as an acceptance test,
+and the [building a gem](https://github.com/turingschool/lesson_plans/tree/master/electives/building-a-gem)
 tutorial shows you how to test a program from the outside)
 
 
 ### 1. It displays all notes by default
+
+Start with an acceptance test (ie when you change everything about the implementation, it still passes).
+It should execute the program and look at the program's standard output and exit status.
 
 Add a few notes to the program, and when you run `notes`, it should print them.
 Don't make this step hard, you can literally pass it with a big puts statement.
@@ -140,7 +145,7 @@ Add 1 to 2    1 + 2  # => 3
 ```
 
 
-### 5. It treats multiple arguments as successive filters
+### 6. It treats multiple arguments as successive filters
 
 ```
 $ notes
@@ -160,7 +165,8 @@ $ notes array add
 Add two arrays    [1,2] + [2, 3]   # => [1, 2, 2, 3]
 ```
 
-### 6. It allows me to search by hidden information
+
+### 7. It allows me to search by hidden information
 
 In this example, the first note can be searched by "add",
 but I keep trying to find it with "plus".
@@ -187,17 +193,59 @@ Add 1 to 2    1 + 2  # => 3
 Subtract 2 from 1    1 - 2  # => 3
 ```
 
-### 8. The `-h` flag prints a description
-prints notes whose value has multiple lines on multiple lines (aligned)
-prints every other line coloured
+
+### 8. Passing `-h` prints a description
+
+```
+$ notes -h
+Usage: notes [filter1] [filter2] [...]
+
+Notes that are accessible from the command line.
+```
+
+
+### 9. Line the values up
+
+```
+$ notes
+Add 1 to 2              1 + 2  # => 3
+Subtract 2 from 1       1 - 2  # => 3
+Concatenate two arrays  [1,2] + [2, 3] # => [1, 2, 2, 3]
+```
 
 
 Extensions
 ----------
 
-### 7. Line the values up
-### 9. Supports multiline values
-### 10. Colours every other line
+### Allow examples to have multiple lines
+
+```
+$ notes array
+Concatenate two arrays         [1,2] + [2, 3]   # => [1, 2, 2, 3]
+Append an item to an array     a = [1]
+                               a << 2
+                               a # => [1, 2]
+Find out how big the array is  ["a","b"].length # => 2
+```
+
+
+### Print every other line coloured
+
+![selecting notes about arrays](select-array.png)
+
+You can print colour with:
+
+```ruby
+puts "normal \e[30mblack\e[0m normal"
+puts "normal \e[31mred\e[0m normal"
+puts "normal \e[32mgreen\e[0m normal"
+puts "normal \e[33myellow\e[0m normal"
+puts "normal \e[34mblue\e[0m normal"
+puts "normal \e[35mmagenta\e[0m normal"
+puts "normal \e[36mcyan\e[0m normal"
+puts "normal \e[37mwhite\e[0m normal"
+```
+
 
 
 Evaluation Rubric
