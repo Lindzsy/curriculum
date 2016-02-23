@@ -37,15 +37,19 @@ Part 1: Big Picture
 
 Have answers to these questions, we'll discuss them when we meet:
 
-* **Who all is in this book club?** You can make this up, but you need to make it concrete and understand what you're trying to accomplish. You're in the book club, I'm in the book club, who else?
+* **Who all is in this book club?** You can make this up, but you need to make it concrete and understand what you're trying to accomplish.
+You're in the book club, I'm in the book club, who else?
 * **Why are they in the book club?** They're joining for a reason, what is it? What do you want to get out of this book club? What do I want to get out of it? The others?
-* **How does your itinerary help them to that end?** You're going to do some work, right? How do you know it's the right work? How do you know it's useful? How will it help [name of participant] have a better experience as a result? This will help you decide what to put into the itinerary.
+* **How does your itinerary help them to that end?** You're going to do some work, right? How do you know it's the right work? How do you know it's useful?
+How will it help [name of participant] have a better experience as a result? This will help you decide what to put into the itinerary.
 
 Use your imagination, none of this exists yet, so you can literally make it anything you want. There are no rules about the book club itself, only about the process.
 Think about the book club you want to be in, think about who wants to be in your book club.
 What do they want to do? What do they want to know? I am not going to give you requirements for it, because you will make the requirements up yourself,
 based on a consideration of the domain, the participants, the needs. Really put yourself in the shoes of someone attending,
 you should be able to take this itinerary and *actually* run a book club off of it.
+
+Here's an example of one I made [example](https://s3.amazonaws.com/land-of-lisp-itinerary/index.html).
 
 
 Part 2: Read the chapters
