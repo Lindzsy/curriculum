@@ -13,6 +13,9 @@ and have independent histories.
 
 Merging is when you bring multiple branches together into a single branch.
 
+The Process
+-----------
+
 Pick one person to host the main repository, we'll call them "Host".
 Give the pair commit access to it on gihub, we'll call them "Pair".
 Commit access will allow them to directly push changes to the repository.
@@ -37,3 +40,21 @@ When working on either computer, follow this process:
    You can do this within github.
 1. Go back to the master branch `$ git checkout master`
 1. Pull the new changes `$ git pull`
+
+
+The Git Game!
+-------------
+
+For each team member:
+
+* 1 point: A pull request from the member
+* 1 point: The branch name is be the team member's name
+* 1 point: The pull request adds a new file with that member's name
+* 1 point: Someone else on the team will pull it into master
+           Each member get's a max of 1 point here, so for 3
+           points, you'd need 3 members to pull. If only one pulls
+           all 3 requests, then you only get 1 point.
+* 1 point: Pull the changes into master and see all three commits
+
+Assuming 3 members, that's 5 points each for a total of 15.
+Which team will win?!
