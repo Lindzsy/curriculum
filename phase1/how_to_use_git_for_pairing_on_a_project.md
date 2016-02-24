@@ -1,10 +1,12 @@
-How to use git for pairing on a projeect
-----------------------------------------
+How to use git for pairing on a project
+---------------------------------------
+
+[Video](https://vimeo.com/156561999)
 
 * **Pairing**: two people working on one computer.
 * **Project**: One codebase with multiple team members contributing to it.
 
-Git will facilitate this approach throug branches and merging.
+Git will facilitate this approach through branches and merging.
 
 Branches are versions of the code that you give a name to
 and have independent histories.
