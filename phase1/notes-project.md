@@ -246,10 +246,86 @@ puts "normal \e[36mcyan\e[0m normal"
 puts "normal \e[37mwhite\e[0m normal"
 ```
 
+### Negated regular expressions
+
+Sometimes it's easier to specify what you don't want than what you do want.
+
+```
+$ notes
+Add 1 to 2              1 + 2  # => 3
+Subtract 2 from 1       1 - 2  # => 3
+Concatenate two arrays  [1,2] + [2, 3] # => [1, 2, 2, 3]
+
+$ notes ~int
+Concatenate two arrays  [1,2] + [2, 3] # => [1, 2, 2, 3]
+```
+
+If you have some other syntax that you like better, then use that instead.
+
+### Make your own extension
+
+Try using it for a while, what else would you like to have?
+If you have a good idea, run it by me and we can add it!
 
 
 Evaluation Rubric
 -----------------
 
-Coming Soon!
+### 1. Overall Functionality
 
+```
+4: Application implements all nine iterations and at least one extension
+3: Application implements iterations 0 - 9
+2: Application implements iterations 0 - 6
+1: Application implements through interation 5 or less
+```
+
+
+### 2. Test-Driven Development
+
+```
+4: Minimal number of acceptance tests to have confidence everything is hooked up correctly, and it works.
+3: Test names that describe behaviour (I can read them in English and understand how the code works)
+2: Tests adequately cover the behaviour (ie they try edge cases and illustrate that the test name is actually true)
+1: Tests fail or have gaps in coverage.
+```
+
+
+### 3. Fundamental Ruby & Style
+
+Coming later, after I figure out how to configure Rubocop to not be annoying.
+
+(maybe using enumerables over writing our own loops)
+(maybe that it doesn't have code that anticipates some future that will never come, but makes life harder right now)
+
+```
+4: ??
+3: ??
+2: Application runs but does not pass the style guide (to be provided)
+1: Application generates syntax error or crashes during execution
+```
+
+
+### 4. Breaking Logic into Components
+
+```
+4: I could wire this into a webpage right now, without changing any of the submitted code.
+3: `bin/notes` contains only the notes and the code to wire everything together.
+   There is a clear attempt to separate code dealing with the terminal (put, print, argv, escape sequences, etc)
+   and code that would be useful in other contexts
+2: Follows the proper directory structure with code in lib, executable in bin, tests in test or spec,
+   only one toplevel file in lib, the rest are stored within a directory named after the project.
+   Classes and modules are namespaced inside a constant.
+1: Code is haphazardly placed, filenames are incorrect, the `$LOAD_PATH` is littered with files a user could accidentally require.
+   `Object` is littered with constants and methods.
+```
+
+
+### 5. Collaboration
+
+```
+2: Frequent committing (ie if half a feature was commplete, then half the feature was available to the team, because you didn't hoard the functionality).
+4: Pull requests for every iteration.
+3: Git history illustrates that you paired (maybe list your pair).
+1: Tests pass on every pull request at the time that it was merged.
+```
