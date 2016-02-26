@@ -3,6 +3,12 @@ TDD a Linked List!
 
 Lets make a linked list!
 
+If you struggle
+---------------
+
+Consider working through some [linked list challenges](https://github.com/JoshCheek/linked_list_challenges).
+
+
 Process
 -------
 
@@ -21,12 +27,12 @@ Process
 Support the interface of array
 ------------------------------
 
+* `LinkedList#shift`
+* `LinkedList#unshift`
 * `LinkedList#[]`
 * `LinkedList#<<`
 * `LinkedList#push`
 * `LinkedList#pop`
-* `LinkedList#shift`
-* `LinkedList#unshift`
 * `LinkedList#delete_at`
 
 
