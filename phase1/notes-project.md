@@ -81,6 +81,7 @@ Find out how big the array is    ["a","b"].length # => 2
 
 Same as the previous version, but instead of running it with `$ ruby bin/notes`,
 you run it with `$ notes`, and it works from anywhere on your computer.
+As far as testing, you can run it directly, without Ruby.
 
 ```
 $ notes
