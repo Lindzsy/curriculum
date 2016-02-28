@@ -82,7 +82,7 @@ end
 Stretch chalenges!
 ------------------
 
-### `LinkedList#each`
+#### `LinkedList#each`
 
 For this one, you might want to re-watch our [blocks](https://vimeo.com/156462214) video.
 
@@ -94,7 +94,7 @@ end  # => #<LinkedList:0x007fc07b0e2e80 @head=#<LinkedList::Node:0x007fc07b0e2d4
 ```
 
 
-### `LinkedList#map`
+#### `LinkedList#map`
 
 ```ruby
 list = LinkedList.new << 'a' << 'b' << 'c'
@@ -102,7 +102,7 @@ list.map { |char| char.upcase } # => ["A", "B", "C"]
 ```
 
 
-### `LinkedList#inspect`
+#### `LinkedList#inspect`
 
 If you get the above done, then try defining `LinkedList#inspect` to look like this:
 
@@ -111,7 +111,7 @@ LinkedList.new << 'a' << 'b' << 'c'  # => ("a" -> "b" -> "c")
 ```
 
 
-### `LinkedList#delete_at`
+#### `LinkedList#delete_at`
 
 ```ruby
 list = LinkedList.new      # => #<LinkedList:0x007fdbb910e860>
@@ -129,7 +129,7 @@ list                       # => #<LinkedList:0x007fdbb910e860 @head=nil>
 ```
 
 
-### `LinkedList.[]`
+#### `LinkedList.[]`
 
 How to define a singleton method:
 
