@@ -33,7 +33,6 @@ Support the interface of array
 * `LinkedList#<<`
 * `LinkedList#push`
 * `LinkedList#pop`
-* `LinkedList#delete_at`
 
 
 Example (aka make this your acceptance test)
