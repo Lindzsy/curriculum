@@ -8,7 +8,8 @@ Lets make that information easily accessible by building a program whose job
 is to store the notes and let us query them easily.
 We'll name the program `notes`
 
-I've added some integer and array notes to mine, and when I run it it shows me all the notes:
+I've added some integer and array notes to mine, a note consists of a description
+and an example. When I run it it shows me all the notes:
 
 ![running without selecting anything](no-selections.jpg)
 
@@ -81,7 +82,13 @@ Find out how big the array is    ["a","b"].length # => 2
 
 Same as the previous version, but instead of running it with `$ ruby bin/notes`,
 you run it with `$ notes`, and it works from anywhere on your computer.
-As far as testing, you can run it directly, without Ruby.
+This will require you to deal with permissions, add a shebang, and to put an executable in the `PATH` environment variable.
+These are things we covered in [unix1](https://github.com/CodePlatoon/curriculum/blob/master/phase1/unix1.md)
+and [unix2](https://github.com/CodePlatoon/curriculum/blob/master/phase1/unix2.md).
+If you get confused about the `PATH` vs the `$LOAD_PATH`, then read [this](https://gist.github.com/Vince331/f4c077ad2555196f0c5f)).
+Note that when I did it myself, it required me to change only 2 lines of code, set permissions, and add a symlink.
+If you use a symlink, note that (you may later need to use `File.realdirpath` instead of `File.expand_path`.
+Your tests only need to prove that it can be run directly, without mention of Ruby from the outside.
 
 ```
 $ notes
@@ -100,11 +107,14 @@ Find out how big the array is    ["a","b"].length # => 2
 ```
 
 
-### 3. Select notes whose description matches an argument from the command line
+### 3. Select notes whose **description** matches an argument from the command line
 
 We want to be able to select only the relevant notes.
 When I pass a single command-line argument, it should not show
-me any notes whose description matches the argument.
+me any notes whose **description** matches the argument.
+
+I have only 2 lines of output in the first example,
+because my notes program only has 2 notes in it.
 
 ```
 $ notes
@@ -119,7 +129,7 @@ Find out how big the array is    ["a","b"].length # => 2
 ```
 
 
-### 4. Select notes whose example matches an argument from the command line
+### 4. Select notes whose **example** matches an argument from the command line
 
 ```
 $ notes
