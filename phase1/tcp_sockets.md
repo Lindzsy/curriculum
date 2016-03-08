@@ -14,7 +14,7 @@ port   = 3001                       # to allow multiple programs to serve conten
 server = TCPServer.new host, port   # make the server
 
 # Take a request
-socket = s.accept                   # waits until you something connects
+socket = server.accept              # waits until you something connects
 socket.gets                         # read a line (this is the same `gets` method you call on `$stdin`)
 socket.read 5                       # read 5 characters from the input
 socket.print "hello!"               # write "hello!" back into the socket (this is the same print you call on `$stdout`)
