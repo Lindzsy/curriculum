@@ -4,7 +4,7 @@ Telephone Socket Game
 Purpose:
 
 1. Have fun
-2. Anthropomorphicificizieedkljsdklg (sp?) sockets and servers so they're easier to keep track of
+2. Anthropomorphicificizieedkljsdklg (sp?) clients and servers so they're easier to keep track of
 3. Moar shell experience
 
 Fun #1: Write a script to find your IP address
@@ -78,18 +78,22 @@ The order will be:
 
 > James, Megan, Vince, Sean, Derreck, Greg, Matthew, Dongmin, Javi
 
+Stop and take a moment to say "I receive messages *from* [person to your left],
+I send messages *to* [person to your right]". When you make the connections,
+save the sockets into variables named "server", "from", and "to".
+
 Each of you will need to find your IP, start a server,
-and open a socket to the IP/Port of the person after you.
+and open a socket to the IP/Port of the person right you.
 Tell the person before you what your IP is and what port you chose,
 so they can connect to you.
 
 Use the examples in the [tcp sockets](https://github.com/CodePlatoon/curriculum/blob/master/phase1/tcp_sockets.md)
 material to get connected. Make sure the person before you can send you messages.
-Make sure you can send messages to the person after you.
+Make sure you can send messages to the person right you.
 
 
 1. Read a message from the person before you, print it to `$stdout`,
-   then send it to the person after you. We should all see the message,
+   then send it to the person right you. We should all see the message,
    and it should pop up on my screen!
 2. Same thing, but prepend your name before printing.
    What will the output look like on my screen?
