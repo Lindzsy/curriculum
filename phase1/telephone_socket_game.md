@@ -1,7 +1,11 @@
 Telephone Socket Game
 =====================
 
-Purpose: Have fun, anthropomorphicificizieedkljsdklg sockets and servers so they're easier to keep track of.
+Purpose:
+
+1. Have fun
+2. Anthropomorphicificizieedkljsdklg (sp?) sockets and servers so they're easier to keep track of
+3. Moar shell experience
 
 Fun #1: Write a script to find your IP address
 ----------------------------------------------
