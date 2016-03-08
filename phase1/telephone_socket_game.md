@@ -78,18 +78,23 @@ The order will be:
 
 > James, Megan, Vince, Sean, Derreck, Greg, Matthew, Dongmin, Javi
 
-Stop and take a moment to say "I receive messages *from* [person to your left],
-I send messages *to* [person to your right]". When you make the connections,
-save the sockets into variables named "server", "from", and "to".
+Arrange yourselves in a circle so that the person you're sending messages to is on your left,
+and that you're receiving messages from is on your right.
 
-Each of you will need to find your IP, start a server,
-and open a socket to the IP/Port of the person right you.
-Tell the person before you what your IP is and what port you chose,
-so they can connect to you.
+Take a moment to write down on paper "I am a *client* of [person to your left],
+I am a *server* of [person to your right]". Contemplate their spatial proximity,
+and their responsibility of a client you are the server to, or a server you are the client to.
 
-Use the examples in the [tcp sockets](https://github.com/CodePlatoon/curriculum/blob/master/phase1/tcp_sockets.md)
-material to get connected. Make sure the person before you can send you messages.
-Make sure you can send messages to the person right you.
+Take a look at the [tcp sockets](https://github.com/CodePlatoon/curriculum/blob/master/phase1/tcp_sockets.md)
+example. How many variables are there going to be to get connected? What are you going to name them?
+Now start your server on the ip you previously found, give your ip and port to your client,
+ask your server for their ip and port. Coordinate with the people around you so this goes smoothly:
+
+* accept your client's socket into the variable you named after them,
+* connect to the server, saving the socket into the variable you named after them..
+
+Make sure the person to your right can send you messages.
+Make sure the person to your left can receive your messages.
 
 
 1. Read a message from the person before you, print it to `$stdout`,
