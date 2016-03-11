@@ -30,11 +30,20 @@ You're going to build a web application to serve your
 Iteration 0 - Pass my acceptance test
 -------------------------------------
 
-This step will build a valid rack server.
+This step will get us a valid rack server.
 
 * I've provided an acceptance test [here](web_notes_acceptance_test.rb).
 * You **will** need to make your own unit tests around parsing the request and generating the response.
-* To see how other servers have parsed request, play with the code in [exploring_rack.rb](exploring_rack.rb).
+  Not only will you pass my pedantic testing requirements, but it will be much much easier.
+  If you don't know what to send on the IO object, then go do the [http](https://github.com/turingschool/waypoints/blob/master/waypoints/http.md)
+  waypoint again, focus on understanding what you're seeing, why you're seeing it, why I'm having you go back and look at it,
+  and which things you see come from which places in our code.
+* To talk across the internet, you'll need to set up a TCP server.
+  Go through the [example code](https://github.com/CodePlatoon/curriculum/blob/master/phase1/tcp_sockets.md),
+  and take the time to understand the relationships between the pieces.
+  Introduction to [sockets](https://vimeo.com/158073174) (where you all connect to my machine).
+  Here are the class videos, you can see Google's [HTTP response](https://vimeo.com/158096735)
+* To see how other servers have parsed the requests, play with the code in [exploring_rack.rb](exploring_rack.rb).
 * Create a binary named `notes_server`, which will require the server code and run it.
   You can skip the acceptance test on this one.
 
@@ -54,7 +63,7 @@ Again, you can play with [exploring_rack.rb](exploring_rack.rb)
 to see how other servers have done this.
 
 
-Iteration 3 - Serving your notes
+Iteration 2 - Serving your notes
 --------------------------------
 
 The form from the previous step should be returned when people make requests to the root.
@@ -64,7 +73,7 @@ have at it :) If you don't know how to make an HTML list or table, then use a se
 find an example you can base yours off of.
 
 
-Iteration 4 - Selecting your notes
+Iteration 3 - Selecting your notes
 ----------------------------------
 
 Select the notes you display at `/search` based on what's in the query string.
@@ -83,7 +92,7 @@ This functionality already exists in your notes app project,
 you'll pass selectors based on the query rather than based on `ARGV`
 
 
-Iteration 5 - Adding notes
+Iteration 4 - Adding notes
 --------------------------
 
 Create a second form on the root page that will send a `POST` request to `/notes`.
@@ -97,7 +106,7 @@ Place the body into an IO object at the key `rack.input`.
 The submitted information should be added to the notes such that it can then be matched in subsequent requests.
 
 
-Iteration 6 - persisting notes
+Iteration 5 - persisting notes
 ------------------------------
 
 Store your notes should be read in from a file.

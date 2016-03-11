@@ -26,10 +26,11 @@ class AcceptanceTest < Minitest::Test
     end
 
     run_server port, app do
-      response = Net::HTTP.get_response('localhost', '/path', port)
+      response = Net::HTTP.get_response('localhost', '/lolol', port)
       assert_equal "200",              response.code
       assert_equal 'bbq',              response.header['omg']
       assert_equal "hello, class ^_^", response.body
+      assert_equal "/lolol",           path_info
     end
   end
 
