@@ -27,6 +27,21 @@ and look through the examples and links.
 Most important piecs
 --------------------
 
+#### Getting Rake
+
+See if you have Rake
+
+```sh
+$ type rake
+```
+
+If not, install it with Rubygems:
+
+```sh
+$ gem install rake
+```
+
+
 #### Rakefile
 
 Put your rake code (tasks) in this file.
