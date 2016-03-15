@@ -23,7 +23,7 @@ class AcceptanceTest < Minitest::Test
   def wait_for(thread)
     loop do
       break if thread.status == 'sleep' # it is ready for our request
-      raise "The iserver finished without waiting for our request" unless thread.status
+      raise "The server did not wait for our request" unless thread.status
       Thread.pass
     end
   end

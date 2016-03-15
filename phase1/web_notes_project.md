@@ -61,12 +61,14 @@ so you can test your app by calling it with the same hash.
 To unit test this, just give it a hash like your server would have created.
 Again, you can play with [exploring_rack.rb](exploring_rack.rb)
 to see how other servers have done this.
+To talk about the contents of the body, just check it to see that it has some of the words you expect to be in there.
+Ie somewhere in that body is a form
 
 
 Iteration 2 - Serving your notes
 --------------------------------
 
-The form from the previous step should be returned when people make requests to the root.
+The form from the previous step should be returned when people make requests to the root path.
 And since the form submission makes requests to `/search`, we'll list our our notes on that page.
 Here, you might choose to do an unordered list, or a table... or if you have other ideas,
 have at it :) If you don't know how to make an HTML list or table, then use a search engine to
