@@ -21,8 +21,16 @@ The two ways to use ERB
 
 There are 2 ways to use ERB
 
-| Like this      | `<%= ruby code %>` |
-| And like this  | `<%  ruby code %>` |
+<table>
+  <tr>
+    <td>Like this</td>
+    <td>`<%= ruby code %>`</td>
+  </tr>
+  <tr>
+    <td>And like this</td>
+    <td><%  ruby code %></td>
+  </tr>
+</table>
 
 
 With an equal sign
