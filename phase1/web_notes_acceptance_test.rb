@@ -1,13 +1,13 @@
-require 'notes/web' # <-- you'll need to make this
-require 'net/http'  # this is from the stdlib
+require 'notes/server' # <-- you'll need to make this
+require 'net/http'     # this is from the stdlib
 
-class WebAcceptanceTest < Minitest::Test
+class ServerTest < Minitest::Test
   def port
     9292
   end
 
   def run_server(port, app, &block)
-    server = Notes::Web.new(app, Port: port, Host: 'localhost')
+    server = Notes::Server.new(app, Port: port, Host: 'localhost')
     # The thread allows the server to sit and wait for a request,
     # but still return to here so we can send it.
     thread = Thread.new do
