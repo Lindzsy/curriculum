@@ -24,7 +24,7 @@ There are 2 ways to use ERB
 <table>
   <tr>
     <td>Like this</td>
-    <td>`<%= ruby code %>`</td>
+    <td><%= ruby code %></td>
   </tr>
   <tr>
     <td>And like this</td>
