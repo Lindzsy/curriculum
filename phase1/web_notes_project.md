@@ -4,11 +4,18 @@ Web Notes
 This project is based on one I made for Turing,
 which can be seen [here](https://github.com/turingschool/curriculum/blob/master/source/projects/http_yeah_you_know_me.markdown).
 
+
 Project Overview
 ----------------
 
-In this project we'll begin to introduce HTTP, the protocol that runs the web,
-and build a functioning web server to put that understanding into action.
+You're going to build a web application to serve your
+[notes project](https://github.com/CodePlatoon/curriculum/blob/master/phase1/notes-project.md).
+
+We'll build it from the ground up, so that when we move into Rails, we have a much deeper
+understanding of what it's doing, and what is possile.
+
+Note that this will build on the Notes Project, so you need to have done that first.
+
 
 Learning Goals
 --------------
@@ -18,13 +25,6 @@ Learning Goals
 * Understand how the HTTP request/response cycle works
 * Practice implementing basic HTTP requests and responses
 * See how design decisions we make allow this to be easy... or difficult :P
-
-
-The Project
------------
-
-You're going to build a web application to serve your
-[notes project](https://github.com/CodePlatoon/curriculum/blob/master/phase1/notes-project.md).
 
 
 Iteration 0 - Pass my acceptance test
@@ -46,6 +46,7 @@ This step will get us a valid rack server.
 * To see how other servers have parsed the requests, play with the code in [exploring_rack.rb](exploring_rack.rb).
 * Create a binary named `notes_server`, which will require the server code and run it.
   You can skip the acceptance test on this one.
+* This is the same thing I did in front of you at Chicago Ruby [link](https://vimeo.com/157390424).
 
 
 Iteration 1 - Your own app
@@ -58,11 +59,16 @@ Place the query string in the env hash at the key `QUERY_STRING`.
 You don't need to make a web request to unit test this, your server parses the web request into a hash,
 so you can test your app by calling it with the same hash.
 
-To unit test this, just give it a hash like your server would have created.
-Again, you can play with [exploring_rack.rb](exploring_rack.rb)
-to see how other servers have done this.
-To talk about the contents of the body, just check it to see that it has some of the words you expect to be in there.
-Ie somewhere in that body is a form
+To unit test this, just give your app a hash like your server would have created.
+Look at the body that it returns to make sure it has some of the words you expect to be in there.
+Ie somewhere in that body is a form, or when you set the query string to search for an array,
+it has some content from the notes dealing with arrays, and none from the notes that don't.
+
+How do you figure out what to give the hash?
+Play with [exploring_rack.rb](exploring_rack.rb) to see how other servers have done this.
+Look at the HTTP request using netcat, then compare that with the hash the server gives you.
+
+Also, there is a big list of the expected keys, [here](http://www.rubydoc.info/github/rack/rack/master/file/SPEC).
 
 
 Iteration 2 - Serving your notes
@@ -79,14 +85,17 @@ Iteration 3 - Selecting your notes
 ----------------------------------
 
 Select the notes you display at `/search` based on what's in the query string.
+If you see a bunch of stuff that looks like "%21" in the query string,
+this is because it doesn't want to use certain characters, since they have other meanings.
+It "escapes" these characters by p
 Note that the `%20` is really a space:
 
 ```ruby
-" "          # => " "
-  .ord       # => 32
-  .to_s(16)  # => "20"
-  .to_i(16)  # => 32
-  .chr       # => " "
+"!"          # => "!"
+  .ord       # => 33
+  .to_s(16)  # => "21"
+  .to_i(16)  # => 33
+  .chr       # => "!"
 ```
 
 Your app should select notes that match the query string.
@@ -111,5 +120,6 @@ The submitted information should be added to the notes such that it can then be 
 Iteration 5 - persisting notes
 ------------------------------
 
-Store your notes should be read in from a file.
+Store your notes somewhere that you can add them and they will still be around.
+You can do this by sticking them into a JSON file, or a database.
 When you add notes, they should be saved back into the file so that they are still available when you restart.
