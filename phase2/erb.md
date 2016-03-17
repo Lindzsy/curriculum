@@ -39,16 +39,10 @@ With an equal sign
 The first one lets you embed the result of running Ruby code.
 
 ```ruby
-@data = {description: 'Add two numbers together', example: '10 + 2 # => 12'}
-
-template = <<-HTML
-<div class="description"><%= @data[:description] %></div>
-<div class="example"><%= @data[:example] %></div>
-HTML
-
-ERB.new(template).result(binding())
-# => "<div class=\"description\">Add two numbers together</div>
-#    <div class=\"example\">10 + 2 # => 12</div>"
+require 'erb'
+@number = 123
+ERB.new('abc <%= @number %> defg').result(binding())
+# => "abc 123 defg"
 ```
 
 Without an equal sign
@@ -58,11 +52,13 @@ The second does not put the result of the code into the string,
 it is intended to be used for control flow.
 
 ```ruby
-erb = ERB.new('1<% if @show_two %>2<% end %>3')
+require 'erb'
+erb = ERB.new('1<% if show_two %>2<% end %>3')
 
-@show_two = true
+show_two = true
 erb.result(binding())  # => "123"
-@show_two = false
+
+show_two = false
 erb.result(binding())  # => "13"
 ```
 
@@ -73,11 +69,13 @@ Lets put them both together
 
 ```ruby
 @names = %w[Sally Sue Sarah]
-template = '<ul>
+template = <<-HTML
+<ul>
 <% @names.each do |name| %>
   <li><%= name %></li>
 <% end %>
-</ul>'
+</ul>
+HTML
 ERB.new(template).result(binding())
 # => "<ul>
 #
@@ -89,3 +87,10 @@ ERB.new(template).result(binding())
 #
 #    </ul>"
 ```
+
+Instance variables and local variables
+--------------------------------------
+
+You are passing a binding, which has access to local variables and `self`.
+Thus, the renderer can access local variables through the binding,
+and can access instance variables, through the object at the binding's `self`.
