@@ -5,7 +5,7 @@ What
 ----
 
 JSON is a string format for storing data.
-Its name means "JavaScript Object Notation,
+Its name means _"JavaScript Object Notation"_,
 because its syntax is based on JavaScript.
 
 JSON can store nil, true, false, numbers, strings, arrays, and hashes... our 6 structures
@@ -17,7 +17,7 @@ It is frequently used in APIs, and as a persistence format (a way of storing dat
 because it is human readable, natural for anyone who understands JavaScript, easy to parse,
 and it contains a set of structures that pretty much every language is able to represent.
 
-You can see an example of JSON in the body of this command:
+You can see an example of JSON in the body of this HTTP response.
 
 ```sh
 $ curl -i https://api.github.com
@@ -40,7 +40,8 @@ require 'json'
 
 You can call the singleton method `JSON.dump` to turn Ruby into JSON.
 
-Note that what we call "nil", JSON calls "null", and what we call a "hash", JSON calls an "object".
+Note that what we call "nil", JSON calls "null",
+and what we call a "hash", JSON calls an "object".
 
 ```ruby
 JSON.dump [nil, true, false, 123, 12.34, "abc", [], {}]
@@ -83,8 +84,9 @@ JSON doesn't have Symbols, so they become Strings.
 JSON.dump [:abc] # => "[\"abc\"]"
 ```
 
-However, that's annoying in Ruby, so you can tell the JSON parser
-to turn hash keys into symbols with the `symbolize_names` keyword argument.
+However, we frequently use symbols as hash keys in Ruby,
+so you can tell the JSON parser to turn hash keys into symbols
+with the `symbolize_names` keyword argument.
 
 ```ruby
 JSON.parse '[{"a":1}, {"b":2}]', symbolize_names: true  # => [{:a=>1}, {:b=>2}]
