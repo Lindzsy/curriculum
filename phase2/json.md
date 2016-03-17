@@ -23,6 +23,14 @@ You can see an example of JSON in the body of this HTTP response.
 $ curl -i https://api.github.com
 ```
 
+Where to get more in-depth info
+-------------------------------
+
+* [docs](http://www.rubydoc.info/stdlib/json) for the JSON library that ships in Ruby's stdlib.
+* [json.org](http://www.json.org/) has really good technical information about JSON.
+* [wikipedia](https://en.wikipedia.org/wiki/JSON) has some history and background information.
+* [jsonlint.com](http://jsonlint.com/) will tell you whether your JSON is valid.
+
 
 Most important pieces
 ---------------------

@@ -300,14 +300,12 @@ Evaluation Rubric
 
 ### 3. Fundamental Ruby & Style
 
-Coming later, after I figure out how to configure Rubocop to not be annoying.
-
-(maybe using enumerables over writing our own loops)
-(maybe that it doesn't have code that anticipates some future that will never come, but makes life harder right now)
-
-* 4: ??
-* 3: ??
-* 2: Application runs but does not pass the style guide (to be provided)
+* 4: Application passes Rubocop, uses proper naming, and is generally pristine,
+     and uses Ruby well, eg the Enumerable methods.
+     rather than duplicating it, is named descriptively.
+* 3: Application passes Rubocop, uses proper naming, and is generally pristine.
+* 2: Application runs but does not pass Rubocop, or has constants that don't match the file,
+     incorrect camel/snake casing, commented out code, etc.
 * 1: Application generates syntax error or crashes during execution
 
 
@@ -326,7 +324,7 @@ Coming later, after I figure out how to configure Rubocop to not be annoying.
 
 ### 5. Collaboration
 
-* 2: Frequent committing (ie if half a feature was commplete, then half the feature was available to the team, because you didn't hoard the functionality).
-* 4: Pull requests for every iteration.
-* 3: Git history illustrates that you paired (maybe list your pair).
+* 4: Frequent committing (ie if half a feature was commplete, then half the feature was available to the team, because you didn't hoard the functionality).
+* 3: Pull requests for every iteration.
+* 2: Git history illustrates that you paired (maybe list your pair).
 * 1: Tests pass on every pull request at the time that it was merged.

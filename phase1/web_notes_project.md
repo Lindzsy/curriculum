@@ -106,6 +106,17 @@ Your app should select notes that match the query string.
 This functionality already exists in your notes app project,
 you'll pass selectors based on the query rather than based on `ARGV`
 
+The easy way to do this is:
+
+* Submit a request with all the letters you can type on your keybaord,
+  look at what comes into the request.
+* Then write a test that says some piece of code can take the version in the request,
+  and turn it into the version in you submitted in the form.
+* Break down the different things that can happen, and write a test that shows
+  the piece of code can do each of those smaller ideas.
+* Then write the code that does this.
+* Then wire that piece of code into place in your app.
+
 
 Iteration 4 - Adding notes
 --------------------------
@@ -127,23 +138,67 @@ Extension - Persisting notes
 
 When I add a note and restart the server, it remembers the note.
 You can do this by saving and loading notes from a JSON file.
+[Here](https://github.com/CodePlatoon/curriculum/blob/master/phase2/json.md)
+is some material showing how to do that.
 
 
 Extension - All Status Codes
 ----------------------------
 
+Don't just support 200 OK, support them all!
+When the app returns a status code,
+use the human words described at the link Yumin posted,
+[httpstatuses.com](https://httpstatuses.com/).
+
+
 Extension - Error handling
 --------------------------
 
-* 500 on errors
-* 404 on non-found pages
+When the app explodes, have the server render response with a status of
+500 Internal server Error, and some body stating that there was a server error.
+You'll may need another acceptance test to test this,
+though if you put some thought into decoupling, you can do it with a unit test.
+
+When the path doesn't match any of the `REQUEST_METHOD` / `PATH_INFO` pairs,
+return a status of 404 Not Found, and some body stating that it couldn't find
+the thing the app requested.
+
+
+Extension - Logging
+-------------------
+
+Logging means that we record some useful information in a log.
+The `REQUEST_METHOD` and `PATH_INFO` seem pretty useful, probably log those.
+If you want to see some other information, log that, too.
+
+You might record it by doing something like `$stdout.puts "some useful info"`,
+but that would spam the tests and wouldn't allow us to do things like saving
+the logs for later. So a better plan is to provide an IO stream to the server
+when you create it. It can print into whatever stream you give it,
+`@log.puts "some useful info"` and then you can give it `$stdout` from your
+`bin/notes_server`, and you can give it `StringIO.new` from your test.
 
 
 Extension - Natty notes
 -----------------------
 
-* Styled notes
-* Pulled out with ERB
+Use HTML and CSS to produce an interface that is pleasant to use.
+It should be consistent, and CSS that is shared between pages
+should be accessed through a separate request so that multiple pages
+can reference it.
+
+If your HTML is stored in a String in your application, you're going
+to have an issue where you have to restart your server every time you
+make a change, since it's running in memory. Restarting loads it from
+the source code again, so you can see your changes.
+That's going to make it really painful, so take those strings out of
+your code and put them in their own files that you read off the file
+system every time you make a change.
+Now you don't have to restart restart the server every time!
+
+If you're interpolating Ruby code into the string,
+use [ERB](https://github.com/CodePlatoon/curriculum/blob/master/phase2/erb.md)
+so you can embed Ruby code into the string.
 
 
 Evaluation Rubric
@@ -154,7 +209,9 @@ Evaluation Rubric
 * 4: Application implements the 4 iterations and at least 2 extensions
 * 3: Application implements through iteration 4
 * 2: Application implements iterations 1 - 3
-* 1: Application implements through interation 0 or less
+* 1: Application implements through interation 0 or less,
+     or removes functionality from the command-line notes,
+     or can't be run with `bin/notes_server`
 
 You can get a 1/2 bonus point by having everyone in your group perform
 the [http waypoint](https://github.com/turingschool/waypoints/blob/master/waypoints/http.md)
@@ -172,36 +229,52 @@ difficulty giving you the full point, we can apply this to compensate and get th
 
 ### 3. Fundamental Ruby & Style
 
-Coming later, after I figure out how to configure Rubocop to not be annoying.
-
-(maybe using enumerables over writing our own loops)
-(maybe that it doesn't have code that anticipates some future that will never come, but makes life harder right now)
-
-* 4: ??
-* 3: ??
-* 2: Application runs but does not pass the style guide (to be provided)
+* 4: Application passes Rubocop, uses proper naming, and is generally pristine,
+     and uses Ruby well, eg the Enumerable methods.
+     rather than duplicating it, is named descriptively.
+* 3: Application passes Rubocop, uses proper naming, and is generally pristine.
+* 2: Application runs but does not pass Rubocop, or has constants that don't match the file,
+     incorrect camel/snake casing, commented out code, etc.
 * 1: Application generates syntax error or crashes during execution
 
 
 ### 4. Breaking Logic into Components
 
-* 4: I could wire this into a webpage right now, without changing any of the submitted code.
-* 3: `bin/notes` contains only the notes and the code to wire everything together.
-     There is a clear attempt to separate code dealing with the terminal (put, print, argv, escape sequences, etc)
-     and code that would be useful in other contexts
-* 2: Follows the proper directory structure with code in lib, executable in bin, tests in test or spec,
-     only one toplevel file in lib, the rest are stored within a directory named after the project.
-     Classes and modules are namespaced inside a constant.
-* 1: Code is haphazardly placed, filenames are incorrect, the `$LOAD_PATH` is littered with files a user could accidentally require.
-     `Object` is littered with constants and methods.
+maybe that it doesn't have code that anticipates some future that will never come,
+but makes life harder right now
 
+* 4: Code in lib either doesn't know about the command line / web page,
+     or that knowledge is kept to a place, whose responsibility is to handle those things,
+     and the core notes code is kept oblivious.
+* 3: There is a clear attempt to separate code dealing with the terminal
+     (put, print, argv, escape sequences, etc), web page (html, css, web specific request knowledge)
+     and code that would be useful in other contexts.
+     Methods pulled out of other methods are made private,
+     so the outside world doesn't depend on them.
+     Methods with bits of functionality broken out of them are placed in
+     their own class, not all mixed together.
+* 2: Follows the proper directory structure with code in lib, executable in bin,
+     tests in test or spec, only one toplevel file in lib,
+     the rest are stored within a directory named after the project.
+     Classes and modules are namespaced inside a constant.
+     Lots of code that adds overhead for the sake of anticipated future use cases
+     (really, this is what waterfall is -- the opposite of agile).
+* 1: Code is haphazardly placed, filenames are incorrect,
+     the `$LOAD_PATH` is littered with files a user could accidentally require.
+     `Object` is littered with constants and methods.
 
 ### 5. Collaboration
 
-* 2: Frequent committing (ie if half a feature was commplete, then half the feature was available to the team, because you didn't hoard the functionality).
-* 4: Pull requests for every iteration.
-* 3: Git history illustrates that you paired (maybe list your pair).
-* 1: Tests pass on every pull request at the time that it was merged.
-
-
-
+* 4: Frequent committing (ie if half a feature was commplete, then half the
+     feature was available to the team, because you didn't hoard the functionality).
+     Team members working either together or on functionality that implies a
+     shared vision and understanding of the direction.
+     CI nearly always passes, and failures are addressed before moving on.
+* 3: Pull requests for every iteration, some confusion on the direction / what
+     other members are working on.
+* 2: Independent work that has no bearing on the team's vision for the project.
+* 1: No CI or Failing CI builds that go unnoticed / unaddressed,
+     lack of coherence of the product. A useless / nonfunctioning project for
+     most of its life (remember how
+     [iteration](http://herdingcats.typepad.com/.a/6a00d8341ca4d953ef01a511e114a3970c-pi)
+     should work).
