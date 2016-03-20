@@ -94,3 +94,33 @@ Instance variables and local variables
 You are passing a binding, which has access to local variables and `self`.
 Thus, the renderer can access local variables through the binding,
 and can access instance variables, through the object at the binding's `self`.
+
+
+Seeing the code generated from the template
+-------------------------------------------
+
+If you're having difficulty understanding
+what the template is going to do, you
+can see the Ruby code that it would generate
+like this:
+
+```ruby
+require 'erb'
+erb  = ERB.new("abc <% if @show_2 %>2<% end %> defg\n")
+code = erb.src.gsub(/ *; */, "\n")
+puts code
+```
+
+In our case, if we ran that, it would print out this:
+
+```ruby
+#coding:UTF-8
+_erbout = ''
+_erbout.concat "abc "
+if @show_2
+_erbout.concat "2"
+end
+_erbout.concat " defg\n"
+
+_erbout.force_encoding(__ENCODING__)
+```
