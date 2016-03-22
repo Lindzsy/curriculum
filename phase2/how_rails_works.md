@@ -1,6 +1,9 @@
 How Rails Works
 ===============
 
+* [video](https://vimeo.com/159890837) where we look through Rails and see the big picture
+* [video](https://vimeo.com/159861997) of the above plus installation
+
 What is Ruby on Rails?
 ----------------------
 
