@@ -40,11 +40,11 @@ In our above example, the client is saying to the server:
 The verbs (request methods)
 ---------------------------
 
-First think about these as operations on a file,
-it's helpful, because that's the context they were derived in.
+First think about these as operations on a file.
+It's helpful, because that's the context they were derived in.
 
-* POST - used to **create** a new file (it wi in the request body)
-* GET - used to **read** a file (this Unix parlance for retrieving, think `File.read`)
+* POST - used to **create** a new file (it's within in the request body)
+* GET - used to **read** a file (this is Unix parlance for retrieving, think `File.read`)
 * PUT -  used to **update** a file (completely replace it)
 * PATCH - same as PUT, but for a portion of the file
 * DELETE - used to **delete** a file
@@ -145,7 +145,7 @@ Dealing with other verbs
 ------------------------
 
 If I'm using a social media site, I might want to send a friend request.
-But I can't send a requst "REQUEST-FRIENDSHIP /users/23",
+But I can't send a request "REQUEST-FRIENDSHIP /users/23",
 there is no verb for it.
 
 The way to deal with situations like this is to turn your verb into a noun:
