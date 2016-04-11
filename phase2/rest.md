@@ -95,25 +95,25 @@ into the 8 routes that Rails would give you for a resource.
 
 ```
 /photos/:id
-UsersController
+PhotosController
 #show
 /photos/:id
 DELETE
-UsersController
+PhotosController
 #edit
 update a specific photo
 /photos
 /photos/:id
-UsersController
+PhotosController
 #update
 display a specific photo
 return an HTML form for editing a photo
 delete a specific photo
 /photos/:id
 GET
-UsersController
+PhotosController
 #create
-UsersController
+PhotosController
 #destroy
 return an HTML form for creating a new photo
 GET
@@ -121,16 +121,16 @@ PATCH
 GET
 display a list of all photos
 update a specific photo
-UsersController
+PhotosController
 #update
 GET
 /photos
 PUT
 /photos/new
-UsersController
+PhotosController
 #new
 /photos/:id/edit
-UsersController
+PhotosController
 #index
 create a new photo
 POST
@@ -178,6 +178,8 @@ You tell Rails about your verb/noun pairs in "config/routes.rb"
 If what you have is close enough to the idea described above,
 then you can just call the method `resources` and pass the name,
 and it will set up 8 default routes for you.
+
+Play around with some of the methods from [here](http://guides.rubyonrails.org/routing.html)
 
 ```ruby
 # This code works as of Rails 4.2
