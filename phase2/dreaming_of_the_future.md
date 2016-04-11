@@ -51,6 +51,7 @@ What within it ignites intrigue in you?<br />
     [this](http://github.com/applegrain/creact) material to teach how to use it from Rails.
     She says "I did the official tutorial - which left much to be desired - and then started working on a small side project. The tutorial I linked to above should be pretty exhaustive in the explanations and geared towards someone that does not have a lot of experience with JavaScript"
     and also "let me know if I can help in any way!", which means that she's available to help you with it!
+  * Three.js lets you do 3D stuff, [here](http://gilesbowkett.blogspot.com/2014/04/build-anime-robot-in-webgl-using-threejs.html) is one that walks you through building a Tachikoma.
 * CSS
   * [This](http://codepen.io/alexmwalker/pen/paHcG) CSS thing looks amazing!
     I had no idea you could do stuff like that with CSS!
@@ -86,3 +87,5 @@ What within it ignites intrigue in you?<br />
     That's useful if you want to do some kind of processing at a low-level!
   * [Here](http://codingbat.com/python) are some resources on Django, and [here](https://www.djangoproject.com/start/)
     is some material to help teach you Python and algorithmic thinking, both of those would be relevant!
+  * [You, Me, & SVG](https://www.codeschool.com/courses/you-me-svg) learn about Scalable Vector Graphics!
+  * 10-30 minute [markdown tutorial](http://www.markdowntutorial.com/lesson/1/)
