@@ -95,7 +95,8 @@ into the 8 routes that Rails would give you for a resource.
 
 ```
 /photos/:id
-UsersController#show
+UsersController
+#show
 /photos/:id
 DELETE
 UsersController
