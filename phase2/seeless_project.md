@@ -157,6 +157,10 @@ when you get there and it blows up, you'll know what you intended for it to do.
 Don't let discomfort with capybara pull you out of context,
 you can literally write English pseudocode in places where you don't know what to do.
 
+Testing web requests
+--------------------
+
+[Testing web requests](https://github.com/CodePlatoon/curriculum/blob/master/phase2/testing_with_web_requests.md)
 
 Let your tests guide you
 -------------------------
