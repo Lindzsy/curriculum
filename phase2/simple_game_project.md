@@ -2,7 +2,7 @@ Tic Tac Toe
 -----------
 
 For this game, we'll build a [tic tac toe](https://en.wikipedia.org/wiki/Tic-tac-toe).
-
+[Video](https://vimeo.com/162839198) of giving out the project.
 
 Purpose
 -------
