@@ -29,25 +29,25 @@ Primary functionality:
 * I can play Tic Tac Toe against a computer (it is not required to play intelligently)
 * I can't interfere with other player's games
 * I can watch a replay of my game
+* I can start another game when mine is over
 
 
 Secondary functionality:
 ------------------------
 
+* I can see a list of my previous games
 * I can see my games later, even if I'm on a different computer or my phone
   (eg if you're storing info about me in the db,
   I can prove that I'm the user in the DB with something like [oauth](from_zero_to_oauth.md))
-* I can see a list of my previous games
-* I can tweet a link to my replay
 
 
 Stretch functionality:
 ----------------------
 
+* I can tweet a link to my replay
 * You can add a feature of your own (play the thing a bit, you need to have the perspective of your user)
 * The computer is smart enough to always win
 * I can see a list of other players games -- followup functionality: I can mark my games visible / invisible
-* I can't interfere with other player's games
 * I can play against another human player (careful to think about the implications of this)
 * I can see a list of current games and choose to watch them
 
