@@ -1,0 +1,39 @@
+// run with: dot dependencies.gv -T png > dependencies.png
+digraph {
+  splines=line;
+  label="Good design has callstacks that are short and wide";
+  labelloc=top;
+
+  subgraph cluster_0 {
+    label="6 dependencies";
+    a1[label="a"];
+    b1[label="b"];
+    c1[label="c"];
+    d1[label="d"];
+    a1 -> b1;
+    b1 -> c1;
+    c1 -> d1;
+  }
+
+  subgraph cluster_1 {
+    label="5 dependencies";
+    a2[label="a"];
+    b2[label="b"];
+    c2[label="c"];
+    d2[label="d"];
+    a2 -> b2;
+    b2 -> c2;
+    b2 -> d2;
+  }
+
+  subgraph cluster_2 {
+    label="3 dependencies";
+    a3[label="a"];
+    b3[label="b"];
+    c3[label="c"];
+    d3[label="d"];
+    a3 -> b3;
+    a3 -> c3;
+    a3 -> d3;
+  }
+}
