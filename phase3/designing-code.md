@@ -97,10 +97,20 @@ make_move(HumanPlayer.new)
 * Try this out on the Gilded Rose kata.
 
 
+Interface Segregation Principle (ISP)
+-------------------------------------
+
+Small Surface Area
+
+The tinier the better, hence a function is best
+
+
+
 Dependency Inversion Principle (DIP)
 ------------------------------------
 
 Usually implemented through "dependency injection"
+Push a dep earlier in the callstack to its parent.
 
 
 Dependency removal principle
@@ -118,12 +128,77 @@ implies:
 I don't want your baggage, just give me what I need to do my job, not the whole fkn world.
 
 
-Interface Segregation Principle (ISP)
--------------------------------------
+Null Objects
+------------
 
-Small Surface Area
+When you have some object that might be nil, you may need to check to see if it is nil
+before you call any methods on it. This can take a fairly simple idea and make it complex,
+as well as create a lot of test cases you need to hit.
 
-The tinier the better, hence a function is best
+```ruby
+class Node
+  def initialize(data, link)
+    @data, @link = data, link
+  end
+
+  def length
+    if @link
+      1+@link.length
+    else
+      1
+    end
+  end
+
+  def join
+    if @link
+      @data.to_s + @link.join
+    else
+      @data.to_s
+    end
+  end
+end
+
+list = Node.new('H', Node.new('e', Node.new('l', Node.new('l', Node.new('o', nil)))))
+list.length # => 5
+list.join   # => "Hello"
+```
+
+
+If we had an object that just did the right thing for the situation where there would
+have otherwise been nil, then we could call the methods on the object without worrying.
+
+
+```ruby
+class Node
+  def initialize(data, link)
+    @data, @link = data, link
+  end
+
+  def length
+    1+@link.length
+  end
+
+  def join
+    @data.to_s + @link.join
+  end
+end
+
+class NullNode
+  def length
+    0
+  end
+
+  def join
+    ''
+  end
+end
+
+list = Node.new('H', Node.new('e', Node.new('l', Node.new('l', Node.new('o', NullNode.new)))))
+list.length # => 5
+list.join   # => "Hello"
+```
+
+Now all the code becomes much easier to read, write and test!
 
 
 Presenters
@@ -143,11 +218,6 @@ Don't Repeat Yourself (DRY)
 
 move something like db name into a given place (eg selfup/rejs)
 
-
-Dependency Inversion Principle (DIP)
-------------------------------------
-
-Push a dep earlier in the callstack to its parent
 
 
 SRP
