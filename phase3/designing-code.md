@@ -163,9 +163,10 @@ list.length # => 5
 list.join   # => "Hello"
 ```
 
-
-If we had an object that just did the right thing for the situation where there would
-have otherwise been nil, then we could call the methods on the object without worrying.
+We want to move these conditionals out of this object, but if we go any higher, we're
+at the toplevel! So, we'll move the decision about the nil-ness up to the top,
+(you can see it's already there), but create another object whose job is to encapsulate
+the knowledge about what to do when nil. This object will be our "null object".
 
 
 ```ruby
