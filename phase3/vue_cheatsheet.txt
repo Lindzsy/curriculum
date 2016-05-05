@@ -22,7 +22,7 @@ The javascript component:
   * An object, it recognizes these keys (and some others):
     * template | string, CSS selector
     * data     | function returning an object
-    * ready    | function, called when bound to
+    * ready    | function, called when bound to HTML component
     * methods  | object whose keys are fn names, and values are fns
 
 The view component:
@@ -43,3 +43,7 @@ The view component:
         <input v-model="newProductName"></input>
         <input type="submit" value="Add"></input>
       </form>
+      
+      
+      
+      
