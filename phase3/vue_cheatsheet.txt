@@ -1,3 +1,5 @@
+http://codepen.io/josh_cheek/pen/zqmyap
+
 Setup:
   * Add Vue
   * Add jQuery
@@ -8,11 +10,11 @@ New Vue needs:
   * data
 
 Each component needs:
-  * Component in the view:
+  * HTML Component:
       <vue-products>
-  * Template in the view:
+  * Template:
       <script type="text/template" id="products-template"><ul>...
-  * Component in the javascript:
+  * View Model (javascript):
       Vue.component('vue-products', {template: '#products-template'})
 
 The javascript component:
@@ -24,8 +26,13 @@ The javascript component:
     * methods  | object whose keys are fn names, and values are fns
 
 The view component:
-  * Normal HTML, but you can set behaviour with custom attributes
-  * If you declare `message` in your data, you can interpolate it into the html with {{message}}
+  Normal HTML, but you can set behaviour with custom attributes
+
+  If you declare `message` in your data,
+  you can interpolate it into the html with {{message}}
+  
+  3 keys we'll need:
+
   * v-for render the element for each item in a list, here, `names` would need to be declared in our data
       <ul>
         <li v-for="name in productNames">{{name}}</li>
