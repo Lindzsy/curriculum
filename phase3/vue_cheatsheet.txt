@@ -1,0 +1,38 @@
+Setup:
+  * Add Vue
+  * Add jQuery
+  * `new Vue` after the page is loaded (jquery)
+
+New Vue needs:
+  * el
+  * data
+
+Each component needs:
+  * Component in the view:
+      <vue-products>
+  * Template in the view:
+      <script type="text/template" id="products-template"><ul>...
+  * Component in the javascript:
+      Vue.component('vue-products', {template: '#products-template'})
+
+The javascript component:
+  * receives the name of the component (matches the view)
+  * An object, it recognizes these keys (and some others):
+    * template | string, CSS selector
+    * data     | function returning an object
+    * ready    | function, called when bound to
+    * methods  | object whose keys are fn names, and values are fns
+
+The view component:
+  * Normal HTML, but you can set behaviour with custom attributes
+  * If you declare `message` in your data, you can interpolate it into the html with {{message}}
+  * v-for render the element for each item in a list, here, `names` would need to be declared in our data
+      <ul>
+        <li v-for="name in productNames">{{name}}</li>
+      </ul>
+  * v-model sync some html state to one of your data variables
+  * v-on provide a method to be called when an event happens
+      <form v-on:click.prevent="addProduct">
+        <input v-model="newProductName"></input>
+        <input type="submit" value="Add"></input>
+      </form>
